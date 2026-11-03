@@ -1,0 +1,478 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   BASE — MOBILE FIRST
+========================= */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink font-sans;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+
+  img {
+    @apply max-w-full;
+  }
+}
+
+/* =========================
+   COMPONENTS
+========================= */
+
+@layer components {
+
+  /* Container */
+
+  .container-site {
+    @apply w-[calc(100%-30px)] mx-auto;
+  }
+
+  /* Decorative line */
+
+  .gold-line {
+    @apply h-px bg-gold;
+  }
+
+  /* Navigation */
+
+  nav a {
+    @apply relative transition-all duration-300;
+  }
+
+  nav a::after {
+    content: "";
+    @apply absolute -bottom-2 right-0 w-0 h-[2px] bg-gold transition-all duration-300;
+  }
+
+  /* Buttons */
+
+  .gold-button,
+  .hero-cta {
+    @apply relative overflow-hidden bg-forest text-white
+    px-5 py-3 transition-all duration-500;
+  }
+
+  .gold-button::before,
+  .hero-cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -120%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(
+      110deg,
+      transparent,
+      rgba(255,255,255,.25),
+      transparent
+    );
+    transition: right .7s ease;
+  }
+
+  /* Icon Buttons */
+
+  .icon-btn,
+  .heart,
+  .add-btn {
+    @apply transition-all duration-300;
+  }
+
+  /* Product Cards */
+
+  .product-card {
+    @apply min-w-0 bg-white p-2
+    border border-[#e9e1d4]
+    transition-all duration-500;
+  }
+
+  .product-visual {
+    @apply relative overflow-hidden
+    bg-[#e9e2d5]
+    h-[170px]
+    flex items-center justify-center
+    rounded-t-[85px] rounded-b-sm
+    transition-all duration-500;
+  }
+
+  .product-visual::before {
+    content: "";
+    @apply absolute inset-2
+    border border-white/60
+    rounded-t-[80px] rounded-b-sm;
+  }
+
+  .product-visual img {
+    @apply relative z-10 w-full h-full object-cover
+    transition-transform duration-700;
+  }
+
+  .product-info {
+    @apply px-1 pt-3;
+  }
+
+  .product-info h3 {
+    @apply text-xs font-medium mb-2;
+  }
+
+  .product-info p {
+    @apply text-[10px] text-gray-400 mb-3;
+  }
+
+  .product-bottom {
+    @apply flex items-center justify-between gap-2;
+  }
+
+  .product-tag {
+    @apply absolute top-3 right-3 z-20
+    bg-white/90 text-[#8d7143]
+    px-2 py-1 text-[9px]
+    transition-all duration-300;
+  }
+
+  .heart {
+    @apply absolute top-3 left-3 z-20
+    w-7 h-7 rounded-full
+    bg-white/90 text-gray-500
+    flex items-center justify-center;
+  }
+
+  .add-btn {
+    @apply w-7 h-7 rounded-full
+    border border-[#d8cbb6]
+    text-gold bg-transparent;
+  }
+
+  /* Filters */
+
+  .filter {
+    @apply px-3 py-2 text-[10px]
+    border border-[#ded6c8]
+    transition-all duration-300;
+  }
+
+  /* Story Section */
+
+  .story-visual {
+    @apply relative isolate overflow-hidden
+    w-full max-w-[340px] h-[290px]
+    mx-auto p-3
+    border border-gold
+    rounded-t-[170px] rounded-b-lg
+    bg-forest;
+  }
+
+  .story-visual::before {
+    content: "";
+    @apply absolute inset-3
+    border border-[#d5b77b80]
+    rounded-t-[155px] rounded-b-sm;
+  }
+
+  .story-visual::after {
+    content: "";
+    @apply absolute w-[72%] h-[72%]
+    border border-[#e3c78b35]
+    rounded-full;
+    transform: rotate(-24deg);
+  }
+
+  .story-visual img {
+    @apply relative z-10
+    w-[72%] h-full object-cover
+    mx-auto
+    rounded-t-[140px] rounded-b-sm
+    transition-all duration-700;
+  }
+
+  .story-copy h2 {
+    @apply text-2xl leading-relaxed font-normal;
+  }
+
+  .story-copy p {
+    @apply text-xs leading-[2.3] text-gray-500;
+  }
+
+  /* Text Links */
+
+  .text-link {
+    @apply inline-block mt-4 pb-2
+    text-gold border-b border-gold
+    transition-all duration-300;
+  }
+
+  /* Newsletter */
+
+  .newsletter-inner {
+    @apply flex flex-col gap-6;
+  }
+
+  .subscribe {
+    @apply flex w-full border-b border-[#b6a78f];
+  }
+
+  .subscribe input {
+    @apply flex-1 min-w-0 bg-transparent
+    px-1 py-3 outline-none text-xs;
+  }
+
+  .subscribe button {
+    @apply px-2 text-xs text-gold transition-all duration-300;
+  }
+
+  /* Footer */
+
+  .footer-top {
+    @apply flex flex-col gap-7 pb-8;
+  }
+
+  .footer-links {
+    @apply flex flex-wrap gap-5;
+  }
+
+  .footer-links a {
+    @apply text-xs transition-all duration-300;
+  }
+
+  .copyright {
+    @apply flex flex-col gap-3
+    border-t border-white/10
+    pt-4 text-[10px];
+  }
+
+  /* Login Modal */
+
+  .modal {
+    @apply relative w-full max-w-[420px]
+    p-6 bg-white
+    border border-[#c5a36a80]
+    rounded-t-sm rounded-br-[40px];
+    animation: modalIn .4s ease;
+  }
+
+  .close {
+    @apply absolute top-3 left-3
+    text-2xl transition-all duration-300;
+  }
+
+  .field {
+    @apply mb-4;
+  }
+
+  .field label {
+    @apply block text-xs mb-2 text-gray-500;
+  }
+
+  .field input {
+    @apply w-full p-3 text-xs
+    border border-[#e3dccf]
+    bg-transparent outline-none;
+  }
+
+  .submit {
+    @apply w-full py-3 mt-2
+    bg-forest text-white text-xs
+    transition-all duration-300;
+  }
+}
+
+/* =========================
+   HOVER — DESKTOP DEVICES
+========================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  nav a:hover {
+    @apply text-gold -translate-y-1;
+  }
+
+  nav a:hover::after {
+    @apply w-full;
+  }
+
+  .gold-button:hover,
+  .hero-cta:hover,
+  .submit:hover {
+    @apply -translate-y-1 shadow-luxury;
+    background-color: #354f41;
+  }
+
+  .gold-button:hover::before,
+  .hero-cta:hover::before {
+    right: 130%;
+  }
+
+  .icon-btn:hover {
+    @apply -translate-y-1;
+    background: #253B32;
+    color: white;
+    border-color: #C5A36A;
+  }
+
+  .heart:hover {
+    @apply scale-110;
+    background: #253B32;
+    color: white;
+  }
+
+  .add-btn:hover {
+    @apply rotate-90 scale-110;
+    background: #253B32;
+    color: white;
+  }
+
+  .product-card:hover {
+    @apply -translate-y-2 shadow-luxury;
+    border-color: #C5A36A;
+  }
+
+  .product-card:hover .product-visual img {
+    @apply scale-110;
+  }
+
+  .product-card:hover .product-tag {
+    @apply bg-forest text-white;
+  }
+
+  .story-visual:hover img {
+    @apply scale-105;
+  }
+
+  .text-link:hover {
+    @apply pr-3;
+    color: #253B32;
+  }
+
+  .filter:hover {
+    @apply -translate-y-1;
+    border-color: #C5A36A;
+  }
+
+  .subscribe button:hover {
+    @apply -translate-x-1;
+    color: #253B32;
+  }
+
+  .footer-links a:hover {
+    @apply -translate-y-1;
+    color: #D7B77E;
+  }
+
+  .close:hover {
+    @apply rotate-90 scale-110;
+    color: #C5A36A;
+  }
+}
+
+/* =========================
+   TABLET — 768px+
+========================= */
+
+@screen md {
+
+  .container-site {
+    @apply w-[calc(100%-48px)];
+  }
+
+  .product-visual {
+    @apply h-[230px];
+  }
+
+  .product-info {
+    @apply px-2 pt-4;
+  }
+
+  .product-info h3 {
+    @apply text-sm;
+  }
+
+  .story-visual {
+    @apply h-[360px] max-w-[400px];
+  }
+
+  .story-copy h2 {
+    @apply text-3xl;
+  }
+
+  .newsletter-inner {
+    @apply flex-row items-center justify-between;
+  }
+
+  .subscribe {
+    @apply max-w-[400px];
+  }
+
+  .footer-top {
+    @apply flex-row justify-between items-start;
+  }
+
+  .copyright {
+    @apply flex-row justify-between;
+  }
+}
+
+/* =========================
+   DESKTOP — 1024px+
+========================= */
+
+@screen lg {
+
+  .container-site {
+    @apply max-w-[1180px];
+  }
+
+  .product-visual {
+    @apply h-[270px];
+  }
+
+  .product-info h3 {
+    @apply text-sm;
+  }
+
+  .story-visual {
+    @apply h-[420px] max-w-[430px];
+  }
+
+  .story-copy h2 {
+    @apply text-4xl;
+  }
+
+  .story-copy p {
+    @apply text-sm leading-[2.4];
+  }
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
