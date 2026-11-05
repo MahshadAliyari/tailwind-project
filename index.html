@@ -1,1962 +1,1563 @@
+
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="زرین‌سرا؛ مجموعه‌ای خاص از طلا و جواهرات ظریف و لوکس">
-    <meta name="theme-color" content="#253b32">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#092820">
 
-    <title>زرین‌سرا | گالری طلا و جواهر</title>
+  <title>ARVÉ | جواهرات خاص و ماندگار</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+  <link rel="stylesheet" href="./dist/output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./dist/output.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Vazirmatn', sans-serif;
-        }
-
-        :root {
-            --forest: #253b32;
-            --forest-light: #3b5949;
-            --gold: #c5a36a;
-            --gold-light: #d7ba84;
-            --cream: #f8f5ef;
-            --ink: #282822;
-            --muted: #89877f;
-            --border: #e8dfd0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 90px;
-        }
-
-        body {
-            margin: 0;
-            background: var(--cream);
-            color: var(--ink);
-        }
-
-        button,
-        input {
-            font: inherit;
-        }
-
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        button {
-            cursor: pointer;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container-site {
-            width: calc(100% - 32px);
-            max-width: 1180px;
-            margin-inline: auto;
-        }
-
-        .gold-text {
-            color: var(--gold);
-        }
-
-        .gold-button {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            background: var(--forest);
-            color: white;
-            transition: .3s;
-        }
-
-        .gold-button:hover {
-            background: var(--forest-light);
-            transform: translateY(-3px);
-        }
-
-        /* HEADER */
-
-        .site-header {
-            background: rgba(248, 245, 239, .95);
-            backdrop-filter: blur(15px);
-        }
-
-        .logo-mark {
-            width: 42px;
-            height: 42px;
-            flex-shrink: 0;
-            border: 1px solid var(--gold);
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            color: var(--gold);
-            font-size: 21px;
-        }
-
-        .nav-link {
-            position: relative;
-            transition: .3s;
-        }
-
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            right: 0;
-            bottom: -8px;
-            height: 1px;
-            width: 0;
-            background: var(--gold);
-            transition: .3s;
-        }
-
-        .nav-link:hover {
-            color: var(--gold);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .icon-action {
-            width: 36px;
-            height: 36px;
-            display: grid;
-            place-items: center;
-            position: relative;
-            transition: .25s;
-        }
-
-        .icon-action:hover {
-            color: var(--gold);
-        }
-
-        .mobile-menu {
-            display: none;
-        }
-
-        .mobile-menu.active {
-            display: flex;
-        }
-
-        /* HERO */
-
-        .hero {
-            background: var(--forest);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border: 1px solid rgba(197, 163, 106, .2);
-            border-radius: 50%;
-            top: -130px;
-            left: -100px;
-            pointer-events: none;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 450px;
-            height: 450px;
-            border: 1px solid rgba(197, 163, 106, .09);
-            border-radius: 50%;
-            bottom: -350px;
-            right: -200px;
-            pointer-events: none;
-        }
-
-        .hero-image-frame {
-            position: relative;
-            width: 100%;
-            max-width: 390px;
-            height: 340px;
-            margin-inline: auto;
-            border: 1px solid var(--gold);
-            border-radius: 200px 200px 4px 4px;
-            padding: 10px;
-        }
-
-        .hero-image-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 190px 190px 2px 2px;
-        }
-
-        .hero-caption {
-            position: absolute;
-            bottom: 20px;
-            right: -5px;
-            background: var(--cream);
-            color: var(--forest);
-            padding: 12px 16px;
-            font-size: 11px;
-        }
-
-        /* SECTION TITLES */
-
-        .section-kicker {
-            color: var(--gold);
-            font-size: 11px;
-            letter-spacing: 2px;
-        }
-
-        .section-title {
-            font-size: 25px;
-            font-weight: 500;
-        }
-
-        .section-line {
-            width: 45px;
-            height: 1px;
-            background: var(--gold);
-            margin: 15px auto 0;
-        }
-
-        /* CATEGORIES */
-
-        .category-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            font-size: 11px;
-            transition: .3s;
-        }
-
-        .category-circle {
-            width: 76px;
-            height: 76px;
-            padding: 4px;
-            overflow: hidden;
-            border: 1px solid #d8c7a8;
-            border-radius: 50%;
-            background: white;
-            transition: .35s;
-        }
-
-        .category-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            transition: transform .5s;
-        }
-
-        .category-item:hover .category-circle {
-            transform: translateY(-5px);
-            border-color: var(--gold);
-        }
-
-        .category-item:hover img {
-            transform: scale(1.1);
-        }
-
-        /* PRODUCTS */
-
-        .product-card {
-            position: relative;
-            background: white;
-            padding: 8px;
-            border: 1px solid #e9e1d4;
-            transition: .4s;
-            min-width: 0;
-        }
-
-        .product-card.hidden-product {
-            display: none;
-        }
-
-        .product-visual {
-            position: relative;
-            overflow: hidden;
-            height: 190px;
-            background: #eee7dc;
-            border-radius: 120px 120px 3px 3px;
-        }
-
-        .product-visual::before {
-            content: "";
-            position: absolute;
-            inset: 8px 8px 0;
-            border: 1px solid rgba(197, 163, 106, .7);
-            border-bottom: 0;
-            border-radius: 110px 110px 0 0;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .product-visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .8s;
-        }
-
-        .product-tag {
-            position: absolute;
-            top: 13px;
-            right: 13px;
-            z-index: 3;
-            background: white;
-            color: #947340;
-            font-size: 9px;
-            padding: 5px 9px;
-        }
-
-        .heart {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            z-index: 3;
-            background: white;
-            color: #777;
-            border-radius: 50%;
-            width: 31px;
-            height: 31px;
-            display: grid;
-            place-items: center;
-            font-size: 18px;
-            transition: .3s;
-        }
-
-        .product-info {
-            padding: 15px 5px 8px;
-        }
-
-        .product-info h3 {
-            font-size: 12px;
-            font-weight: 500;
-            margin-bottom: 7px;
-        }
-
-        .product-info p {
-            font-size: 10px;
-            color: #999;
-            margin-bottom: 13px;
-        }
-
-        .product-bottom {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 5px;
-        }
-
-        .product-price {
-            font-size: 10px;
-            font-weight: 600;
-            color: var(--forest);
-        }
-
-        .add-btn {
-            width: 30px;
-            height: 30px;
-            flex-shrink: 0;
-            border: 1px solid #d8c7a8;
-            color: var(--gold);
-            transition: .3s;
-        }
-
-        .filter {
-            flex-shrink: 0;
-            transition: .25s;
-        }
-
-        .filter.active {
-            background: var(--forest);
-            color: white;
-            border-color: var(--forest);
-        }
-
-        @media (hover: hover) and (pointer: fine) {
-            .product-card:hover {
-                transform: translateY(-8px);
-                border-color: var(--gold);
-                box-shadow: 0 20px 40px #253b321c;
-            }
-
-            .product-card:hover .product-visual img {
-                transform: scale(1.09);
-            }
-
-            .product-card:hover .add-btn {
-                background: var(--forest);
-                color: white;
-            }
-
-            .heart:hover {
-                background: var(--forest);
-                color: white;
-            }
-        }
-
-        /* STORY */
-
-        .story-visual {
-            position: relative;
-            height: 300px;
-            max-width: 340px;
-            margin-inline: auto;
-            border: 1px solid var(--gold);
-            border-radius: 180px 180px 4px 4px;
-            padding: 10px;
-        }
-
-        .story-visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 170px 170px 2px 2px;
-        }
-
-        /* NEWSLETTER */
-
-        .newsletter {
-            background: #eee8dc;
-        }
-
-        .newsletter-input {
-            background: transparent;
-            border-bottom: 1px solid #b7a88e;
-            outline: none;
-            width: 100%;
-            padding: 12px 4px;
-            font-size: 12px;
-        }
-
-        .newsletter-input:focus {
-            border-color: var(--forest);
-        }
-
-        /* FOOTER */
-
-        .site-footer {
-            background: #20352c;
-            color: white;
-        }
-
-        .footer-link {
-            color: #c9c7bf;
-            font-size: 11px;
-            transition: .3s;
-            text-align: right;
-        }
-
-        .footer-link:hover {
-            color: var(--gold);
-        }
-
-        /* MODALS */
-
-        .modal-backdrop {
-            position: fixed;
-            inset: 0;
-            z-index: 100;
-            background: rgba(15, 25, 20, .68);
-            backdrop-filter: blur(5px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-        }
-
-        .modal-backdrop.active {
-            display: flex;
-        }
-
-        .modal-panel {
-            background: var(--cream);
-            width: 100%;
-            max-width: 430px;
-            max-height: 88vh;
-            overflow-y: auto;
-            padding: 25px;
-            position: relative;
-            border: 1px solid #d8c7a8;
-            animation: modalIn .25s ease;
-        }
-
-        @keyframes modalIn {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 14px;
-            left: 14px;
-            width: 32px;
-            height: 32px;
-            display: grid;
-            place-items: center;
-            color: #777;
-        }
-
-        .modal-input {
-            width: 100%;
-            background: white;
-            border: 1px solid #e4dccf;
-            padding: 13px;
-            font-size: 12px;
-            outline: none;
-            margin-top: 8px;
-        }
-
-        .modal-input:focus {
-            border-color: var(--gold);
-        }
-
-        .modal-label {
-            display: block;
-            font-size: 11px;
-            margin-top: 17px;
-            color: #666;
-        }
-
-        .modal-submit {
-            width: 100%;
-            background: var(--forest);
-            color: white;
-            padding: 13px;
-            font-size: 12px;
-            margin-top: 22px;
-            transition: .3s;
-        }
-
-        .modal-submit:hover:not(:disabled) {
-            background: var(--forest-light);
-        }
-
-        .modal-submit:disabled {
-            opacity: .45;
-            cursor: not-allowed;
-        }
-
-        .modal-switch {
-            color: #947340;
-            font-size: 11px;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
-        .cart-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 0;
-            border-bottom: 1px solid #e5ddcf;
-        }
-
-        .cart-item img {
-            width: 65px;
-            height: 75px;
-            object-fit: cover;
-            border-radius: 35px 35px 2px 2px;
-        }
-
-        .cart-item-info {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .cart-item-info h4 {
-            font-size: 12px;
-            margin-bottom: 7px;
-        }
-
-        .cart-item-info p {
-            font-size: 10px;
-            color: #947340;
-        }
-
-        .remove-cart {
-            color: #a45e5e;
-            font-size: 11px;
-            padding: 8px;
-        }
-
-        .empty-state {
-            text-align: center;
-            color: #888;
-            font-size: 12px;
-            padding: 30px 10px;
-            line-height: 2;
-        }
-
-        /* TOAST */
-
-        .toast-message {
-            position: fixed;
-            z-index: 150;
-            bottom: 22px;
-            right: 50%;
-            transform: translate(50%, 20px);
-            background: var(--forest);
-            color: white;
-            padding: 12px 20px;
-            font-size: 11px;
-            opacity: 0;
-            pointer-events: none;
-            transition: .3s;
-            width: max-content;
-            max-width: calc(100% - 32px);
-            text-align: center;
-        }
-
-        .toast-message.show {
-            opacity: 1;
-            transform: translate(50%, 0);
-        }
-
-        /* RESPONSIVE */
-
-        @media (min-width: 640px) {
-            .container-site {
-                width: calc(100% - 48px);
-            }
-
-            .hero-image-frame {
-                height: 420px;
-            }
-
-            .product-visual {
-                height: 230px;
-            }
-
-            .category-circle {
-                width: 100px;
-                height: 100px;
-            }
-
-            .section-title {
-                font-size: 30px;
-            }
-
-            .story-visual {
-                height: 360px;
-            }
-        }
-
-        @media (min-width: 768px) {
-            .product-visual {
-                height: 245px;
-                border-radius: 145px 145px 3px 3px;
-            }
-
-            .product-visual::before {
-                border-radius: 135px 135px 0 0;
-            }
-
-            .product-info h3 {
-                font-size: 13px;
-            }
-
-            .product-price {
-                font-size: 11px;
-            }
-
-            .story-visual {
-                height: 400px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container-site {
-                max-width: 1180px;
-            }
-
-            .hero-image-frame {
-                height: 490px;
-            }
-
-            .product-visual {
-                height: 285px;
-                border-radius: 165px 165px 3px 3px;
-            }
-
-            .product-visual::before {
-                border-radius: 155px 155px 0 0;
-            }
-
-            .section-title {
-                font-size: 36px;
-            }
-
-            .story-visual {
-                height: 440px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: .01ms !important;
-                transition-duration: .01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
-    </style>
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
 
-    <!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
-    <header class="site-header sticky top-0 z-50 border-b border-[#e8dfd0]">
-        <div class="container-site h-[76px] flex items-center justify-between">
+<header class="site-header fixed top-0 inset-x-0 z-50">
 
-            <button id="menuBtn" class="lg:hidden" aria-label="باز کردن منو" aria-expanded="false">
-                <i data-lucide="menu"></i>
-            </button>
+  <div class="container-custom h-[78px] flex items-center justify-between">
 
-            <a href="#home" class="flex items-center gap-3" aria-label="زرین‌سرا - صفحه اصلی">
-                <span class="logo-mark">Z</span>
-                <span>
-                    <strong class="block text-lg tracking-wide">زرین‌سرا</strong>
-                    <small class="block text-[9px] text-[#a18a62] tracking-[2px]">GOLD & JEWELRY</small>
-                </span>
-            </a>
+    <a href="#" class="flex items-center gap-2 text-gold-light">
+      <i data-lucide="gem" class="w-7 h-7"></i>
+      <span class="text-3xl font-semibold tracking-[4px]">ARVÉ</span>
+    </a>
 
-            <nav class="hidden lg:flex items-center gap-9 text-xs">
-                <a href="#home" class="nav-link">صفحه اصلی</a>
-                <a href="#categories" class="nav-link">دسته‌بندی‌ها</a>
-                <a href="#products" class="nav-link">محصولات</a>
-                <a href="#story" class="nav-link">داستان ما</a>
-                <a href="#contact" class="nav-link">تماس با ما</a>
-            </nav>
+    <nav class="hidden lg:flex items-center gap-8 text-sm text-cream/80">
+      <a href="#" class="nav-link">خانه</a>
+      <a href="#categories" class="nav-link">دسته‌بندی‌ها</a>
+      <a href="#products" class="nav-link">محصولات</a>
+      <a href="#story" class="nav-link">داستان ما</a>
+      <a href="#contact" class="nav-link">تماس با ما</a>
+    </nav>
 
-            <div class="flex items-center gap-2 sm:gap-3">
+    <div class="flex items-center gap-1">
 
-                <button id="searchBtn" class="icon-action" aria-label="جستجوی محصولات">
-                    <i data-lucide="search" class="w-5"></i>
-                </button>
+      <button id="searchToggle" class="header-icon" aria-label="جستجو">
+        <i data-lucide="search"></i>
+      </button>
 
-                <button id="cartBtn" class="icon-action" aria-label="سبد خرید">
-                    <i data-lucide="shopping-bag" class="w-5"></i>
-                    <span id="cartCount"
-                        class="absolute -top-1 -left-1 bg-[#c5a36a] text-white rounded-full w-4 h-4 text-[9px] grid place-items-center">۰</span>
-                </button>
+      <button id="favoriteButton" class="header-icon relative" aria-label="علاقه‌مندی‌ها">
+        <i data-lucide="heart"></i>
+        <span id="favoriteCount" class="counter">۰</span>
+      </button>
 
-                <button id="userBtn" class="icon-action" aria-label="حساب کاربری">
-                    <i data-lucide="user-round" class="w-5"></i>
-                </button>
+      <button id="cartButton" class="header-icon relative" aria-label="سبد خرید">
+        <i data-lucide="shopping-bag"></i>
+        <span id="cartCount" class="counter">۰</span>
+      </button>
 
-            </div>
-        </div>
+      <button id="accountButton" class="header-icon" aria-label="حساب کاربری">
+        <i data-lucide="user-round"></i>
+      </button>
 
-        <nav id="mobileMenu"
-            class="mobile-menu flex-col gap-5 p-5 border-t border-[#e8dfd0] lg:hidden text-sm bg-[#f8f5ef]">
-            <a href="#home">صفحه اصلی</a>
-            <a href="#categories">دسته‌بندی‌ها</a>
-            <a href="#products">محصولات</a>
-            <a href="#story">داستان ما</a>
-            <a href="#contact">تماس با ما</a>
-        </nav>
-    </header>
+      <button id="themeButton" class="header-icon" aria-label="تغییر تم">
+        <i data-lucide="moon"></i>
+      </button>
 
-    <main>
+      <button id="mobileMenuButton" class="header-icon lg:hidden" aria-label="منوی موبایل">
+        <i data-lucide="menu"></i>
+      </button>
 
-        <!-- HERO -->
-
-        <section id="home" class="hero py-12 md:py-20">
-            <div class="container-site grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
-
-                <div class="relative z-10 text-center lg:text-right order-2 lg:order-1">
-
-                    <span class="text-[#d7ba84] text-[11px] tracking-[3px]">
-                        THE ART OF ELEGANCE
-                    </span>
-
-                    <h1 class="text-2xl md:text-4xl leading-[1.8] font-light mt-5">
-                        زیبایی در
-                        <span class="text-[#d7ba84]">جزئیات</span>
-                        معنا پیدا می‌کند
-                    </h1>
-
-                    <p class="text-xs md:text-sm text-white/60 leading-[2.5] mt-5 max-w-md mx-auto lg:mx-0">
-                        مجموعه‌ای از طلا و جواهرات خاص برای لحظه‌هایی که
-                        می‌خواهید متفاوت و ماندگار باشید.
-                    </p>
-                    <div class="flex justify-center lg:justify-start gap-3 mt-8">
-
-                        <!-- مشاهده محصولات -->
-                        <a href="#products" class="group inline-flex items-center justify-center gap-2
-    border border-[#c5a36a] bg-[#c5a36a] text-[#20352c]
-    px-6 py-3 text-xs
-    transition-all duration-300 ease-out
-    hover:-translate-y-1 hover:bg-[#20352c]
-    hover:text-[#e5c68e] hover:shadow-lg
-    hover:shadow-black/20">
-                            <span>مشاهده محصولات</span>
-
-                            <span class="inline-block transition-transform duration-300 group-hover:-translate-x-1">
-                                ←
-                            </span>
-                        </a>
-
-                        <!-- درباره ما -->
-                        <a href="#story" class="group inline-flex items-center justify-center gap-2
-    border border-white/40 bg-transparent text-white
-    px-6 py-3 text-xs
-    transition-all duration-300 ease-out
-    hover:-translate-y-1 hover:border-[#c5a36a]
-    hover:bg-[#20352c] hover:text-[#e5c68e]
-    hover:shadow-lg hover:shadow-black/20">
-                            <span>درباره ما</span>
-
-                            <span class="inline-block transition-transform duration-300 group-hover:-translate-x-1">
-                                ←
-                            </span>
-                        </a>
-
-                    </div>
-                    <div class="flex justify-center lg:justify-start gap-10 mt-12">
-                        <div>
-                            <strong class="text-xl font-light text-[#d7ba84]">۱۰۰٪</strong>
-                            <p class="text-[10px] text-white/50 mt-2">تضمین اصالت</p>
-                        </div>
-                        <div>
-                            <strong class="text-xl font-light text-[#d7ba84]">خاص</strong>
-                            <p class="text-[10px] text-white/50 mt-2">طراحی ماندگار</p>
-                        </div>
-                        <div>
-                            <strong class="text-xl font-light text-[#d7ba84]">ظریف</strong>
-                            <p class="text-[10px] text-white/50 mt-2">انتخاب متفاوت</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="order-1 lg:order-2">
-                    <div class="hero-image-frame">
-                        <img src="images/nec.jpeg" alt="زیورآلات طلایی لوکس">
-                        <div class="hero-caption">درخشش ماندگار، انتخابی برای همیشه</div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- CATEGORIES -->
-
-        <section id="categories" class="py-16 md:py-20">
-            <div class="container-site">
-
-                <div class="text-center mb-10">
-                    <span class="section-kicker">DISCOVER COLLECTIONS</span>
-                    <h2 class="section-title mt-3">دنیای زیورآلات</h2>
-                    <div class="section-line"></div>
-                </div>
-
-                <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-5 md:gap-8">
-
-                    <a href="#products" class="category-item" data-category-link="ring">
-                        <div class="category-circle">
-                            <img src="images/6.jpg" alt="انگشتر طلا" loading="lazy">
-                        </div>
-                        <span>انگشتر</span>
-                    </a>
-
-                    <a href="#products" class="category-item" data-category-link="necklace">
-                        <div class="category-circle">
-                            <img src="images/5.jpg" alt="النگو طلا" loading="lazy">
-                        </div>
-                        <span>النگو</span>
-                    </a>
-
-                    <a href="#products" class="category-item" data-category-link="bracelet">
-                        <div class="category-circle">
-                            <img src="images/4.jpg" alt="دستبند طلا" loading="lazy">
-                        </div>
-                        <span>دستبند</span>
-                    </a>
-
-                    <a href="#products" class="category-item" data-category-link="earring">
-                        <div class="category-circle">
-                            <img src="images/3.jpg" alt="گردنبند طلا" loading="lazy">
-                        </div>
-                        <span>گردنبند</span>
-                    </a>
-
-                    <a href="#products" class="category-item" data-category-link="set">
-                        <div class="category-circle">
-                            <img src="images/2.jpg" alt="ست طلا" loading="lazy">
-                        </div>
-                        <span>ست طلا</span>
-                    </a>
-
-                    <a href="#products" class="category-item" data-category-link="gift">
-                        <div class="category-circle">
-                            <img src="images/1.jpg" alt="هدیه طلا" loading="lazy">
-                        </div>
-                        <span>هدیه خاص</span>
-                    </a>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- PRODUCTS -->
-
-        <section id="products" class="py-16 md:py-24 bg-[#f0ebe2]">
-            <div class="container-site">
-
-                <div class="flex justify-between items-end mb-8">
-                    <div>
-                        <span class="section-kicker">OUR COLLECTION</span>
-                        <h2 class="section-title mt-3">منتخب زرین‌سرا</h2>
-                        <div class="w-12 h-px bg-[#c5a36a] mt-3"></div>
-                    </div>
-
-                    <button id="showAllProducts" class="text-[11px] text-[#947340]">
-                        مشاهده همه ←
-                    </button>
-                </div>
-
-                <!-- FILTERS -->
-
-                <div class="flex gap-2 overflow-x-auto pb-5 mb-4">
-                    <button class="filter active px-4 py-2 text-[10px] border border-[#c5a36a] whitespace-nowrap"
-                        data-filter="all">همه محصولات</button>
-                    <button class="filter px-4 py-2 text-[10px] border border-[#ded6c8] whitespace-nowrap"
-                        data-filter="ring">انگشتر</button>
-                    <button class="filter px-4 py-2 text-[10px] border border-[#ded6c8] whitespace-nowrap"
-                        data-filter="necklace">گردنبند</button>
-                    <button class="filter px-4 py-2 text-[10px] border border-[#ded6c8] whitespace-nowrap"
-                        data-filter="bracelet">دستبند</button>
-                    <button class="filter px-4 py-2 text-[10px] border border-[#ded6c8] whitespace-nowrap"
-                        data-filter="earring">گوشواره</button>
-                </div>
-
-                <!-- PRODUCT GRID -->
-
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-
-                    <!-- Product 1 -->
-                    <article class="product-card group min-w-0 bg-transparent" data-category="ring"
-                        data-name="انگشتر مینیمال آوا">
-                        <div
-                            class="product-visual relative h-[190px] sm:h-[230px] md:h-[260px] lg:h-[285px] overflow-hidden rounded-t-[120px] md:rounded-t-[150px] bg-transparent">
-
-                            <span class="product-tag">پرفروش</span>
-
-                            <button class="heart" type="button" aria-label="افزودن به علاقه‌مندی‌ها">♡</button>
-
-                            <img src="images/ring.webp" alt="انگشتر مینیمال آوا"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-
-                        <div class="product-info bg-white px-3 py-4 md:px-4 md:py-5 border border-[#e8dfd0]">
-                            <h3 class="text-sm md:text-base font-semibold text-[#282822] mb-2">
-                                انگشتر مینیمال آوا
-                            </h3>
-
-                            <p class="text-xs text-[#89877f] mb-4">طلای ۱۸ عیار</p>
-
-                            <div class="product-bottom flex items-center justify-between gap-2">
-                                <span class="product-price text-xs md:text-sm font-bold text-[#253b32]">
-                                    ۲۸,۵۰۰,۰۰۰ تومان
-                                </span>
-
-                                <button class="add-btn" type="button" aria-label="افزودن به سبد خرید">+</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Product 2 -->
-                    <article class="product-card group min-w-0 bg-transparent" data-category="necklace"
-                        data-name="گردنبند ماه‌نشان">
-                        <div
-                            class="product-visual relative h-[190px] sm:h-[230px] md:h-[260px] lg:h-[285px] overflow-hidden rounded-t-[120px] md:rounded-t-[150px] bg-transparent">
-
-                            <button class="heart" type="button" aria-label="افزودن به علاقه‌مندی‌ها">♡</button>
-
-                            <img src="images/necklace.jpeg" alt="گردنبند ماه‌نشان"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-
-                        <div class="product-info bg-white px-3 py-4 md:px-4 md:py-5 border border-[#e8dfd0]">
-                            <h3 class="text-sm md:text-base font-semibold text-[#282822] mb-2">
-                                گردنبند ماه‌نشان
-                            </h3>
-
-                            <p class="text-xs text-[#89877f] mb-4">طلای ۱۸ عیار</p>
-
-                            <div class="product-bottom flex items-center justify-between gap-2">
-                                <span class="product-price text-xs md:text-sm font-bold text-[#253b32]">
-                                    ۳۵,۲۰۰,۰۰۰ تومان
-                                </span>
-
-                                <button class="add-btn" type="button" aria-label="افزودن به سبد خرید">+</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Product 3 -->
-                    <article class="product-card group min-w-0 bg-transparent" data-category="bracelet"
-                        data-name="دستبند کلاسیک رها">
-                        <div
-                            class="product-visual relative h-[190px] sm:h-[230px] md:h-[260px] lg:h-[285px] overflow-hidden rounded-t-[120px] md:rounded-t-[150px] bg-transparent">
-
-                            <button class="heart" type="button" aria-label="افزودن به علاقه‌مندی‌ها">♡</button>
-
-                            <img src="images/bracelet.webp" alt="دستبند کلاسیک رها"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-
-                        <div class="product-info bg-white px-3 py-4 md:px-4 md:py-5 border border-[#e8dfd0]">
-                            <h3 class="text-sm md:text-base font-semibold text-[#282822] mb-2">
-                                دستبند کلاسیک رها
-                            </h3>
-
-                            <p class="text-xs text-[#89877f] mb-4">طلای ۱۸ عیار</p>
-
-                            <div class="product-bottom flex items-center justify-between gap-2">
-                                <span class="product-price text-xs md:text-sm font-bold text-[#253b32]">
-                                    ۴۱,۸۰۰,۰۰۰ تومان
-                                </span>
-
-                                <button class="add-btn" type="button" aria-label="افزودن به سبد خرید">+</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Product 4 -->
-                    <article class="product-card group min-w-0 bg-transparent" data-category="earring"
-                        data-name="گوشواره آناهید">
-                        <div
-                            class="product-visual relative h-[190px] sm:h-[230px] md:h-[260px] lg:h-[285px] overflow-hidden rounded-t-[120px] md:rounded-t-[150px] bg-transparent">
-
-                            <button class="heart" type="button" aria-label="افزودن به علاقه‌مندی‌ها">♡</button>
-
-                            <img src="images/gosh.jpg" alt="گوشواره آناهید"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-
-                        <div class="product-info bg-white px-3 py-4 md:px-4 md:py-5 border border-[#e8dfd0]">
-                            <h3 class="text-sm md:text-base font-semibold text-[#282822] mb-2">
-                                گوشواره آناهید
-                            </h3>
-
-                            <p class="text-xs text-[#89877f] mb-4">طلای ۱۸ عیار</p>
-
-                            <div class="product-bottom flex items-center justify-between gap-2">
-                                <span class="product-price text-xs md:text-sm font-bold text-[#253b32]">
-                                    ۲۲,۹۰۰,۰۰۰ تومان
-                                </span>
-
-                                <button class="add-btn" type="button" aria-label="افزودن به سبد خرید">+</button>
-                            </div>
-                        </div>
-                    </article>
-
-                </div>
-
-
-                <p id="noProducts" class="empty-state hidden">در این دسته‌بندی هنوز محصولی وجود ندارد.</p>
-
-                <div class="text-center mt-10">
-                    <button id="showAllProductsBottom" class="gold-button px-8 py-3 text-xs">
-                        مشاهده تمام محصولات
-                    </button>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- BRAND STORY -->
-
-        <section id="story" class="py-16 md:py-24">
-            <div class="container-site grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-                <div class="story-visual">
-                    <img src="images/login.webp" alt="جزئیات ظریف جواهرات" loading="lazy">
-                </div>
-
-                <div class="text-center md:text-right">
-                    <span class="section-kicker">OUR STORY</span>
-
-                    <h2 class="text-2xl md:text-4xl leading-[1.8] mt-4 font-normal">
-                        هر قطعه، روایتی از
-                        <span class="gold-text">زیبایی</span>
-                        و اصالت
-                    </h2>
-
-                    <div class="w-12 h-px bg-[#c5a36a] my-5 mx-auto md:mx-0"></div>
-
-                    <p class="text-xs md:text-sm leading-[2.6] text-gray-500">
-                        در زرین‌سرا باور داریم که طلا تنها یک زیور نیست؛
-                        بخشی از خاطرات و لحظه‌های ارزشمند زندگی شماست.
-                        به همین دلیل هر انتخاب با دقت، ظرافت و عشق انجام می‌شود.
-                    </p>
-
-                    <a href="#contact" class="inline-block mt-7 border-b border-[#c5a36a] pb-2 text-xs text-[#947340]">
-                        ارتباط با زرین‌سرا ←
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- BANNER -->
-
-        <section class="py-14 bg-[#e9e1d4] text-center">
-            <div class="container-site">
-                <span class="section-kicker">A SPECIAL GIFT</span>
-                <h2 class="text-2xl md:text-4xl mt-4 leading-relaxed">
-                    برای لحظه‌هایی که
-                    <span class="gold-text">فراموش نمی‌شوند</span>
-                </h2>
-                <p class="text-xs text-gray-500 mt-4">
-                    هدیه‌ای ماندگار برای خودتان و عزیزانتان
-                </p>
-                <a href="#categories" class="gold-button px-8 py-3 mt-7 text-xs">
-                    انتخاب هدیه
-                </a>
-            </div>
-        </section>
-
-        <!-- NEWSLETTER -->
-
-        <section class="newsletter py-14">
-            <div class="container-site grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
-
-                <div>
-                    <span class="section-kicker">STAY IN TOUCH</span>
-                    <h2 class="text-xl md:text-2xl mt-3">همراه دنیای زرین‌سرا باشید</h2>
-                    <p class="text-xs text-gray-500 mt-3 leading-7">
-                        از جدیدترین مجموعه‌ها و پیشنهادهای ویژه باخبر شوید.
-                    </p>
-                </div>
-
-                <form class="flex gap-3" id="newsletterForm">
-                    <input type="email" required placeholder="آدرس ایمیل شما" class="newsletter-input"
-                        aria-label="آدرس ایمیل">
-                    <button type="submit" class="gold-button px-5 text-xs whitespace-nowrap">
-                        عضویت
-                    </button>
-                </form>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-
-    <footer id="contact" class="site-footer pt-14 pb-6">
-        <div class="container-site">
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12">
-
-                <div>
-                    <div class="flex items-center gap-3">
-                        <span class="logo-mark">Z</span>
-                        <strong class="text-lg">زرین‌سرا</strong>
-                    </div>
-                    <p class="text-[11px] text-white/50 leading-8 mt-5">
-                        دنیایی از طلا و جواهرات خاص؛
-                        برای سلیقه‌هایی که زیبایی را در جزئیات می‌بینند.
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="text-sm mb-5 gold-text">دسترسی سریع</h3>
-                    <div class="flex flex-col gap-4">
-                        <a href="#home" class="footer-link">صفحه اصلی</a>
-                        <a href="#products" class="footer-link">محصولات</a>
-                        <a href="#story" class="footer-link">درباره ما</a>
-                        <a href="#contact" class="footer-link">تماس با ما</a>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-sm mb-5 gold-text">خدمات مشتریان</h3>
-                    <div class="flex flex-col gap-4">
-                        <button type="button" class="footer-link info-link" data-info="guide">راهنمای خرید</button>
-                        <button type="button" class="footer-link info-link" data-info="shipping">شرایط ارسال</button>
-                        <button type="button" class="footer-link info-link" data-info="faq">سؤالات متداول</button>
-                        <button type="button" class="footer-link info-link" data-info="rules">قوانین و مقررات</button>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-sm mb-5 gold-text">ارتباط با ما</h3>
-                    <div class="flex flex-col gap-4 text-[11px] text-white/60">
-                        <a href="tel:02112345678">تلفن:12345678-021</a>
-                        <a href="mailto:info@zarrinsara.ir">ایمیل: info@zarrinsara.ir</a>
-                        <span>اینستاگرام: zarrinsara@</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <div
-                class="border-t border-white/10 pt-5 flex flex-col sm:flex-row justify-between gap-3 text-[10px] text-white/40">
-                <p>تمامی حقوق برای زرین‌سرا محفوظ است.</p>
-                <p>طراحی شده با عشق و ظرافت ✦</p>
-            </div>
-
-        </div>
-    </footer>
-
-    <!-- LOGIN MODAL -->
-
-    <div class="modal-backdrop" id="loginModal">
-        <div class="modal-panel">
-
-            <button class="modal-close" data-close="loginModal" aria-label="بستن">
-                <i data-lucide="x"></i>
-            </button>
-
-            <div class="text-center pt-5">
-                <span class="logo-mark mx-auto">ز</span>
-                <h2 class="text-xl mt-4">به زرین‌سرا خوش آمدید</h2>
-                <p class="text-xs text-gray-500 mt-2" id="authDescription">
-                    برای ورود به حساب کاربری خود اطلاعات را وارد کنید.
-                </p>
-            </div>
-
-            <form id="authForm">
-                <label class="modal-label" for="authName">نام و نام خانوادگی</label>
-                <input class="modal-input" id="authName" type="text" placeholder="نام شما" autocomplete="name" hidden>
-
-                <label class="modal-label" for="authEmail">ایمیل</label>
-                <input class="modal-input" id="authEmail" type="email" placeholder="example@email.com" required
-                    autocomplete="email">
-
-                <label class="modal-label" for="authPassword">رمز عبور</label>
-
-                <div class="relative">
-                    <input class="modal-input pl-12" id="authPassword" type="password" placeholder="حداقل ۶ کاراکتر"
-                        required minlength="6" autocomplete="current-password">
-
-                    <button type="button" id="togglePassword" class="absolute left-3 top-5 text-gray-400"
-                        aria-label="نمایش رمز">
-                        <i data-lucide="eye" class="w-4"></i>
-                    </button>
-                </div>
-
-                <button type="submit" class="modal-submit" id="authSubmit">
-                    ورود به حساب
-                </button>
-            </form>
-
-            <p class="text-center mt-5 text-xs text-gray-500">
-                <span id="authSwitchText">حساب کاربری ندارید؟</span>
-                <button type="button" id="authSwitch" class="modal-switch">
-                    ثبت‌نام کنید
-                </button>
-            </p>
-
-        </div>
     </div>
 
-    <!-- SEARCH MODAL -->
+  </div>
 
-    <div class="modal-backdrop" id="searchModal">
-        <div class="modal-panel">
+  <!-- SEARCH -->
+  <div id="searchPanel" class="hidden bg-emerald-dark border-t border-gold/20">
 
-            <button class="modal-close" data-close="searchModal" aria-label="بستن">
-                <i data-lucide="x"></i>
-            </button>
+    <div class="container-custom py-4 flex items-center gap-3">
 
-            <h2 class="text-lg font-medium mt-3">جست‌وجو در زرین‌سرا</h2>
-            <p class="text-xs text-gray-500 mt-2">نام محصول موردنظر را وارد کنید.</p>
+      <i data-lucide="search" class="text-gold"></i>
 
-            <input id="searchInput" class="modal-input mt-5" type="search" placeholder="مثلاً انگشتر، گردنبند...">
+      <input
+        id="searchInput"
+        class="flex-1 bg-transparent text-white outline-none text-sm placeholder:text-white/50"
+        placeholder="جستجوی نام محصول..."
+      >
 
-            <div id="searchResults" class="mt-4"></div>
-        </div>
+      <button id="closeSearch" class="text-white" aria-label="بستن">
+        <i data-lucide="x"></i>
+      </button>
+
     </div>
 
-    <!-- CART MODAL -->
+  </div>
 
-    <div class="modal-backdrop" id="cartModal">
-        <div class="modal-panel">
+  <!-- MOBILE NAV -->
+  <nav id="mobileMenu" class="hidden bg-emerald-dark border-t border-gold/20 p-6 flex-col gap-5 text-cream lg:hidden">
+    <a href="#">خانه</a>
+    <a href="#categories">دسته‌بندی‌ها</a>
+    <a href="#products">محصولات</a>
+    <a href="#story">داستان ما</a>
+    <a href="#contact">تماس با ما</a>
+  </nav>
 
-            <button class="modal-close" data-close="cartModal" aria-label="بستن">
-                <i data-lucide="x"></i>
-            </button>
+</header>
 
-            <h2 class="text-lg font-medium mt-3">سبد خرید شما</h2>
-            <p class="text-xs text-gray-500 mt-2">محصولات انتخاب‌شده</p>
 
-            <div id="cartItems" class="mt-5"></div>
+<!-- ================= HERO ================= -->
 
-            <div class="border-t border-[#e5ddcf] mt-5 pt-4">
-                <div class="flex justify-between text-sm">
-                    <span>مجموع سبد خرید</span>
-                    <strong id="cartTotal" class="text-[#947340]">۰ تومان</strong>
-                </div>
+<main>
 
-                <button id="checkoutBtn" class="modal-submit">
-                    ادامه فرایند خرید
-                </button>
-            </div>
-        </div>
+<section class="hero pt-20">
+
+  <div class="container-custom relative z-10">
+
+    <div class="hero-content text-cream max-w-[600px] mr-auto">
+
+      <div class="flex items-center gap-3 mb-7">
+        <span class="w-12 h-px bg-gold"></span>
+        <span class="text-gold-light text-xs tracking-widest">
+          THE ART OF ELEGANCE
+        </span>
+      </div>
+
+      <h1 class="text-4xl md:text-6xl font-bold leading-[1.8] mb-6">
+        زیبایی را
+        <span class="gold-shimmer block">متفاوت تجربه کن</span>
+      </h1>
+
+      <p class="text-sm md:text-base text-cream/75 leading-9 max-w-lg mb-9">
+        مجموعه‌ای از جواهرات خاص با الهام از هنر معماری،
+        طبیعت و زیبایی‌های ماندگار.
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+
+        <a href="#products" class="btn-primary">
+          کشف مجموعه
+          <i data-lucide="arrow-left"></i>
+        </a>
+
+        <a href="#story" class="btn-outline border-cream/50 text-cream hover:text-white">
+          داستان برند
+        </a>
+
+      </div>
+
     </div>
 
-    <!-- INFO MODAL -->
+  </div>
 
-    <div class="modal-backdrop" id="infoModal">
-        <div class="modal-panel">
+  <div class="hero-decor">ARVÉ — TIMELESS COLLECTION</div>
 
-            <button class="modal-close" data-close="infoModal" aria-label="بستن">
-                <i data-lucide="x"></i>
-            </button>
+</section>
 
-            <h2 id="infoTitle" class="text-lg mt-3">اطلاعات زرین‌سرا</h2>
-            <p id="infoText" class="text-xs text-gray-500 leading-8 mt-4"></p>
 
-        </div>
+<!-- ================= CATEGORIES ================= -->
+
+<section id="categories" class="section-space light-section">
+
+  <div class="container-custom">
+
+    <div class="text-center mb-14 reveal">
+
+      <span class="section-label">EXPLORE OUR COLLECTION</span>
+
+      <h2 class="section-title mt-3">دنیای ظرافت و درخشش</h2>
+
+      <div class="gold-line"></div>
+
+      <p class="text-muted muted-text text-sm leading-8">
+        برای هر سلیقه، یک انتخاب منحصربه‌فرد
+      </p>
+
     </div>
 
-    <div id="toast" class="toast-message" role="status" aria-live="polite"></div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-7">
 
-    <!-- JAVASCRIPT -->
+      <button class="category-card reveal" data-category="necklace">
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        <div class="arch-frame category-image">
+          <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=650&q=85" alt="گردنبند" loading="lazy">
+        </div>
 
-            // HELPERS
-
-            const $ = (selector, parent = document) =>
-                parent.querySelector(selector);
-
-            const $$ = (selector, parent = document) =>
-                [...parent.querySelectorAll(selector)];
-
-            const formatNumber = value =>
-                new Intl.NumberFormat("fa-IR").format(value);
-
-            const formatPrice = value =>
-                formatNumber(value) + " تومان";
-
-            if (window.lucide) {
-                lucide.createIcons();
-            }
-
-            function showToast(message) {
-                const toast = $("#toast");
-                toast.textContent = message;
-                toast.classList.add("show");
-
-                clearTimeout(showToast.timer);
-
-                showToast.timer = setTimeout(() => {
-                    toast.classList.remove("show");
-                }, 2600);
-            }
-
-            // MODALS
-
-            function openModal(id) {
-                const modal = document.getElementById(id);
-                if (!modal) return;
-
-                modal.classList.add("active");
-                document.body.style.overflow = "hidden";
-            }
-
-            function closeModal(id) {
-                const modal = document.getElementById(id);
-                if (!modal) return;
-
-                modal.classList.remove("active");
-
-                if (!$(".modal-backdrop.active")) {
-                    document.body.style.overflow = "";
-                }
-            }
-
-            $$("[data-close]").forEach(button => {
-                button.addEventListener("click", () => {
-                    closeModal(button.dataset.close);
-                });
-            });
-
-            $$(".modal-backdrop").forEach(modal => {
-                modal.addEventListener("click", event => {
-                    if (event.target === modal) {
-                        closeModal(modal.id);
-                    }
-                });
-            });
-
-            document.addEventListener("keydown", event => {
-                if (event.key === "Escape") {
-                    $$(".modal-backdrop.active").forEach(modal => {
-                        closeModal(modal.id);
-                    });
-                }
-            });
-
-            // MOBILE MENU
-
-            const menuBtn = $("#menuBtn");
-            const mobileMenu = $("#mobileMenu");
-
-            menuBtn.addEventListener("click", () => {
-                const isOpen = mobileMenu.classList.toggle("active");
-                menuBtn.setAttribute("aria-expanded", String(isOpen));
-            });
-
-            $$("#mobileMenu a").forEach(link => {
-                link.addEventListener("click", () => {
-                    mobileMenu.classList.remove("active");
-                    menuBtn.setAttribute("aria-expanded", "false");
-                });
-            });
-
-            // PRODUCTS DATA
-
-            const products = $$(".product-card").map((card, index) => ({
-                id: String(index + 1),
-                name: card.dataset.name || $("h3", card).textContent.trim(),
-                category: card.dataset.category || "other",
-                price: Number(
-                    $(".product-price", card).textContent.replace(/[^\d]/g, "")
-                ),
-                image: $("img", card).getAttribute("src"),
-                card
-            }));
-
-            // CART
-
-            function readCart() {
-                try {
-                    const saved = JSON.parse(
-                        localStorage.getItem("zarrinsara-cart") || "[]"
-                    );
-
-                    if (!Array.isArray(saved)) return [];
-
-                    return saved.filter(item =>
-                        item &&
-                        typeof item.id === "string" &&
-                        Number.isInteger(item.quantity) &&
-                        item.quantity > 0 &&
-                        products.some(product => product.id === item.id)
-                    ).map(item => {
-                        const product = products.find(p => p.id === item.id);
-
-                        return {
-                            id: product.id,
-                            name: product.name,
-                            price: product.price,
-                            image: product.image,
-                            quantity: item.quantity
-                        };
-                    });
-                } catch {
-                    return [];
-                }
-            }
-
-            let cart = readCart();
-
-            function saveCart() {
-                localStorage.setItem(
-                    "zarrinsara-cart",
-                    JSON.stringify(cart.map(item => ({
-                        id: item.id,
-                        quantity: item.quantity
-                    })))
-                );
-            }
-
-            function updateCart() {
-                const count = cart.reduce(
-                    (sum, item) => sum + item.quantity, 0
-                );
-
-                $("#cartCount").textContent = formatNumber(count);
-
-                const container = $("#cartItems");
-
-                const total = cart.reduce(
-                    (sum, item) => sum + item.price * item.quantity, 0
-                );
-
-                $("#cartTotal").textContent = formatPrice(total);
-
-                if (!cart.length) {
-                    container.innerHTML = `
-            <div class="empty-state">
-              <p>سبد خرید شما هنوز خالی است.</p>
-              <p>محصول موردعلاقه‌تان را انتخاب کنید.</p>
-            </div>
-          `;
-
-                    $("#checkoutBtn").disabled = true;
-                    return;
-                }
-
-                $("#checkoutBtn").disabled = false;
-
-                container.innerHTML = cart.map(item => `
-          <div class="cart-item">
-            <img src="${item.image}" alt="${item.name}">
-
-            <div class="cart-item-info">
-              <h4>${item.name}</h4>
-              <p>${formatPrice(item.price)}</p>
-              <span class="text-[10px] text-gray-500">
-                تعداد: ${formatNumber(item.quantity)}
-              </span>
-            </div>
-
-            <button class="remove-cart" data-remove="${item.id}">
-              حذف
-            </button>
+        <div class="category-info">
+          <h3 class="font-bold">گردنبند</h3>
+          <div class="flex justify-center items-center gap-2 mt-3 text-xs">
+            <span>مشاهده مجموعه</span>
+            <span class="category-arrow"><i data-lucide="arrow-left" class="w-4 h-4"></i></span>
           </div>
-        `).join("");
+        </div>
 
-                $$("[data-remove]", container).forEach(button => {
-                    button.addEventListener("click", () => {
-                        cart = cart.filter(
-                            item => item.id !== button.dataset.remove
-                        );
+      </button>
 
-                        saveCart();
-                        updateCart();
-                        showToast("محصول از سبد خرید حذف شد.");
-                    });
-                });
-            }
+      <button class="category-card reveal" data-category="ring">
 
-            $$(".add-btn").forEach(button => {
-                button.addEventListener("click", () => {
-                    const card = button.closest(".product-card");
+        <div class="arch-frame category-image">
+          <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=650&q=85" alt="انگشتر" loading="lazy">
+        </div>
 
-                    const product = products.find(
-                        item => item.card === card
-                    );
+        <div class="category-info">
+          <h3 class="font-bold">انگشتر</h3>
+          <div class="flex justify-center items-center gap-2 mt-3 text-xs">
+            <span>مشاهده مجموعه</span>
+            <span class="category-arrow"><i data-lucide="arrow-left" class="w-4 h-4"></i></span>
+          </div>
+        </div>
 
-                    if (!product) return;
+      </button>
 
-                    const existing = cart.find(
-                        item => item.id === product.id
-                    );
+      <button class="category-card reveal" data-category="earring">
 
-                    if (existing) {
-                        existing.quantity++;
-                    } else {
-                        cart.push({
-                            id: product.id,
-                            name: product.name,
-                            price: product.price,
-                            image: product.image,
-                            quantity: 1
-                        });
-                    }
+        <div class="arch-frame category-image">
+          <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=650&q=85" alt="گوشواره" loading="lazy">
+        </div>
 
-                    saveCart();
-                    updateCart();
+        <div class="category-info">
+          <h3 class="font-bold">گوشواره</h3>
+          <div class="flex justify-center items-center gap-2 mt-3 text-xs">
+            <span>مشاهده مجموعه</span>
+            <span class="category-arrow"><i data-lucide="arrow-left" class="w-4 h-4"></i></span>
+          </div>
+        </div>
 
-                    showToast(`${product.name} به سبد خرید اضافه شد.`);
-                });
-            });
+      </button>
 
-            $("#cartBtn").addEventListener("click", () => {
-                updateCart();
-                openModal("cartModal");
-            });
+      <button class="category-card reveal" data-category="bracelet">
 
-            updateCart();
+        <div class="arch-frame category-image">
+          <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=650&q=85" alt="دستبند" loading="lazy">
+        </div>
 
-            // FAVORITES
+        <div class="category-info">
+          <h3 class="font-bold">دستبند</h3>
+          <div class="flex justify-center items-center gap-2 mt-3 text-xs">
+            <span>مشاهده مجموعه</span>
+            <span class="category-arrow"><i data-lucide="arrow-left" class="w-4 h-4"></i></span>
+          </div>
+        </div>
 
-            function readFavorites() {
-                try {
-                    const saved = JSON.parse(
-                        localStorage.getItem("zarrinsara-favorites") || "[]"
-                    );
+      </button>
 
-                    if (!Array.isArray(saved)) return [];
+    </div>
 
-                    return saved.filter(id =>
-                        products.some(product => product.id === id)
-                    );
-                } catch {
-                    return [];
-                }
-            }
+  </div>
 
-            let favorites = readFavorites();
+</section>
 
-            function updateFavorites() {
-                $$(".heart").forEach(button => {
-                    const card = button.closest(".product-card");
 
-                    const product = products.find(
-                        item => item.card === card
-                    );
+<!-- ================= PRODUCTS ================= -->
 
-                    if (!product) return;
+<section id="products" class="section-space light-section bg-[#FBF8F2]">
 
-                    const active = favorites.includes(product.id);
+  <div class="container-custom">
 
-                    button.textContent = active ? "♥" : "♡";
-                    button.style.color = active ? "#b65b62" : "#777";
-                    button.setAttribute("aria-pressed", String(active));
-                });
-            }
+    <div class="flex flex-col md:flex-row justify-between md:items-end gap-5 mb-10 reveal">
 
-            $$(".heart").forEach(button => {
-                button.addEventListener("click", () => {
-                    const card = button.closest(".product-card");
+      <div>
+        <span class="section-label">HANDPICKED FOR YOU</span>
+        <h2 class="section-title mt-3">منتخب‌های ARVÉ</h2>
+        <p class="muted-text text-muted text-sm mt-2">
+          قطعاتی که استایل شما را ماندگار می‌کنند.
+        </p>
+      </div>
 
-                    const product = products.find(
-                        item => item.card === card
-                    );
+      <span id="resultCount" class="text-xs text-muted"></span>
 
-                    if (!product) return;
+    </div>
 
-                    if (favorites.includes(product.id)) {
-                        favorites = favorites.filter(
-                            id => id !== product.id
-                        );
+    <div class="flex flex-wrap gap-2 mb-9 reveal">
 
-                        showToast("از علاقه‌مندی‌ها حذف شد.");
-                    } else {
-                        favorites.push(product.id);
-                        showToast("به علاقه‌مندی‌ها اضافه شد.");
-                    }
+      <button class="filter-btn active" data-filter="all">همه محصولات</button>
+      <button class="filter-btn" data-filter="necklace">گردنبند</button>
+      <button class="filter-btn" data-filter="ring">انگشتر</button>
+      <button class="filter-btn" data-filter="earring">گوشواره</button>
+      <button class="filter-btn" data-filter="bracelet">دستبند</button>
 
-                    localStorage.setItem(
-                        "zarrinsara-favorites",
-                        JSON.stringify(favorites)
-                    );
+      <select id="sortSelect" class="filter-btn bg-transparent outline-none">
+        <option value="default">مرتب‌سازی</option>
+        <option value="cheap">ارزان‌ترین</option>
+        <option value="expensive">گران‌ترین</option>
+        <option value="name">نام محصول</option>
+      </select>
 
-                    updateFavorites();
-                });
-            });
+    </div>
 
-            updateFavorites();
+    <div id="productGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-7">
+    </div>
 
-            // FILTERS
+    <div id="emptyMessage" class="hidden text-center py-16 text-muted">
+      <i data-lucide="search-x" class="w-12 h-12 mx-auto mb-4"></i>
+      محصولی پیدا نشد.
+    </div>
 
-            function filterProducts(category) {
-                let visibleCount = 0;
+  </div>
 
-                $$(".product-card").forEach(card => {
-                    const matches =
-                        category === "all" ||
-                        card.dataset.category === category;
+</section>
 
-                    card.classList.toggle("hidden-product", !matches);
 
-                    if (matches) visibleCount++;
-                });
+<!-- ================= STORY ================= -->
 
-                $$(".filter").forEach(button => {
-                    button.classList.toggle(
-                        "active",
-                        button.dataset.filter === category
-                    );
-                });
+<section id="story" class="story-section light-section section-space">
 
-                $("#noProducts").classList.toggle(
-                    "hidden",
-                    visibleCount !== 0
-                );
-            }
+  <div class="container-custom grid md:grid-cols-2 gap-14 items-center">
 
-            $$(".filter").forEach(button => {
-                button.addEventListener("click", () => {
-                    filterProducts(button.dataset.filter);
-                });
-            });
+    <div class="relative reveal">
 
-            $$("[data-category-link]").forEach(link => {
-                link.addEventListener("click", () => {
-                    filterProducts(link.dataset.categoryLink);
-                });
-            });
+      <div class="arch-frame aspect-[4/5] max-w-[470px] mx-auto">
+        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=90" alt="طراحی جواهرات" loading="lazy">
+      </div>
 
-            function showAllProducts() {
-                filterProducts("all");
-                document.getElementById("products").scrollIntoView({
-                    behavior: "smooth"
-                });
-            }
+      <div class="absolute -bottom-5 -left-3 bg-emerald rounded-full w-32 h-32 flex flex-col justify-center items-center text-gold-light shadow-luxury float-animation">
+        <span class="text-2xl font-bold">ARVÉ</span>
+        <span class="text-[9px] tracking-widest">EST. 2026</span>
+      </div>
 
-            $("#showAllProducts").addEventListener("click", showAllProducts);
-            $("#showAllProductsBottom").addEventListener("click", showAllProducts);
+    </div>
 
-            // SEARCH
+    <div class="reveal">
 
-            $("#searchBtn").addEventListener("click", () => {
-                $("#searchInput").value = "";
-                $("#searchResults").innerHTML = "";
-                openModal("searchModal");
-                $("#searchInput").focus();
-            });
+      <span class="section-label">OUR PHILOSOPHY</span>
 
-            $("#searchInput").addEventListener("input", event => {
-                const query = event.target.value.trim().toLocaleLowerCase("fa");
-                const results = $("#searchResults");
+      <h2 class="section-title mt-4 mb-6">
+        هنر در جزئیات است،
+        <span class="gold-text">زیبایی در انتخاب شما.</span>
+      </h2>
 
-                if (!query) {
-                    results.innerHTML = "";
-                    return;
-                }
+      <p class="muted-text text-muted text-sm leading-9 mb-5">
+        ما در ARVÉ باور داریم جواهرات فقط یک اکسسوری نیستند؛
+        آن‌ها بخشی از خاطرات، احساسات و لحظه‌های خاص زندگی شما هستند.
+      </p>
 
-                const matches = products.filter(product =>
-                    product.name.toLocaleLowerCase("fa").includes(query)
-                );
+      <p class="muted-text text-muted text-sm leading-9 mb-8">
+        هر قطعه با الهام از فرم‌های معماری و طبیعت انتخاب شده
+        تا ترکیبی از اصالت، ظرافت و زیبایی را به شما هدیه دهد.
+      </p>
 
-                if (!matches.length) {
-                    results.innerHTML = `
-            <p class="empty-state">محصولی با این نام پیدا نشد.</p>
-          `;
-                    return;
-                }
+      <a href="#contact" class="btn-primary">
+        بیشتر درباره ما
+        <i data-lucide="arrow-left"></i>
+      </a>
 
-                results.innerHTML = matches.map(product => `
-          <button type="button"
-            class="flex items-center gap-3 w-full text-right py-3 border-b border-[#e5ddcf]"
-            data-search-product="${product.id}">
+    </div>
 
-            <img src="${product.image}" alt=""
-              class="w-12 h-14 object-cover rounded-full">
+  </div>
 
-            <span class="flex-1">
-              <strong class="block text-xs">${product.name}</strong>
-              <small class="block text-[10px] text-[#947340] mt-2">
-                ${formatPrice(product.price)}
-              </small>
-            </span>
+</section>
 
-            <span class="text-xs">مشاهده</span>
+
+<!-- ================= SERVICES ================= -->
+
+<section class="bg-emerald text-cream py-20">
+
+  <div class="container-custom grid grid-cols-1 sm:grid-cols-3 gap-12 text-center">
+
+    <div class="service-item reveal">
+      <div class="service-icon">
+        <i data-lucide="gem" class="w-7 h-7"></i>
+      </div>
+      <h3 class="font-bold mb-3">کیفیت و اصالت</h3>
+      <p class="text-xs text-cream/60 leading-7">توجه به کیفیت و جزئیات هر انتخاب</p>
+    </div>
+
+    <div class="service-item reveal">
+      <div class="service-icon">
+        <i data-lucide="package-check" class="w-7 h-7"></i>
+      </div>
+      <h3 class="font-bold mb-3">بسته‌بندی ویژه</h3>
+      <p class="text-xs text-cream/60 leading-7">تجربه‌ای زیبا از لحظه دریافت سفارش</p>
+    </div>
+
+    <div class="service-item reveal">
+      <div class="service-icon">
+        <i data-lucide="headphones" class="w-7 h-7"></i>
+      </div>
+      <h3 class="font-bold mb-3">همراهی با شما</h3>
+      <p class="text-xs text-cream/60 leading-7">پشتیبانی و راهنمایی در انتخاب</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="light-section bg-[#EDE3D5] py-20">
+
+  <div class="container-custom max-w-2xl text-center reveal">
+
+    <span class="section-label">THE ARVÉ LETTER</span>
+
+    <h2 class="section-title mt-4 mb-4">از دنیای ما باخبر بمانید</h2>
+
+    <p class="muted-text text-muted text-sm leading-8 mb-8">
+      جدیدترین مجموعه‌ها و اتفاقات ARVÉ را زودتر از دیگران ببینید.
+    </p>
+
+    <form id="newsletterForm" class="flex flex-col sm:flex-row gap-3">
+
+      <input
+        id="newsletterEmail"
+        type="email"
+        required
+        class="form-field flex-1"
+        placeholder="ایمیل خود را وارد کنید"
+      >
+
+      <button type="submit" class="btn-primary whitespace-nowrap">
+        عضویت
+        <i data-lucide="arrow-left"></i>
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact" class="site-footer">
+
+  <div class="footer-wave"></div>
+
+  <div class="footer-orb top-20 -left-32"></div>
+  <div class="footer-orb bottom-20 -right-32"></div>
+
+  <div class="container-custom relative z-10">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-14">
+
+      <div>
+
+        <a href="#" class="flex items-center gap-3 text-gold-light mb-6">
+          <i data-lucide="gem" class="w-8 h-8"></i>
+          <span class="text-4xl tracking-[4px] font-semibold">ARVÉ</span>
+        </a>
+
+        <p class="text-cream/60 text-sm leading-9">
+          فراتر از یک جواهر؛
+          داستانی از هنر، اصالت و زیبایی ماندگار.
+        </p>
+
+        <div class="flex gap-3 mt-7">
+          <a href="#" class="social-link" aria-label="اینستاگرام"><i data-lucide="instagram"></i></a>
+          <a href="#" class="social-link" aria-label="تلگرام"><i data-lucide="send"></i></a>
+          <a href="#" class="social-link" aria-label="پینترست"><i data-lucide="pin"></i></a>
+        </div>
+
+      </div>
+
+      <div>
+        <h3 class="footer-title">دسترسی سریع</h3>
+        <a href="#" class="footer-link">صفحه اصلی</a>
+        <a href="#categories" class="footer-link">دسته‌بندی‌ها</a>
+        <a href="#products" class="footer-link">محصولات</a>
+        <a href="#story" class="footer-link">داستان ما</a>
+      </div>
+
+      <div>
+        <h3 class="footer-title">راهنمای مشتریان</h3>
+        <a href="#contact" class="footer-link">راهنمای خرید</a>
+        <a href="#contact" class="footer-link">روش‌های ارسال</a>
+        <a href="#contact" class="footer-link">قوانین و مقررات</a>
+        <a href="#contact" class="footer-link">سؤالات متداول</a>
+      </div>
+
+      <div>
+        <h3 class="footer-title">ارتباط با ما</h3>
+
+        <div class="flex items-center gap-3 text-sm text-cream/60 mb-5">
+          <i data-lucide="phone" class="text-gold"></i>
+          <span>۰۲۱-۱۲۳۴۵۶۷۸</span>
+        </div>
+
+        <div class="flex items-center gap-3 text-sm text-cream/60 mb-5">
+          <i data-lucide="mail" class="text-gold"></i>
+          <span>hello@arve.com</span>
+        </div>
+
+        <div class="flex items-center gap-3 text-sm text-cream/60">
+          <i data-lucide="map-pin" class="text-gold"></i>
+          <span>تهران، ایران</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="border-t border-gold/20 py-7 flex flex-col md:flex-row justify-between items-center gap-4">
+
+      <p class="text-xs text-cream/50">
+        © 2026 ARVÉ. تمامی حقوق محفوظ است.
+      </p>
+
+      <p class="text-gold-light tracking-widest text-sm">
+        TIMELESS BEAUTY ✦
+      </p>
+
+      <button id="backToTop" class="flex items-center gap-2 text-xs text-cream/60 hover:text-gold transition">
+        بازگشت به بالا
+        <i data-lucide="arrow-up" class="w-4 h-4"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- ================= CART DRAWER ================= -->
+
+<div id="drawerOverlay" class="drawer-overlay"></div>
+
+<aside id="cartDrawer" class="cart-drawer">
+
+  <div class="flex items-center justify-between p-6 border-b border-emerald/10">
+
+    <div>
+      <h3 class="font-bold text-xl text-emerald">سبد خرید</h3>
+      <p class="text-xs text-muted mt-2">انتخاب‌های زیبای شما</p>
+    </div>
+
+    <button id="closeCart" class="text-emerald" aria-label="بستن سبد">
+      <i data-lucide="x"></i>
+    </button>
+
+  </div>
+
+  <div id="cartItems" class="flex-1 overflow-y-auto p-5 space-y-5"></div>
+
+  <div class="p-6 border-t border-emerald/20">
+
+    <div class="flex justify-between items-center mb-5">
+      <span class="text-sm">مجموع سفارش</span>
+      <strong id="cartTotal" class="text-emerald">۰ تومان</strong>
+    </div>
+
+    <button id="checkoutButton" class="btn-primary w-full">
+      ادامه خرید
+      <i data-lucide="arrow-left"></i>
+    </button>
+
+  </div>
+
+</aside>
+
+
+<!-- ================= AUTH MODAL ================= -->
+
+<div id="authBackdrop" class="modal-backdrop">
+
+  <div class="auth-modal">
+
+    <button id="closeAuth" class="absolute top-5 left-5 text-muted hover:text-red-500" aria-label="بستن">
+      <i data-lucide="x"></i>
+    </button>
+
+    <div class="text-center mb-7">
+
+      <div class="w-14 h-14 mx-auto rounded-full bg-emerald text-gold-light grid place-items-center mb-4">
+        <i data-lucide="gem" class="w-7 h-7"></i>
+      </div>
+
+      <h2 class="text-2xl font-bold text-emerald">به دنیای ARVÉ خوش آمدید</h2>
+
+      <p class="text-xs text-muted mt-2">حساب کاربری خود را مدیریت کنید</p>
+
+    </div>
+
+    <div class="flex border-b border-emerald/10 mb-7">
+
+      <button class="auth-tab active" data-auth-tab="login">ورود</button>
+
+      <button class="auth-tab" data-auth-tab="register">ثبت‌نام</button>
+
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm" class="auth-form">
+
+      <label class="block text-xs mb-2">ایمیل یا نام کاربری</label>
+
+      <input id="loginEmail" type="text" required class="form-field" placeholder="example@email.com">
+
+      <label class="block text-xs mt-5 mb-2">رمز عبور</label>
+
+      <input id="loginPassword" type="password" required minlength="6" class="form-field" placeholder="رمز عبور خود را وارد کنید">
+
+      <button type="submit" class="btn-primary w-full mt-7">
+        ورود به حساب
+        <i data-lucide="log-in"></i>
+      </button>
+
+      <p class="text-xs text-muted text-center mt-5">
+        حساب کاربری ندارید؟
+        <button type="button" id="goRegister" class="text-emerald font-bold">ثبت‌نام کنید</button>
+      </p>
+
+    </form>
+
+    <!-- REGISTER FORM -->
+    <form id="registerForm" class="auth-form hidden">
+
+      <label class="block text-xs mb-2">نام و نام خانوادگی</label>
+
+      <input id="registerName" type="text" required minlength="3" class="form-field" placeholder="نام شما">
+
+      <label class="block text-xs mt-5 mb-2">آدرس ایمیل</label>
+
+      <input id="registerEmail" type="email" required class="form-field" placeholder="example@email.com">
+
+      <label class="block text-xs mt-5 mb-2">رمز عبور</label>
+
+      <input id="registerPassword" type="password" required minlength="6" class="form-field" placeholder="حداقل ۶ کاراکتر">
+
+      <label class="block text-xs mt-5 mb-2">تکرار رمز عبور</label>
+
+      <input id="confirmPassword" type="password" required minlength="6" class="form-field" placeholder="تکرار رمز عبور">
+
+      <button type="submit" class="btn-primary w-full mt-7">
+        ساخت حساب کاربری
+        <i data-lucide="user-plus"></i>
+      </button>
+
+      <p class="text-xs text-muted text-center mt-5">
+        قبلاً ثبت‌نام کرده‌اید؟
+        <button type="button" id="goLogin" class="text-emerald font-bold">وارد شوید</button>
+      </p>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div id="toast" class="toast"></div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const $ = selector => document.querySelector(selector);
+
+const $$ = selector => document.querySelectorAll(selector);
+
+const money = value => value.toLocaleString("fa-IR") + " تومان";
+
+const number = value => value.toLocaleString("fa-IR");
+
+
+// ================= PRODUCTS =================
+
+const products = [
+
+  {
+    id: 1,
+    name: "گردنبند قلب طلایی",
+    category: "necklace",
+    price: 11500000,
+    oldPrice: 13500000,
+    badge: "جدید",
+    image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85"
+  },
+
+  {
+    id: 2,
+    name: "انگشتر الماس کلاسیک",
+    category: "ring",
+    price: 15900000,
+    oldPrice: 18500000,
+    badge: "پرفروش",
+    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=85"
+  },
+
+  {
+    id: 3,
+    name: "گوشواره زمرد",
+    category: "earring",
+    price: 14500000,
+    oldPrice: 0,
+    badge: "جدید",
+    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=85"
+  },
+
+  {
+    id: 4,
+    name: "دستبند ظریف طلایی",
+    category: "bracelet",
+    price: 9600000,
+    oldPrice: 11200000,
+    badge: "ویژه",
+    image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=700&q=85"
+  },
+
+  {
+    id: 5,
+    name: "گردنبند مروارید",
+    category: "necklace",
+    price: 12500000,
+    oldPrice: 0,
+    badge: "خاص",
+    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=85"
+  },
+
+  {
+    id: 6,
+    name: "انگشتر مینیمال",
+    category: "ring",
+    price: 8500000,
+    oldPrice: 9900000,
+    badge: "محبوب",
+    image: "https://images.unsplash.com/photo-1603561596112-db4b9b7c7a6a?auto=format&fit=crop&w=700&q=85"
+  },
+
+  {
+    id: 7,
+    name: "گوشواره طلایی",
+    category: "earring",
+    price: 7800000,
+    oldPrice: 0,
+    badge: "جدید",
+    image: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=700&q=85"
+  },
+
+  {
+    id: 8,
+    name: "دستبند الماس",
+    category: "bracelet",
+    price: 18500000,
+    oldPrice: 21000000,
+    badge: "خاص",
+    image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=700&q=85"
+  }
+
+];
+
+
+// ================= STATE =================
+
+let cart = JSON.parse(localStorage.getItem("arve-cart") || "[]");
+
+let favorites = JSON.parse(localStorage.getItem("arve-favorites") || "[]");
+
+let currentCategory = "all";
+
+let searchQuery = "";
+
+
+// ================= TOAST =================
+
+let toastTimer;
+
+function showToast(message) {
+
+  const toast = $("#toast");
+
+  toast.textContent = message;
+
+  toast.classList.add("active");
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("active");
+  }, 2700);
+
+}
+
+
+// ================= SAVE DATA =================
+
+function saveData() {
+
+  localStorage.setItem("arve-cart", JSON.stringify(cart));
+
+  localStorage.setItem("arve-favorites", JSON.stringify(favorites));
+
+}
+
+
+// ================= RENDER PRODUCTS =================
+
+function renderProducts() {
+
+  let result = [...products];
+
+  if (currentCategory !== "all") {
+    result = result.filter(p => p.category === currentCategory);
+  }
+
+  if (searchQuery) {
+    result = result.filter(p =>
+      p.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }
+
+  const sort = $("#sortSelect").value;
+
+  if (sort === "cheap") {
+    result.sort((a, b) => a.price - b.price);
+  }
+
+  if (sort === "expensive") {
+    result.sort((a, b) => b.price - a.price);
+  }
+
+  if (sort === "name") {
+    result.sort((a, b) => a.name.localeCompare(b.name, "fa"));
+  }
+
+  $("#resultCount").textContent =
+    number(result.length) + " محصول";
+
+  $("#emptyMessage").classList.toggle("hidden", result.length !== 0);
+
+  $("#productGrid").innerHTML = result.map(product => `
+
+    <article class="product-card">
+
+      <div class="product-image">
+
+        <img
+          src="${product.image}"
+          alt="${product.name}"
+          loading="lazy"
+        >
+
+        <span class="product-badge">${product.badge}</span>
+
+        <div class="product-actions">
+
+          <button
+            class="product-action"
+            onclick="toggleFavorite(${product.id})"
+            aria-label="علاقه‌مندی"
+          >
+            <i data-lucide="heart"
+              class="${favorites.includes(product.id) ? 'fill-red-500 text-red-500' : ''}">
+            </i>
           </button>
-        `).join("");
 
-                $$("[data-search-product]", results).forEach(button => {
-                    button.addEventListener("click", () => {
-                        const product = products.find(
-                            item => item.id === button.dataset.searchProduct
-                        );
+          <button
+            class="product-action"
+            onclick="addToCart(${product.id})"
+            aria-label="افزودن به سبد خرید"
+          >
+            <i data-lucide="shopping-bag"></i>
+          </button>
 
-                        closeModal("searchModal");
+          <button
+            class="product-action"
+            onclick="showProduct(${product.id})"
+            aria-label="مشاهده محصول"
+          >
+            <i data-lucide="eye"></i>
+          </button>
 
-                        filterProducts("all");
+        </div>
 
-                        product.card.scrollIntoView({
-                            behavior: "smooth",
-                            block: "center"
-                        });
+      </div>
 
-                        product.card.classList.add("ring-2", "ring-[#c5a36a]");
+      <div class="product-details">
 
-                        setTimeout(() => {
-                            product.card.classList.remove(
-                                "ring-2", "ring-[#c5a36a]"
-                            );
-                        }, 1800);
-                    });
-                });
-            });
+        <h3 class="font-semibold text-sm mb-3">${product.name}</h3>
 
-            // LOGIN / REGISTER DEMO
+        <div class="flex flex-wrap items-center gap-2">
 
-            let authMode = "login";
+          <span class="product-price">${money(product.price)}</span>
 
-            // کاربران فقط در حافظه صفحه نگهداری می‌شوند.
-            // این سیستم نمایشی است و جایگزین احراز هویت واقعی نیست.
-            const demoUsers = [];
+          ${product.oldPrice ? `
+            <span class="product-old-price">
+              ${number(product.oldPrice)}
+            </span>
+          ` : ""}
 
-            $("#userBtn").addEventListener("click", () => {
-                authMode = "login";
-                updateAuthMode();
-                openModal("loginModal");
-            });
+        </div>
 
-            function updateAuthMode() {
-                const register = authMode === "register";
+      </div>
 
-                $("#authName").hidden = !register;
-                $("#authName").required = register;
+    </article>
 
-                $("#authDescription").textContent = register
-                    ? "برای ساخت حساب کاربری اطلاعات خود را وارد کنید."
-                    : "برای ورود به حساب کاربری خود اطلاعات را وارد کنید.";
+  `).join("");
 
-                $("#authSubmit").textContent = register
-                    ? "ساخت حساب کاربری"
-                    : "ورود به حساب";
+  lucide.createIcons();
 
-                $("#authSwitchText").textContent = register
-                    ? "قبلاً ثبت‌نام کرده‌اید؟"
-                    : "حساب کاربری ندارید؟";
+}
 
-                $("#authSwitch").textContent = register
-                    ? "وارد شوید"
-                    : "ثبت‌نام کنید";
 
-                $("#authPassword").autocomplete = register
-                    ? "new-password"
-                    : "current-password";
-            }
+// ================= PRODUCT DETAILS =================
 
-            $("#authSwitch").addEventListener("click", () => {
-                authMode = authMode === "login" ? "register" : "login";
-                updateAuthMode();
-            });
+function showProduct(id) {
 
-            $("#togglePassword").addEventListener("click", () => {
-                const input = $("#authPassword");
-                const isHidden = input.type === "password";
+  const product = products.find(p => p.id === id);
 
-                input.type = isHidden ? "text" : "password";
-                $("#togglePassword").innerHTML = isHidden
-                    ? '<i data-lucide="eye-off" class="w-4"></i>'
-                    : '<i data-lucide="eye" class="w-4"></i>';
+  if (!product) return;
 
-                if (window.lucide) lucide.createIcons();
-            });
+  showToast(product.name + " | " + money(product.price));
 
-            $("#authForm").addEventListener("submit", event => {
-                event.preventDefault();
+}
 
-                const email = $("#authEmail").value.trim().toLowerCase();
-                const password = $("#authPassword").value;
 
-                if (authMode === "register") {
-                    const name = $("#authName").value.trim();
+// ================= FILTER =================
 
-                    if (demoUsers.some(user => user.email === email)) {
-                        showToast("این ایمیل قبلاً ثبت شده است.");
-                        return;
-                    }
+$$(".filter-btn[data-filter]").forEach(button => {
 
-                    demoUsers.push({
-                        name,
-                        email,
-                        password
-                    });
+  button.addEventListener("click", () => {
 
-                    showToast("ثبت‌نام نمایشی با موفقیت انجام شد.");
+    $$(".filter-btn[data-filter]").forEach(btn =>
+      btn.classList.remove("active")
+    );
 
-                } else {
-                    const user = demoUsers.find(item =>
-                        item.email === email &&
-                        item.password === password
-                    );
+    button.classList.add("active");
 
-                    if (!user) {
-                        showToast("اطلاعات ورود صحیح نیست یا ثبت‌نام نکرده‌اید.");
-                        return;
-                    }
+    currentCategory = button.dataset.filter;
 
-                    showToast(`خوش آمدید ${user.name}`);
-                }
+    renderProducts();
 
-                closeModal("loginModal");
-                event.target.reset();
+  });
 
-                authMode = "login";
-                updateAuthMode();
-            });
+});
 
-            // CHECKOUT DEMO
 
-            $("#checkoutBtn").addEventListener("click", () => {
-                if (!cart.length) return;
+// CATEGORY CLICK
 
-                showInfo(
-                    "ثبت سفارش",
-                    "سبد خرید شما آماده است. برای ثبت سفارش واقعی باید سیستم مدیریت سفارش و درگاه پرداخت به بک‌اند متصل شود."
-                );
+$$(".category-card").forEach(button => {
 
-                closeModal("cartModal");
-            });
+  button.addEventListener("click", () => {
 
-            // INFO LINKS
+    currentCategory = button.dataset.category;
 
-            function showInfo(title, message) {
-                $("#infoTitle").textContent = title;
-                $("#infoText").textContent = message;
-                openModal("infoModal");
-            }
+    $$(".filter-btn[data-filter]").forEach(btn => {
 
-            const infoContent = {
-                guide: {
-                    title: "راهنمای خرید",
-                    text: "محصول موردنظر را انتخاب کنید و با زدن دکمه افزودن به سبد خرید، آن را به سبد خود اضافه کنید. ثبت سفارش واقعی در نسخه فعلی هنوز فعال نیست."
-                },
-                shipping: {
-                    title: "شرایط ارسال",
-                    text: "اطلاعات مربوط به هزینه و زمان ارسال پس از تعیین روش‌های ارسال فروشگاه تکمیل خواهد شد."
-                },
-                faq: {
-                    title: "سؤالات متداول",
-                    text: "برای دریافت اطلاعات درباره محصولات، اصالت کالا و نحوه سفارش می‌توانید از راه‌های ارتباطی فروشگاه استفاده کنید."
-                },
-                rules: {
-                    title: "قوانین و مقررات",
-                    text: "قوانین خرید، مرجوعی و حفظ حریم خصوصی باید پیش از شروع فروش واقعی توسط مدیریت فروشگاه تعیین و در این بخش درج شوند."
-                }
-            };
+      btn.classList.toggle(
+        "active",
+        btn.dataset.filter === currentCategory
+      );
 
-            $$(".info-link").forEach(button => {
-                button.addEventListener("click", () => {
-                    const info = infoContent[button.dataset.info];
+    });
 
-                    if (info) {
-                        showInfo(info.title, info.text);
-                    }
-                });
-            });
+    renderProducts();
 
-            // NEWSLETTER DEMO
+    $("#products").scrollIntoView({ behavior: "smooth" });
 
-            $("#newsletterForm").addEventListener("submit", event => {
-                event.preventDefault();
+  });
 
-                const email = $('input[type="email"]', event.currentTarget)
-                    .value.trim();
+});
 
-                if (!email) return;
 
-                showToast("درخواست عضویت شما ثبت شد.");
-                event.currentTarget.reset();
-            });
+// SORT
 
-        });
-    </script>
+$("#sortSelect").addEventListener("change", renderProducts);
+
+
+// ================= SEARCH =================
+
+$("#searchToggle").addEventListener("click", () => {
+
+  $("#searchPanel").classList.toggle("hidden");
+
+  $("#searchInput").focus();
+
+});
+
+$("#closeSearch").addEventListener("click", () => {
+
+  $("#searchPanel").classList.add("hidden");
+
+});
+
+$("#searchInput").addEventListener("input", event => {
+
+  searchQuery = event.target.value.trim();
+
+  renderProducts();
+
+});
+
+
+// ================= FAVORITES =================
+
+function toggleFavorite(id) {
+
+  if (favorites.includes(id)) {
+
+    favorites = favorites.filter(item => item !== id);
+
+    showToast("از علاقه‌مندی‌ها حذف شد");
+
+  } else {
+
+    favorites.push(id);
+
+    showToast("به علاقه‌مندی‌ها اضافه شد");
+
+  }
+
+  saveData();
+
+  updateCounts();
+
+  renderProducts();
+
+}
+
+$("#favoriteButton").addEventListener("click", () => {
+
+  if (!favorites.length) {
+    showToast("هنوز محصولی به علاقه‌مندی‌ها اضافه نکرده‌اید");
+    return;
+  }
+
+  currentCategory = "all";
+
+  searchQuery = "";
+
+  $("#searchInput").value = "";
+
+  $("#productGrid").innerHTML = "";
+
+  const saved = products.filter(p => favorites.includes(p.id));
+
+  $("#productGrid").innerHTML = saved.map(product => `
+
+    <article class="product-card">
+
+      <div class="product-image">
+
+        <img src="${product.image}" alt="${product.name}">
+
+        <div class="product-actions">
+
+          <button class="product-action" onclick="toggleFavorite(${product.id})">
+            <i data-lucide="heart" class="fill-red-500 text-red-500"></i>
+          </button>
+
+          <button class="product-action" onclick="addToCart(${product.id})">
+            <i data-lucide="shopping-bag"></i>
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="product-details">
+        <h3 class="font-semibold text-sm mb-3">${product.name}</h3>
+        <span class="product-price">${money(product.price)}</span>
+      </div>
+
+    </article>
+
+  `).join("");
+
+  $("#resultCount").textContent = number(saved.length) + " محصول موردعلاقه";
+
+  $("#emptyMessage").classList.toggle("hidden", saved.length > 0);
+
+  $("#products").scrollIntoView({ behavior: "smooth" });
+
+  lucide.createIcons();
+
+});
+
+
+// ================= CART =================
+
+function addToCart(id) {
+
+  const product = products.find(p => p.id === id);
+
+  const existing = cart.find(p => p.id === id);
+
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({ ...product, quantity: 1 });
+  }
+
+  saveData();
+
+  updateCart();
+
+  showToast("محصول به سبد خرید اضافه شد");
+
+}
+
+
+function changeQuantity(id, amount) {
+
+  const item = cart.find(p => p.id === id);
+
+  if (!item) return;
+
+  item.quantity += amount;
+
+  if (item.quantity <= 0) {
+    cart = cart.filter(p => p.id !== id);
+  }
+
+  saveData();
+
+  updateCart();
+
+}
+
+
+function removeFromCart(id) {
+
+  cart = cart.filter(p => p.id !== id);
+
+  saveData();
+
+  updateCart();
+
+  showToast("محصول از سبد حذف شد");
+
+}
+
+
+function updateCounts() {
+
+  const count = cart.reduce((sum, p) => sum + p.quantity, 0);
+
+  $("#cartCount").textContent = number(count);
+
+  $("#favoriteCount").textContent = number(favorites.length);
+
+}
+
+
+function updateCart() {
+
+  updateCounts();
+
+  const total = cart.reduce(
+    (sum, p) => sum + p.price * p.quantity, 0
+  );
+
+  $("#cartTotal").textContent = money(total);
+
+  if (!cart.length) {
+
+    $("#cartItems").innerHTML = `
+      <div class="text-center py-20 text-muted">
+        <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-5"></i>
+        <p>سبد خرید شما خالی است.</p>
+        <button onclick="closeCart()" class="btn-outline mt-6">
+          ادامه خرید
+        </button>
+      </div>
+    `;
+
+  } else {
+
+    $("#cartItems").innerHTML = cart.map(item => `
+
+      <div class="flex gap-4 border-b border-emerald/10 pb-5">
+
+        <img
+          src="${item.image}"
+          alt="${item.name}"
+          class="w-20 h-24 rounded-xl object-cover"
+        >
+
+        <div class="flex-1">
+
+          <h4 class="text-sm font-bold text-emerald mb-2">${item.name}</h4>
+
+          <p class="text-xs text-gold-dark mb-3">${money(item.price)}</p>
+
+          <div class="flex items-center gap-3">
+
+            <button onclick="changeQuantity(${item.id},-1)" class="w-7 h-7 rounded-full border border-emerald/30">−</button>
+
+            <span class="text-sm">${number(item.quantity)}</span>
+
+            <button onclick="changeQuantity(${item.id},1)" class="w-7 h-7 rounded-full border border-emerald/30">+</button>
+
+            <button onclick="removeFromCart(${item.id})" class="mr-auto text-red-500" aria-label="حذف">
+              <i data-lucide="trash-2"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `).join("");
+
+  }
+
+  lucide.createIcons();
+
+}
+
+
+// CART DRAWER
+
+function openCart() {
+
+  $("#cartDrawer").classList.add("active");
+
+  $("#drawerOverlay").classList.add("active");
+
+  document.body.style.overflow = "hidden";
+
+}
+
+function closeCart() {
+
+  $("#cartDrawer").classList.remove("active");
+
+  $("#drawerOverlay").classList.remove("active");
+
+  document.body.style.overflow = "";
+
+}
+
+$("#cartButton").addEventListener("click", openCart);
+
+$("#closeCart").addEventListener("click", closeCart);
+
+$("#drawerOverlay").addEventListener("click", closeCart);
+
+
+// ================= CHECKOUT =================
+
+$("#checkoutButton").addEventListener("click", () => {
+
+  if (!cart.length) {
+    showToast("سبد خرید شما خالی است");
+    return;
+  }
+
+  if (!localStorage.getItem("arve-current-user")) {
+    closeCart();
+    openAuth();
+    showToast("برای ادامه ابتدا وارد حساب خود شوید");
+    return;
+  }
+
+  showToast("این نسخه آزمایشی است؛ درگاه پرداخت متصل نیست.");
+
+});
+
+
+// ================= AUTH =================
+
+function openAuth() {
+
+  $("#authBackdrop").classList.add("active");
+
+  document.body.style.overflow = "hidden";
+
+}
+
+function closeAuth() {
+
+  $("#authBackdrop").classList.remove("active");
+
+  document.body.style.overflow = "";
+
+}
+
+$("#accountButton").addEventListener("click", () => {
+
+  const user = JSON.parse(localStorage.getItem("arve-current-user") || "null");
+
+  if (user) {
+
+    const leave = confirm(
+      "سلام " + user.name + " عزیز!\nآیا می‌خواهید از حساب خارج شوید؟"
+    );
+
+    if (leave) {
+      localStorage.removeItem("arve-current-user");
+      showToast("از حساب کاربری خارج شدید");
+    }
+
+  } else {
+
+    openAuth();
+
+  }
+
+});
+
+$("#closeAuth").addEventListener("click", closeAuth);
+
+$("#authBackdrop").addEventListener("click", event => {
+
+  if (event.target === $("#authBackdrop")) closeAuth();
+
+});
+
+
+// AUTH TABS
+
+function switchAuth(type) {
+
+  $$(".auth-tab").forEach(tab => {
+
+    tab.classList.toggle("active", tab.dataset.authTab === type);
+
+  });
+
+  $("#loginForm").classList.toggle("hidden", type !== "login");
+
+  $("#registerForm").classList.toggle("hidden", type !== "register");
+
+}
+
+$$(".auth-tab").forEach(tab => {
+
+  tab.addEventListener("click", () => switchAuth(tab.dataset.authTab));
+
+});
+
+$("#goRegister").addEventListener("click", () => switchAuth("register"));
+
+$("#goLogin").addEventListener("click", () => switchAuth("login"));
+
+
+// REGISTER
+
+$("#registerForm").addEventListener("submit", event => {
+
+  event.preventDefault();
+
+  const name = $("#registerName").value.trim();
+
+  const email = $("#registerEmail").value.trim().toLowerCase();
+
+  const password = $("#registerPassword").value;
+
+  const confirmPassword = $("#confirmPassword").value;
+
+  if (password.length < 6) {
+    showToast("رمز عبور باید حداقل ۶ کاراکتر باشد");
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    showToast("تکرار رمز عبور صحیح نیست");
+    return;
+  }
+
+  const users = JSON.parse(localStorage.getItem("arve-users") || "[]");
+
+  if (users.some(user => user.email === email)) {
+    showToast("این ایمیل قبلاً ثبت شده است");
+    return;
+  }
+
+  users.push({ name, email, password });
+
+  localStorage.setItem("arve-users", JSON.stringify(users));
+
+  localStorage.setItem(
+    "arve-current-user",
+    JSON.stringify({ name, email })
+  );
+
+  event.target.reset();
+
+  closeAuth();
+
+  showToast("ثبت‌نام با موفقیت انجام شد. خوش آمدید!");
+
+});
+
+
+// LOGIN
+
+$("#loginForm").addEventListener("submit", event => {
+
+  event.preventDefault();
+
+  const email = $("#loginEmail").value.trim().toLowerCase();
+
+  const password = $("#loginPassword").value;
+
+  const users = JSON.parse(localStorage.getItem("arve-users") || "[]");
+
+  const user = users.find(
+    item => item.email === email && item.password === password
+  );
+
+  if (!user) {
+    showToast("ایمیل یا رمز عبور اشتباه است");
+    return;
+  }
+
+  localStorage.setItem(
+    "arve-current-user",
+    JSON.stringify({ name: user.name, email: user.email })
+  );
+
+  event.target.reset();
+
+  closeAuth();
+
+  showToast("خوش آمدید " + user.name);
+
+});
+
+
+// ================= NEWSLETTER =================
+
+$("#newsletterForm").addEventListener("submit", event => {
+
+  event.preventDefault();
+
+  const email = $("#newsletterEmail").value.trim().toLowerCase();
+
+  const emails = JSON.parse(
+    localStorage.getItem("arve-newsletter") || "[]"
+  );
+
+  if (emails.includes(email)) {
+    showToast("این ایمیل قبلاً عضو شده است");
+    return;
+  }
+
+  emails.push(email);
+
+  localStorage.setItem("arve-newsletter", JSON.stringify(emails));
+
+  event.target.reset();
+
+  showToast("عضویت شما با موفقیت ثبت شد");
+
+});
+
+
+// ================= THEME =================
+
+function applyTheme(theme) {
+
+  document.body.classList.toggle("dark-mode", theme === "dark");
+
+  $("#themeButton").innerHTML = theme === "dark"
+    ? '<i data-lucide="sun"></i>'
+    : '<i data-lucide="moon"></i>';
+
+  localStorage.setItem("arve-theme", theme);
+
+  lucide.createIcons();
+
+}
+
+$("#themeButton").addEventListener("click", () => {
+
+  const dark = document.body.classList.contains("dark-mode");
+
+  applyTheme(dark ? "light" : "dark");
+
+});
+
+if (localStorage.getItem("arve-theme") === "dark") {
+  applyTheme("dark");
+}
+
+
+// ================= MOBILE MENU =================
+
+$("#mobileMenuButton").addEventListener("click", () => {
+
+  $("#mobileMenu").classList.toggle("hidden");
+
+  $("#mobileMenu").classList.toggle("flex");
+
+});
+
+$$('#mobileMenu a').forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    $("#mobileMenu").classList.add("hidden");
+
+    $("#mobileMenu").classList.remove("flex");
+
+  });
+
+});
+
+
+// ================= BACK TO TOP =================
+
+$("#backToTop").addEventListener("click", () => {
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+});
+
+
+// ================= KEYBOARD =================
+
+document.addEventListener("keydown", event => {
+
+  if (event.key === "Escape") {
+
+    closeCart();
+
+    closeAuth();
+
+    $("#searchPanel").classList.add("hidden");
+
+  }
+
+});
+
+
+// ================= SCROLL ANIMATIONS =================
+
+const revealObserver = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+      entry.target.classList.add("show");
+
+      revealObserver.unobserve(entry.target);
+
+    }
+
+  });
+
+}, {
+  threshold: 0.12
+});
+
+$$(".reveal").forEach(element => {
+
+  revealObserver.observe(element);
+
+});
+
+
+// ================= INITIALIZE =================
+
+renderProducts();
+
+updateCart();
+
+lucide.createIcons();
+
+</script>
 
 </body>
-
 </html>
