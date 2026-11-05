@@ -417,10 +417,170 @@
 
 </main>
 
+<!-- ================= CONTACT SECTION ================= -->
+
+<section id="contact" class="contact-section section-space">
+
+  <div class="container-custom">
+
+    <div class="text-center mb-14 reveal">
+      <span class="section-label">GET IN TOUCH</span>
+      <h2 class="section-title mt-3">بیایید با هم در ارتباط باشیم</h2>
+      <div class="gold-line"></div>
+      <p class="muted-text text-muted text-sm leading-8">
+        سوالی دارید؟ ما اینجاییم تا به شما کمک کنیم.
+      </p>
+    </div>
+
+    <div class="contact-wrapper grid md:grid-cols-2 gap-0 overflow-hidden rounded-3xl reveal">
+
+      <!-- CONTACT IMAGE -->
+      <div class="contact-visual">
+
+        <div class="contact-arch">
+          <img
+            src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1000&q=90"
+            alt="جواهرات لوکس ARVÉ"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="contact-image-content">
+          <span>ARVÉ JOURNAL</span>
+          <h3>هر ارتباطی<br>شروع یک داستان است.</h3>
+          <p>ما مشتاق شنیدن صدای شما هستیم.</p>
+        </div>
+
+        <div class="contact-circle"></div>
+
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="contact-form-area">
+
+        <div class="mb-8">
+          <span class="section-label">SEND US A MESSAGE</span>
+          <h3 class="text-2xl font-bold text-emerald mt-3">
+            پیام خود را بنویسید
+          </h3>
+          <p class="text-muted text-xs mt-3 leading-7">
+            فرم زیر را تکمیل کنید تا بتوانیم با شما در ارتباط باشیم.
+          </p>
+        </div>
+
+        <form id="contactForm" novalidate>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+
+            <div class="contact-field">
+              <label for="contactName">نام و نام خانوادگی</label>
+              <input
+                id="contactName"
+                name="name"
+                type="text"
+                placeholder="نام شما"
+                required
+                minlength="3"
+              >
+              <small class="field-error"></small>
+            </div>
+
+            <div class="contact-field">
+              <label for="contactEmail">آدرس ایمیل</label>
+              <input
+                id="contactEmail"
+                name="email"
+                type="email"
+                placeholder="example@email.com"
+                required
+              >
+              <small class="field-error"></small>
+            </div>
+
+          </div>
+
+          <div class="contact-field mt-5">
+
+            <label for="contactPhone">شماره تماس</label>
+
+            <input
+              id="contactPhone"
+              name="phone"
+              type="tel"
+              placeholder="09xxxxxxxxx"
+              pattern="09[0-9]{9}"
+              required
+            >
+
+            <small class="field-error"></small>
+
+          </div>
+
+          <div class="contact-field mt-5">
+
+            <label for="contactSubject">موضوع پیام</label>
+
+            <select id="contactSubject" name="subject" required>
+              <option value="">موضوع موردنظر را انتخاب کنید</option>
+              <option value="product">سوال درباره محصولات</option>
+              <option value="order">پیگیری سفارش</option>
+              <option value="support">پشتیبانی</option>
+              <option value="suggestion">انتقاد و پیشنهاد</option>
+              <option value="other">سایر موارد</option>
+            </select>
+
+            <small class="field-error"></small>
+
+          </div>
+
+          <div class="contact-field mt-5">
+
+            <label for="contactMessage">متن پیام</label>
+
+            <textarea
+              id="contactMessage"
+              name="message"
+              rows="5"
+              minlength="10"
+              maxlength="1000"
+              placeholder="پیام خود را اینجا بنویسید..."
+              required
+            ></textarea>
+
+            <small class="field-error"></small>
+
+            <div class="text-left text-[10px] text-muted mt-2">
+              <span id="messageCount">۰</span> / ۱۰۰۰
+            </div>
+
+          </div>
+
+          <button
+            type="submit"
+            id="contactSubmit"
+            class="btn-primary w-full mt-7 contact-submit"
+          >
+            <span>ارسال پیام</span>
+            <i data-lucide="send" class="w-4 h-4"></i>
+          </button>
+
+          <p id="contactFeedback" class="contact-feedback hidden" role="status"></p>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
 
 <!-- ================= FOOTER ================= -->
 
-<footer id="contact" class="site-footer">
+<footer id="footer" class="site-footer">
 
   <div class="footer-wave"></div>
 
