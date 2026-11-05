@@ -1224,3 +1224,906 @@ body.dark-mode {
   }
 
 }
+/* ================================
+   ARVÉ - RESPONSIVE REFINEMENTS
+================================ */
+
+/* فونت یکدست */
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Vazirmatn", sans-serif;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.container-custom {
+  width: min(91%, 1240px);
+}
+
+.section-space {
+  padding-block: clamp(64px, 7vw, 88px);
+}
+
+.section-title {
+  font-size: clamp(25px, 3.1vw, 38px);
+  line-height: 1.65;
+}
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 2.4px;
+}
+
+.btn-primary,
+.btn-outline {
+  min-height: 44px;
+  padding: 11px 22px;
+  font-size: 13px;
+}
+
+/* HEADER */
+.site-header {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .08);
+}
+
+.header-inner {
+  height: 72px;
+}
+
+.brand-logo span {
+  font-size: 26px;
+  letter-spacing: 3px;
+}
+
+.header-actions {
+  gap: 2px;
+}
+
+.header-icon {
+  width: 38px;
+  height: 38px;
+}
+
+.header-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* STORY ARCH */
+.story-section .arch-frame {
+  width: min(100%, 420px);
+  aspect-ratio: 4 / 4.8;
+  margin-inline: auto;
+  border-radius: 175px 175px 10px 10px;
+}
+
+.story-section .arch-frame img {
+  object-position: center center;
+}
+
+/* CONTACT IMAGE */
+.contact-visual {
+  min-height: 590px;
+  padding: 36px;
+}
+
+.contact-arch {
+  top: 22px;
+  width: 78%;
+  height: 76%;
+  border-radius: 210px 210px 10px 10px;
+}
+
+.contact-arch img {
+  object-position: center center;
+}
+
+.contact-image-content h3 {
+  font-size: clamp(25px, 2.5vw, 34px);
+  line-height: 1.75;
+}
+
+.contact-image-content p {
+  font-size: 12px;
+}
+
+/* PRODUCT CARDS */
+.product-image {
+  height: 270px;
+  margin: 8px;
+  border-radius: 130px 130px 9px 9px;
+}
+
+.product-details {
+  padding: 10px 13px 17px;
+}
+
+/* FILTERS */
+.filter-btn {
+  min-height: 38px;
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-size: 12px;
+  background: rgba(255, 253, 249, .72);
+}
+
+.product-toolbar {
+  align-items: center;
+  gap: 9px;
+}
+
+.sort-select {
+  min-width: 145px;
+  padding: 8px 13px 8px 34px;
+  border: 1px solid rgba(18, 61, 50, .22);
+  border-radius: 30px;
+  color: var(--green);
+  background-color: var(--white);
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23123d32' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 12px center;
+}
+
+.sort-select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(198, 164, 106, .14);
+}
+
+.sort-select option {
+  color: var(--ink);
+  background: var(--white);
+}
+
+/* DARK MODE */
+.dark-mode .sort-select {
+  color: var(--cream);
+  background-color: #17382f;
+  border-color: rgba(198, 164, 106, .4);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23e5c995' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+}
+
+.dark-mode .sort-select option {
+  color: var(--cream);
+  background: #17382f;
+}
+
+/* برای موبایل و صفحات لمسی */
+@media (hover: none) {
+  .product-actions {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .container-custom {
+    width: min(92%, 1160px);
+  }
+
+  .product-image {
+    height: 245px;
+  }
+
+  .contact-visual {
+    min-height: 540px;
+  }
+
+  .contact-arch {
+    height: 75%;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+
+  .header-inner {
+    height: 66px;
+  }
+
+  .brand-logo span {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+
+  .header-actions {
+    gap: 0;
+  }
+
+  .header-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .header-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .desktop-only-icon {
+    display: none;
+  }
+
+  #mobileMenu {
+    padding: 18px 5%;
+    gap: 0;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .12);
+  }
+
+  #mobileMenu a {
+    padding: 12px 4px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(229, 201, 149, .12);
+  }
+
+  .section-space {
+    padding-block: 58px;
+  }
+
+  .section-title {
+    font-size: clamp(23px, 6vw, 29px);
+    line-height: 1.75;
+  }
+
+  .hero {
+    min-height: 590px;
+  }
+
+  /* قوس داستان برند */
+  .story-section .arch-frame {
+    width: min(86%, 340px);
+    aspect-ratio: 4 / 4.9;
+    border-radius: 145px 145px 9px 9px;
+  }
+
+  /* فیلترها */
+  .product-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 26px;
+  }
+
+  .filter-btn {
+    min-height: 35px;
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+
+  .sort-select {
+    flex: 0 0 100%;
+    width: 100%;
+    min-height: 42px;
+    margin-top: 3px;
+    padding-inline: 14px 38px;
+    background-position: left 15px center;
+  }
+
+  /* محصولات */
+  .product-image {
+    height: auto;
+    aspect-ratio: 4 / 4.8;
+    margin: 6px;
+    border-radius: 95px 95px 8px 8px;
+  }
+
+  .product-details {
+    padding: 9px 10px 14px;
+  }
+
+  /* تماس با ما */
+  .contact-wrapper {
+    border-radius: 20px;
+  }
+
+  .contact-visual {
+    min-height: 390px;
+    padding: 24px;
+  }
+
+  .contact-arch {
+    top: 12px;
+    width: 74%;
+    height: 76%;
+    border-radius: 145px 145px 8px 8px;
+  }
+
+  .contact-image-content h3 {
+    font-size: 25px;
+    line-height: 1.8;
+  }
+
+  .contact-image-content span {
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+  }
+
+  .contact-image-content p {
+    font-size: 11px;
+    margin-top: 8px;
+  }
+
+  .contact-form-area {
+    padding: 28px 22px;
+  }
+
+  .contact-field {
+    gap: 7px;
+  }
+
+  .contact-field input,
+  .contact-field select {
+    height: 46px;
+  }
+
+  .contact-field textarea {
+    min-height: 112px;
+  }
+
+  .site-footer {
+    padding-top: 75px;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 390px) {
+
+  .container-custom {
+    width: 91%;
+  }
+
+  .brand-logo span {
+    font-size: 20px;
+  }
+
+  .header-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .filter-btn {
+    padding-inline: 10px;
+    font-size: 10px;
+  }
+
+  .product-image {
+    border-radius: 78px 78px 7px 7px;
+  }
+
+  .contact-visual {
+    min-height: 350px;
+  }
+
+  .contact-arch {
+    width: 78%;
+    height: 74%;
+  }
+}
+.arch-frame {
+    border-radius: 50% 50% 0 0 !important;
+    overflow: hidden;
+}
+
+.arch-frame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+/* ================= HERO BACKGROUND ================= */
+
+.hero {
+    position: relative;
+    min-height: 680px;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(8, 35, 28, 0.78) 0%,
+            rgba(8, 35, 28, 0.55) 42%,
+            rgba(8, 35, 28, 0.12) 100%
+        ),
+        url("../images/hero-jewelry.jpg");
+
+    background-size: cover;
+    background-position: center 40%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* محتوای هیرو */
+.hero .hero-content {
+    position: relative;
+    z-index: 2;
+    padding-block: 90px;
+}
+
+/* نوشته تزئینی */
+.hero .hero-decor {
+    position: absolute;
+    z-index: 2;
+}
+/* ================= HERO RESPONSIVE ================= */
+
+.hero {
+    position: relative;
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(8, 35, 28, 0.88) 0%,
+            rgba(8, 35, 28, 0.68) 38%,
+            rgba(8, 35, 28, 0.12) 100%
+        ),
+        url("../images/bl.gif");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.hero .hero-content {
+    position: relative;
+    z-index: 2;
+    padding-block: 100px;
+}
+
+/* لپ‌تاپ و دسکتاپ */
+@media (min-width: 1024px) {
+
+    .hero {
+        min-height: 760px;
+        background-position: center 45%;
+    }
+
+    .hero .hero-content {
+        max-width: 600px;
+        margin-right: auto;
+        padding-block: 110px;
+    }
+
+}
+
+/* لپ‌تاپ با صفحه کوچک‌تر */
+@media (min-width: 769px) and (max-width: 1023px) {
+
+    .hero {
+        min-height: 650px;
+        background-position: 58% center;
+    }
+
+    .hero .hero-content {
+        max-width: 520px;
+        padding-block: 80px;
+    }
+
+}
+
+/* موبایل */
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 600px;
+
+        background-image:
+            linear-gradient(
+                180deg,
+                rgba(8, 35, 28, 0.25) 0%,
+                rgba(8, 35, 28, 0.72) 50%,
+                rgba(8, 35, 28, 0.95) 100%
+            ),
+            url("../images/bl.gif");
+
+        background-position: 62% center;
+    }
+
+    .hero .hero-content {
+        padding: 75px 10px;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .hero .hero-content > div:first-child,
+    .hero .hero-content > div:last-child {
+        justify-content: center;
+    }
+
+    .hero .hero-decor {
+        display: none;
+    }
+
+}
+/* حذف کامل برچسب محصولات */
+.product-card .product-image .product-badge {
+  display: none !important;
+  visibility: hidden !important;
+}
+/* ARVÉ Footer Social Icons */
+.social-link {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(198, 164, 106, .35);
+  border-radius: 50%;
+  color: var(--gold-light);
+  background: transparent;
+  transition: all .3s ease;
+}
+
+.social-link svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.7;
+}
+
+.social-link:hover {
+  background: var(--gold);
+  color: var(--green-dark);
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+/* ================================
+   ARVÉ - LUXURY PRODUCT SORT
+================================ */
+
+.product-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* دکمه‌های فیلتر */
+.product-toolbar .filter-btn[data-filter] {
+  min-height: 40px;
+  padding: 8px 17px;
+  border: 1px solid rgba(18, 61, 50, .16);
+  border-radius: 30px;
+  background: #fffdf9;
+  color: var(--green);
+  font-family: "Vazirmatn", sans-serif;
+  font-size: 12px;
+  transition: all .3s ease;
+}
+
+.product-toolbar .filter-btn[data-filter]:hover {
+  border-color: var(--gold);
+  color: var(--green);
+  background: #f5efe4;
+}
+
+.product-toolbar .filter-btn[data-filter].active {
+  background: var(--green);
+  color: var(--gold-light);
+  border-color: var(--green);
+  box-shadow: 0 5px 14px rgba(18, 61, 50, .12);
+}
+
+/* بخش مرتب‌سازی */
+.product-toolbar #sortSelect {
+  flex: 0 0 auto;
+  width: 175px;
+  min-width: 175px;
+  height: 42px;
+  padding: 0 15px 0 38px;
+
+  direction: rtl;
+  text-align: right;
+  font-family: "Vazirmatn", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+  color: var(--green);
+  background-color: #fffdf9;
+
+  border: 1px solid rgba(198, 164, 106, .55);
+  border-radius: 12px;
+
+  cursor: pointer;
+  outline: none;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23c6a46a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+  background-position: left 13px center;
+
+  transition: all .3s ease;
+}
+
+.product-toolbar #sortSelect:hover {
+  border-color: var(--gold);
+  box-shadow: 0 5px 16px rgba(198, 164, 106, .13);
+}
+
+.product-toolbar #sortSelect:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(198, 164, 106, .15);
+}
+
+.product-toolbar #sortSelect option {
+  background: #fffdf9;
+  color: var(--green);
+  font-family: "Vazirmatn", sans-serif;
+}
+
+/* حالت تاریک */
+.dark-mode .product-toolbar .filter-btn[data-filter] {
+  background: #17382f;
+  color: var(--cream);
+  border-color: rgba(198, 164, 106, .25);
+}
+
+.dark-mode .product-toolbar .filter-btn[data-filter].active {
+  background: var(--gold);
+  color: var(--green-dark);
+  border-color: var(--gold);
+}
+
+.dark-mode .product-toolbar #sortSelect {
+  background-color: #17382f;
+  color: var(--cream);
+  border-color: rgba(198, 164, 106, .4);
+}
+
+.dark-mode .product-toolbar #sortSelect option {
+  background: #17382f;
+  color: var(--cream);
+}
+
+/* موبایل */
+@media (max-width: 767px) {
+  .product-toolbar {
+    gap: 8px;
+  }
+
+  .product-toolbar .filter-btn[data-filter] {
+    min-height: 36px;
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+
+  .product-toolbar #sortSelect {
+    flex: 1 0 100%;
+    width: 100%;
+    height: 43px;
+    margin-top: 5px;
+    border-radius: 11px;
+    font-size: 12px;
+  }
+}
+/* ==============================
+   ARVÉ CUSTOM SORT DROPDOWN
+============================== */
+
+.sort-wrapper {
+    position: relative;
+    width: 190px;
+    flex-shrink: 0;
+    z-index: 20;
+}
+
+/* Trigger */
+
+.sort-trigger {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    color: var(--green);
+    background: #fffdf9;
+
+    border: 1px solid rgba(198, 164, 106, .5);
+    border-radius: 30px;
+
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.sort-trigger:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 15px rgba(18, 61, 50, .07);
+}
+
+.sort-trigger:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.sort-chevron {
+    width: 16px;
+    height: 16px;
+    color: var(--gold);
+    transition: transform .3s ease;
+}
+
+.sort-wrapper.open .sort-chevron {
+    transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+
+.sort-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 100%;
+    padding: 7px;
+
+    background: #fffdf9;
+    border: 1px solid rgba(198, 164, 106, .3);
+    border-radius: 16px;
+
+    box-shadow: 0 12px 35px rgba(18, 61, 50, .13);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+
+    transition: all .25s ease;
+}
+
+.sort-wrapper.open .sort-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Options */
+
+.sort-option {
+    width: 100%;
+    min-height: 40px;
+    padding: 0 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    color: var(--green);
+    background: transparent;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.sort-option:hover {
+    background: rgba(198, 164, 106, .12);
+    color: #a77d3e;
+}
+
+.sort-option i {
+    width: 15px;
+    height: 15px;
+    color: var(--gold);
+    opacity: 0;
+}
+
+.sort-option.active {
+    color: var(--green);
+    background: rgba(198, 164, 106, .16);
+    font-weight: 700;
+}
+
+.sort-option.active i {
+    opacity: 1;
+}
+
+/* Dark mode */
+
+.dark-mode .sort-trigger,
+.dark-mode .sort-menu {
+    background: #102d25;
+    color: #f4ead8;
+    border-color: rgba(198, 164, 106, .35);
+}
+
+.dark-mode .sort-option {
+    color: #f4ead8;
+}
+
+.dark-mode .sort-option:hover,
+.dark-mode .sort-option.active {
+    background: rgba(198, 164, 106, .15);
+}
+
+.dark-mode .sort-option.active {
+    color: var(--gold-light);
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+    .sort-wrapper {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .sort-trigger {
+        min-height: 43px;
+        border-radius: 12px;
+    }
+
+    .sort-menu {
+        border-radius: 13px;
+    }
+}
+/* Fix dropdown appearing behind product cards */
+
+.product-toolbar {
+    position: relative;
+    z-index: 100;
+    overflow: visible !important;
+}
+
+.sort-wrapper {
+    position: relative;
+    z-index: 200;
+}
+
+.sort-wrapper.open {
+    z-index: 999;
+}
+
+.sort-menu {
+    position: absolute;
+    z-index: 1000;
+    background: #fffdf9;
+}
+
+/* Keep product cards behind dropdown */
+#productGrid {
+    position: relative;
+    z-index: 1;
+}
+
+/* Fix check icons */
+.sort-option svg {
+    opacity: 0;
+    width: 15px;
+    height: 15px;
+    color: var(--gold);
+}
+
+.sort-option.active svg {
+    opacity: 1;
+}

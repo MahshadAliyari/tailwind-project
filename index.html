@@ -1,987 +1,1093 @@
-
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#092820">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#092820">
 
-  <title>ARVÉ | جواهرات خاص و ماندگار</title>
+    <title>ARVÉ | جواهرات خاص و ماندگار</title>
 
-  <link rel="stylesheet" href="./dist/output.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-  <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+    <!-- ================= HEADER ================= -->
 
-<header class="site-header fixed top-0 inset-x-0 z-50">
+    <header class="site-header fixed top-0 inset-x-0 z-50">
 
-  <div class="container-custom h-[78px] flex items-center justify-between">
+        <div class="container-custom header-inner h-[72px] flex items-center justify-between">
 
-    <a href="#" class="flex items-center gap-2 text-gold-light">
-      <i data-lucide="gem" class="w-7 h-7"></i>
-      <span class="text-3xl font-semibold tracking-[4px]">ARVÉ</span>
-    </a>
+            <a href="#" class="brand-logo flex items-center gap-2 text-gold-light">
+                <i data-lucide="gem" class="w-7 h-7"></i>
+                <span class="text-3xl font-semibold tracking-[4px]">ARVÉ</span>
+            </a>
 
-    <nav class="hidden lg:flex items-center gap-8 text-sm text-cream/80">
-      <a href="#" class="nav-link">خانه</a>
-      <a href="#categories" class="nav-link">دسته‌بندی‌ها</a>
-      <a href="#products" class="nav-link">محصولات</a>
-      <a href="#story" class="nav-link">داستان ما</a>
-      <a href="#contact" class="nav-link">تماس با ما</a>
-    </nav>
+            <nav class="hidden lg:flex items-center gap-8 text-sm text-cream/80">
+                <a href="#" class="nav-link">خانه</a>
+                <a href="#categories" class="nav-link">دسته‌بندی‌ها</a>
+                <a href="#products" class="nav-link">محصولات</a>
+                <a href="#story" class="nav-link">داستان ما</a>
+                <a href="#contact" class="nav-link">تماس با ما</a>
+            </nav>
 
-    <div class="flex items-center gap-1">
+            <div class="header-actions flex items-center gap-1">
 
-      <button id="searchToggle" class="header-icon" aria-label="جستجو">
-        <i data-lucide="search"></i>
-      </button>
+                <button id="searchToggle" class="header-icon" aria-label="جستجو">
+                    <i data-lucide="search"></i>
+                </button>
 
-      <button id="favoriteButton" class="header-icon relative" aria-label="علاقه‌مندی‌ها">
-        <i data-lucide="heart"></i>
-        <span id="favoriteCount" class="counter">۰</span>
-      </button>
+                <button id="favoriteButton" class="header-icon relative" aria-label="علاقه‌مندی‌ها">
+                    <i data-lucide="heart"></i>
+                    <span id="favoriteCount" class="counter">۰</span>
+                </button>
 
-      <button id="cartButton" class="header-icon relative" aria-label="سبد خرید">
-        <i data-lucide="shopping-bag"></i>
-        <span id="cartCount" class="counter">۰</span>
-      </button>
+                <button id="cartButton" class="header-icon relative" aria-label="سبد خرید">
+                    <i data-lucide="shopping-bag"></i>
+                    <span id="cartCount" class="counter">۰</span>
+                </button>
 
-      <button id="accountButton" class="header-icon" aria-label="حساب کاربری">
-        <i data-lucide="user-round"></i>
-      </button>
+                <button id="accountButton" class="header-icon desktop-only-icon" aria-label="حساب کاربری">
+                    <i data-lucide="user-round"></i>
+                </button>
 
-      <button id="themeButton" class="header-icon" aria-label="تغییر تم">
-        <i data-lucide="moon"></i>
-      </button>
+                <button id="themeButton" class="header-icon desktop-only-icon" aria-label="تغییر تم">
+                    <i data-lucide="moon"></i>
+                </button>
 
-      <button id="mobileMenuButton" class="header-icon lg:hidden" aria-label="منوی موبایل">
-        <i data-lucide="menu"></i>
-      </button>
+                <button id="mobileMenuButton" class="header-icon lg:hidden" aria-label="منوی موبایل">
+                    <i data-lucide="menu"></i>
+                </button>
 
-    </div>
-
-  </div>
-
-  <!-- SEARCH -->
-  <div id="searchPanel" class="hidden bg-emerald-dark border-t border-gold/20">
-
-    <div class="container-custom py-4 flex items-center gap-3">
-
-      <i data-lucide="search" class="text-gold"></i>
-
-      <input
-        id="searchInput"
-        class="flex-1 bg-transparent text-white outline-none text-sm placeholder:text-white/50"
-        placeholder="جستجوی نام محصول..."
-      >
-
-      <button id="closeSearch" class="text-white" aria-label="بستن">
-        <i data-lucide="x"></i>
-      </button>
-
-    </div>
-
-  </div>
-
-  <!-- MOBILE NAV -->
-  <nav id="mobileMenu" class="hidden bg-emerald-dark border-t border-gold/20 p-6 flex-col gap-5 text-cream lg:hidden">
-    <a href="#">خانه</a>
-    <a href="#categories">دسته‌بندی‌ها</a>
-    <a href="#products">محصولات</a>
-    <a href="#story">داستان ما</a>
-    <a href="#contact">تماس با ما</a>
-  </nav>
-
-</header>
-
-
-<!-- ================= HERO ================= -->
-
-<main>
-
-<section class="hero pt-20">
-
-  <div class="container-custom relative z-10">
-
-    <div class="hero-content text-cream max-w-[600px] mr-auto">
-
-      <div class="flex items-center gap-3 mb-7">
-        <span class="w-12 h-px bg-gold"></span>
-        <span class="text-gold-light text-xs tracking-widest">
-          THE ART OF ELEGANCE
-        </span>
-      </div>
-
-      <h1 class="text-4xl md:text-6xl font-bold leading-[1.8] mb-6">
-        زیبایی را
-        <span class="gold-shimmer block">متفاوت تجربه کن</span>
-      </h1>
-
-      <p class="text-sm md:text-base text-cream/75 leading-9 max-w-lg mb-9">
-        مجموعه‌ای از جواهرات خاص با الهام از هنر معماری،
-        طبیعت و زیبایی‌های ماندگار.
-      </p>
-
-      <div class="flex flex-wrap gap-4">
-
-        <a href="#products" class="btn-primary">
-          کشف مجموعه
-          <i data-lucide="arrow-left"></i>
-        </a>
-
-        <a href="#story" class="btn-outline border-cream/50 text-cream hover:text-white">
-          داستان برند
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="hero-decor">ARVÉ — TIMELESS COLLECTION</div>
-
-</section>
-
-
-<!-- ================= CATEGORIES ================= -->
-
-<section id="categories" class="section-space light-section">
-
-  <div class="container-custom">
-
-    <div class="text-center mb-14 reveal">
-
-      <span class="section-label">EXPLORE OUR COLLECTION</span>
-
-      <h2 class="section-title mt-3">دنیای ظرافت و درخشش</h2>
-
-      <div class="gold-line"></div>
-
-      <p class="text-muted muted-text text-sm leading-8">
-        برای هر سلیقه، یک انتخاب منحصربه‌فرد
-      </p>
-
-    </div>
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-7">
-
-      <button class="category-card reveal" data-category="necklace">
-
-        <div class="arch-frame category-image">
-          <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=650&q=85" alt="گردنبند" loading="lazy">
-        </div>
-
-        <div class="category-info">
-          <h3 class="font-bold">گردنبند</h3>
-          <div class="flex justify-center items-center gap-2 mt-3 text-xs">
-            <span>مشاهده مجموعه</span>
-            <span class="category-arrow"><i data-lucide="arrow-left" class="w-4 h-4"></i></span>
-          </div>
-        </div>
-
-      </button>
-
-      <button class="category-card reveal" data-category="ring">
-
-        <div class="arch-frame category-image">
-          <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=650&q=85" alt="انگشتر" loading="lazy">
-        </div>
-
-        <div class="category-info">
-          <h3 class="font-bold">انگشتر</h3>
-          <div class="flex justify-center items-center gap-2 mt-3 text-xs">
-            <span>مشاهده مجموعه</span>
-            <span class="category-arrow"><i data-lucide="arrow-left" class="w-4 h-4"></i></span>
-          </div>
-        </div>
-
-      </button>
-
-      <button class="category-card reveal" data-category="earring">
-
-        <div class="arch-frame category-image">
-          <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=650&q=85" alt="گوشواره" loading="lazy">
-        </div>
-
-        <div class="category-info">
-          <h3 class="font-bold">گوشواره</h3>
-          <div class="flex justify-center items-center gap-2 mt-3 text-xs">
-            <span>مشاهده مجموعه</span>
-            <span class="category-arrow"><i data-lucide="arrow-left" class="w-4 h-4"></i></span>
-          </div>
-        </div>
-
-      </button>
-
-      <button class="category-card reveal" data-category="bracelet">
-
-        <div class="arch-frame category-image">
-          <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=650&q=85" alt="دستبند" loading="lazy">
-        </div>
-
-        <div class="category-info">
-          <h3 class="font-bold">دستبند</h3>
-          <div class="flex justify-center items-center gap-2 mt-3 text-xs">
-            <span>مشاهده مجموعه</span>
-            <span class="category-arrow"><i data-lucide="arrow-left" class="w-4 h-4"></i></span>
-          </div>
-        </div>
-
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= PRODUCTS ================= -->
-
-<section id="products" class="section-space light-section bg-[#FBF8F2]">
-
-  <div class="container-custom">
-
-    <div class="flex flex-col md:flex-row justify-between md:items-end gap-5 mb-10 reveal">
-
-      <div>
-        <span class="section-label">HANDPICKED FOR YOU</span>
-        <h2 class="section-title mt-3">منتخب‌های ARVÉ</h2>
-        <p class="muted-text text-muted text-sm mt-2">
-          قطعاتی که استایل شما را ماندگار می‌کنند.
-        </p>
-      </div>
-
-      <span id="resultCount" class="text-xs text-muted"></span>
-
-    </div>
-
-    <div class="flex flex-wrap gap-2 mb-9 reveal">
-
-      <button class="filter-btn active" data-filter="all">همه محصولات</button>
-      <button class="filter-btn" data-filter="necklace">گردنبند</button>
-      <button class="filter-btn" data-filter="ring">انگشتر</button>
-      <button class="filter-btn" data-filter="earring">گوشواره</button>
-      <button class="filter-btn" data-filter="bracelet">دستبند</button>
-
-      <select id="sortSelect" class="filter-btn bg-transparent outline-none">
-        <option value="default">مرتب‌سازی</option>
-        <option value="cheap">ارزان‌ترین</option>
-        <option value="expensive">گران‌ترین</option>
-        <option value="name">نام محصول</option>
-      </select>
-
-    </div>
-
-    <div id="productGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-7">
-    </div>
-
-    <div id="emptyMessage" class="hidden text-center py-16 text-muted">
-      <i data-lucide="search-x" class="w-12 h-12 mx-auto mb-4"></i>
-      محصولی پیدا نشد.
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= STORY ================= -->
-
-<section id="story" class="story-section light-section section-space">
-
-  <div class="container-custom grid md:grid-cols-2 gap-14 items-center">
-
-    <div class="relative reveal">
-
-      <div class="arch-frame aspect-[4/5] max-w-[470px] mx-auto">
-        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=90" alt="طراحی جواهرات" loading="lazy">
-      </div>
-
-      <div class="absolute -bottom-5 -left-3 bg-emerald rounded-full w-32 h-32 flex flex-col justify-center items-center text-gold-light shadow-luxury float-animation">
-        <span class="text-2xl font-bold">ARVÉ</span>
-        <span class="text-[9px] tracking-widest">EST. 2026</span>
-      </div>
-
-    </div>
-
-    <div class="reveal">
-
-      <span class="section-label">OUR PHILOSOPHY</span>
-
-      <h2 class="section-title mt-4 mb-6">
-        هنر در جزئیات است،
-        <span class="gold-text">زیبایی در انتخاب شما.</span>
-      </h2>
-
-      <p class="muted-text text-muted text-sm leading-9 mb-5">
-        ما در ARVÉ باور داریم جواهرات فقط یک اکسسوری نیستند؛
-        آن‌ها بخشی از خاطرات، احساسات و لحظه‌های خاص زندگی شما هستند.
-      </p>
-
-      <p class="muted-text text-muted text-sm leading-9 mb-8">
-        هر قطعه با الهام از فرم‌های معماری و طبیعت انتخاب شده
-        تا ترکیبی از اصالت، ظرافت و زیبایی را به شما هدیه دهد.
-      </p>
-
-      <a href="#contact" class="btn-primary">
-        بیشتر درباره ما
-        <i data-lucide="arrow-left"></i>
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= SERVICES ================= -->
-
-<section class="bg-emerald text-cream py-20">
-
-  <div class="container-custom grid grid-cols-1 sm:grid-cols-3 gap-12 text-center">
-
-    <div class="service-item reveal">
-      <div class="service-icon">
-        <i data-lucide="gem" class="w-7 h-7"></i>
-      </div>
-      <h3 class="font-bold mb-3">کیفیت و اصالت</h3>
-      <p class="text-xs text-cream/60 leading-7">توجه به کیفیت و جزئیات هر انتخاب</p>
-    </div>
-
-    <div class="service-item reveal">
-      <div class="service-icon">
-        <i data-lucide="package-check" class="w-7 h-7"></i>
-      </div>
-      <h3 class="font-bold mb-3">بسته‌بندی ویژه</h3>
-      <p class="text-xs text-cream/60 leading-7">تجربه‌ای زیبا از لحظه دریافت سفارش</p>
-    </div>
-
-    <div class="service-item reveal">
-      <div class="service-icon">
-        <i data-lucide="headphones" class="w-7 h-7"></i>
-      </div>
-      <h3 class="font-bold mb-3">همراهی با شما</h3>
-      <p class="text-xs text-cream/60 leading-7">پشتیبانی و راهنمایی در انتخاب</p>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= NEWSLETTER ================= -->
-
-<section class="light-section bg-[#EDE3D5] py-20">
-
-  <div class="container-custom max-w-2xl text-center reveal">
-
-    <span class="section-label">THE ARVÉ LETTER</span>
-
-    <h2 class="section-title mt-4 mb-4">از دنیای ما باخبر بمانید</h2>
-
-    <p class="muted-text text-muted text-sm leading-8 mb-8">
-      جدیدترین مجموعه‌ها و اتفاقات ARVÉ را زودتر از دیگران ببینید.
-    </p>
-
-    <form id="newsletterForm" class="flex flex-col sm:flex-row gap-3">
-
-      <input
-        id="newsletterEmail"
-        type="email"
-        required
-        class="form-field flex-1"
-        placeholder="ایمیل خود را وارد کنید"
-      >
-
-      <button type="submit" class="btn-primary whitespace-nowrap">
-        عضویت
-        <i data-lucide="arrow-left"></i>
-      </button>
-
-    </form>
-
-  </div>
-
-</section>
-
-</main>
-
-<!-- ================= CONTACT SECTION ================= -->
-
-<section id="contact" class="contact-section section-space">
-
-  <div class="container-custom">
-
-    <div class="text-center mb-14 reveal">
-      <span class="section-label">GET IN TOUCH</span>
-      <h2 class="section-title mt-3">بیایید با هم در ارتباط باشیم</h2>
-      <div class="gold-line"></div>
-      <p class="muted-text text-muted text-sm leading-8">
-        سوالی دارید؟ ما اینجاییم تا به شما کمک کنیم.
-      </p>
-    </div>
-
-    <div class="contact-wrapper grid md:grid-cols-2 gap-0 overflow-hidden rounded-3xl reveal">
-
-      <!-- CONTACT IMAGE -->
-      <div class="contact-visual">
-
-        <div class="contact-arch">
-          <img
-            src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1000&q=90"
-            alt="جواهرات لوکس ARVÉ"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="contact-image-content">
-          <span>ARVÉ JOURNAL</span>
-          <h3>هر ارتباطی<br>شروع یک داستان است.</h3>
-          <p>ما مشتاق شنیدن صدای شما هستیم.</p>
-        </div>
-
-        <div class="contact-circle"></div>
-
-      </div>
-
-      <!-- CONTACT FORM -->
-      <div class="contact-form-area">
-
-        <div class="mb-8">
-          <span class="section-label">SEND US A MESSAGE</span>
-          <h3 class="text-2xl font-bold text-emerald mt-3">
-            پیام خود را بنویسید
-          </h3>
-          <p class="text-muted text-xs mt-3 leading-7">
-            فرم زیر را تکمیل کنید تا بتوانیم با شما در ارتباط باشیم.
-          </p>
-        </div>
-
-        <form id="contactForm" novalidate>
-
-          <div class="grid sm:grid-cols-2 gap-5">
-
-            <div class="contact-field">
-              <label for="contactName">نام و نام خانوادگی</label>
-              <input
-                id="contactName"
-                name="name"
-                type="text"
-                placeholder="نام شما"
-                required
-                minlength="3"
-              >
-              <small class="field-error"></small>
             </div>
 
-            <div class="contact-field">
-              <label for="contactEmail">آدرس ایمیل</label>
-              <input
-                id="contactEmail"
-                name="email"
-                type="email"
-                placeholder="example@email.com"
-                required
-              >
-              <small class="field-error"></small>
+        </div>
+
+        <!-- SEARCH -->
+        <div id="searchPanel" class="hidden bg-emerald-dark border-t border-gold/20">
+
+            <div class="container-custom py-4 flex items-center gap-3">
+
+                <i data-lucide="search" class="text-gold"></i>
+
+                <input id="searchInput"
+                    class="flex-1 bg-transparent text-white outline-none text-sm placeholder:text-white/50"
+                    placeholder="جستجوی نام محصول...">
+
+                <button id="closeSearch" class="text-white" aria-label="بستن">
+                    <i data-lucide="x"></i>
+                </button>
+
             </div>
 
-          </div>
+        </div>
 
-          <div class="contact-field mt-5">
+        <!-- MOBILE NAV -->
+        <nav id="mobileMenu"
+            class="hidden bg-emerald-dark border-t border-gold/20 p-6 flex-col gap-5 text-cream lg:hidden">
+            <a href="#">خانه</a>
+            <a href="#categories">دسته‌بندی‌ها</a>
+            <a href="#products">محصولات</a>
+            <a href="#story">داستان ما</a>
+            <a href="#contact">تماس با ما</a>
+        </nav>
 
-            <label for="contactPhone">شماره تماس</label>
+    </header>
 
-            <input
-              id="contactPhone"
-              name="phone"
-              type="tel"
-              placeholder="09xxxxxxxxx"
-              pattern="09[0-9]{9}"
-              required
-            >
 
-            <small class="field-error"></small>
+    <!-- ================= HERO ================= -->
 
-          </div>
+    <main>
 
-          <div class="contact-field mt-5">
+        <section class="hero pt-20">
 
-            <label for="contactSubject">موضوع پیام</label>
+            <div class="container-custom relative z-10">
 
-            <select id="contactSubject" name="subject" required>
-              <option value="">موضوع موردنظر را انتخاب کنید</option>
-              <option value="product">سوال درباره محصولات</option>
-              <option value="order">پیگیری سفارش</option>
-              <option value="support">پشتیبانی</option>
-              <option value="suggestion">انتقاد و پیشنهاد</option>
-              <option value="other">سایر موارد</option>
-            </select>
+                <div class="hero-content text-cream max-w-[600px] mr-auto">
 
-            <small class="field-error"></small>
+                    <div class="flex items-center gap-3 mb-7">
+                        <span class="w-12 h-px bg-gold"></span>
+                        <span class="text-gold-light text-xs tracking-widest">
+                            THE ART OF ELEGANCE
+                        </span>
+                    </div>
 
-          </div>
+                    <h1 class="text-4xl md:text-6xl font-bold leading-[1.8] mb-6">
+                        زیبایی را
+                        <span class="gold-shimmer block">متفاوت تجربه کن</span>
+                    </h1>
 
-          <div class="contact-field mt-5">
+                    <p class="text-sm md:text-base text-cream/75 leading-9 max-w-lg mb-9">
+                        مجموعه‌ای از جواهرات خاص با الهام از هنر معماری،
+                        طبیعت و زیبایی‌های ماندگار.
+                    </p>
 
-            <label for="contactMessage">متن پیام</label>
+                    <div class="flex flex-wrap gap-4">
 
-            <textarea
-              id="contactMessage"
-              name="message"
-              rows="5"
-              minlength="10"
-              maxlength="1000"
-              placeholder="پیام خود را اینجا بنویسید..."
-              required
-            ></textarea>
+                        <a href="#products" class="btn-primary">
+                            کشف مجموعه
+                            <i data-lucide="arrow-left"></i>
+                        </a>
 
-            <small class="field-error"></small>
 
-            <div class="text-left text-[10px] text-muted mt-2">
-              <span id="messageCount">۰</span> / ۱۰۰۰
+                    </div>
+
+                </div>
+
             </div>
 
-          </div>
+            <div class="hero-decor">ARVÉ — TIMELESS COLLECTION</div>
 
-          <button
-            type="submit"
-            id="contactSubmit"
-            class="btn-primary w-full mt-7 contact-submit"
-          >
-            <span>ارسال پیام</span>
-            <i data-lucide="send" class="w-4 h-4"></i>
-          </button>
-
-          <p id="contactFeedback" class="contact-feedback hidden" role="status"></p>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
+        </section>
 
 
+        <!-- ================= CATEGORIES ================= -->
 
-<!-- ================= FOOTER ================= -->
+        <section id="categories" class="section-space light-section">
 
-<footer id="footer" class="site-footer">
+            <div class="container-custom">
 
-  <div class="footer-wave"></div>
+                <div class="text-center mb-14 reveal">
 
-  <div class="footer-orb top-20 -left-32"></div>
-  <div class="footer-orb bottom-20 -right-32"></div>
+                    <span class="section-label">EXPLORE OUR COLLECTION</span>
 
-  <div class="container-custom relative z-10">
+                    <h2 class="section-title mt-3">دنیای ظرافت و درخشش</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-14">
+                    <div class="gold-line"></div>
 
-      <div>
+                    <p class="text-muted muted-text text-sm leading-8">
+                        برای هر سلیقه، یک انتخاب منحصربه‌فرد
+                    </p>
 
-        <a href="#" class="flex items-center gap-3 text-gold-light mb-6">
-          <i data-lucide="gem" class="w-8 h-8"></i>
-          <span class="text-4xl tracking-[4px] font-semibold">ARVÉ</span>
-        </a>
+                </div>
 
-        <p class="text-cream/60 text-sm leading-9">
-          فراتر از یک جواهر؛
-          داستانی از هنر، اصالت و زیبایی ماندگار.
-        </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-7">
 
-        <div class="flex gap-3 mt-7">
-          <a href="#" class="social-link" aria-label="اینستاگرام"><i data-lucide="instagram"></i></a>
-          <a href="#" class="social-link" aria-label="تلگرام"><i data-lucide="send"></i></a>
-          <a href="#" class="social-link" aria-label="پینترست"><i data-lucide="pin"></i></a>
+                    <button class="category-card reveal" data-category="necklace">
+
+                        <div class="arch-frame category-image">
+                            <img src="images/neck.jpg" alt="گردنبند" loading="lazy">
+                        </div>
+
+                        <div class="category-info">
+                            <h3 class="font-bold">گردنبند</h3>
+                            <div class="flex justify-center items-center gap-2 mt-3 text-xs">
+                                <span>مشاهده مجموعه</span>
+                                <span class="category-arrow"><i data-lucide="arrow-left" class="w-4 h-4"></i></span>
+                            </div>
+                        </div>
+
+                    </button>
+
+                    <button class="category-card reveal" data-category="ring">
+
+                        <div class="arch-frame category-image">
+                            <img src="images/ringg.jpg" alt="انگشتر" loading="lazy">
+                        </div>
+
+                        <div class="category-info">
+                            <h3 class="font-bold">انگشتر</h3>
+                            <div class="flex justify-center items-center gap-2 mt-3 text-xs">
+                                <span>مشاهده مجموعه</span>
+                                <span class="category-arrow"><i data-lucide="arrow-left" class="w-4 h-4"></i></span>
+                            </div>
+                        </div>
+
+                    </button>
+
+                    <button class="category-card reveal" data-category="earring">
+
+                        <div class="arch-frame category-image">
+                            <img src="images/goshh.jpg" alt="گوشواره" loading="lazy">
+                        </div>
+
+                        <div class="category-info">
+                            <h3 class="font-bold">گوشواره</h3>
+                            <div class="flex justify-center items-center gap-2 mt-3 text-xs">
+                                <span>مشاهده مجموعه</span>
+                                <span class="category-arrow"><i data-lucide="arrow-left" class="w-4 h-4"></i></span>
+                            </div>
+                        </div>
+
+                    </button>
+
+                    <button class="category-card reveal" data-category="bracelet">
+
+                        <div class="arch-frame category-image">
+                            <img src="images/barc.jpg" alt="دستبند" loading="lazy">
+                        </div>
+
+                        <div class="category-info">
+                            <h3 class="font-bold">دستبند</h3>
+                            <div class="flex justify-center items-center gap-2 mt-3 text-xs">
+                                <span>مشاهده مجموعه</span>
+                                <span class="category-arrow"><i data-lucide="arrow-left" class="w-4 h-4"></i></span>
+                            </div>
+                        </div>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PRODUCTS ================= -->
+
+        <section id="products" class="section-space light-section bg-[#FBF8F2]">
+
+            <div class="container-custom">
+
+                <div class="flex flex-col md:flex-row justify-between md:items-end gap-5 mb-10 reveal">
+
+                    <div>
+                        <span class="section-label">HANDPICKED FOR YOU</span>
+                        <h2 class="section-title mt-3">منتخب‌های ARVÉ</h2>
+                        <p class="muted-text text-muted text-sm mt-2">
+                            قطعاتی که استایل شما را ماندگار می‌کنند.
+                        </p>
+                    </div>
+
+                    <span id="resultCount" class="text-xs text-muted"></span>
+
+                </div>
+
+                <div class="product-toolbar flex flex-wrap gap-2 mb-9 reveal">
+
+                    <button class="filter-btn active" data-filter="all">همه محصولات</button>
+                    <button class="filter-btn" data-filter="necklace">گردنبند</button>
+                    <button class="filter-btn" data-filter="ring">انگشتر</button>
+                    <button class="filter-btn" data-filter="earring">گوشواره</button>
+                    <button class="filter-btn" data-filter="bracelet">دستبند</button>
+
+                    <!-- CUSTOM SORT DROPDOWN -->
+                    <div class="sort-wrapper">
+
+                        <button type="button" id="sortTrigger" class="sort-trigger" aria-expanded="false"
+                            aria-controls="sortMenu">
+                            <span id="sortLabel">مرتب‌سازی</span>
+
+                            <i data-lucide="chevron-down" class="sort-chevron"></i>
+                        </button>
+
+                        <div id="sortMenu" class="sort-menu">
+
+                            <button type="button" class="sort-option active" data-sort="default">
+                                <span>پیش‌فرض</span>
+                                <i data-lucide="check"></i>
+                            </button>
+
+                            <button type="button" class="sort-option" data-sort="cheap">
+                                <span>ارزان‌ترین</span>
+                                <i data-lucide="check"></i>
+                            </button>
+
+                            <button type="button" class="sort-option" data-sort="expensive">
+                                <span>گران‌ترین</span>
+                                <i data-lucide="check"></i>
+                            </button>
+
+                            <button type="button" class="sort-option" data-sort="name">
+                                <span>نام محصول</span>
+                                <i data-lucide="check"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Hidden select: keeps the existing sorting logic working -->
+                    <select id="sortSelect" hidden>
+                        <option value="default">مرتب‌سازی</option>
+                        <option value="cheap">ارزان‌ترین</option>
+                        <option value="expensive">گران‌ترین</option>
+                        <option value="name">نام محصول</option>
+                    </select>
+
+                </div>
+
+                <div id="productGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-7">
+                </div>
+
+                <div id="emptyMessage" class="hidden text-center py-16 text-muted">
+                    <i data-lucide="search-x" class="w-12 h-12 mx-auto mb-4"></i>
+                    محصولی پیدا نشد.
+                </div>
+
+            </div>
+
+        </section>
+        <!-- ================= STORY ================= -->
+
+        <section id="story" class="story-section light-section section-space">
+
+            <div class="container-custom grid md:grid-cols-2 gap-14 items-center">
+
+                <div class="relative reveal">
+
+                    <div class="arch-frame aspect-[4/5] max-w-[420px] mx-auto story-arch">
+                        <img src="images/heroo.jpg" alt="طراحی جواهرات" loading="lazy">
+                    </div>
+
+                    <div
+                        class="absolute -bottom-5 -left-3 bg-emerald rounded-full w-28 h-28 flex flex-col justify-center items-center text-gold-light shadow-luxury float-animation">
+                        <span class="text-xl font-bold">ARVÉ</span>
+                        <span class="text-[9px] tracking-widest">EST. 2026</span>
+                    </div>
+
+                </div>
+
+                <div class="reveal">
+
+                    <span class="section-label">OUR PHILOSOPHY</span>
+
+                    <h2 class="section-title mt-4 mb-6">
+                        هنر در جزئیات است،
+                        <span class="gold-text">زیبایی در انتخاب شما.</span>
+                    </h2>
+
+                    <p class="muted-text text-muted text-sm leading-9 mb-5">
+                        ما در ARVÉ باور داریم جواهرات فقط یک اکسسوری نیستند؛
+                        آن‌ها بخشی از خاطرات، احساسات و لحظه‌های خاص زندگی شما هستند.
+                    </p>
+
+                    <p class="muted-text text-muted text-sm leading-9 mb-8">
+                        هر قطعه با الهام از فرم‌های معماری و طبیعت انتخاب شده
+                        تا ترکیبی از اصالت، ظرافت و زیبایی را به شما هدیه دهد.
+                    </p>
+
+                    <a href="#contact" class="btn-primary">
+                        بیشتر درباره ما
+                        <i data-lucide="arrow-left"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SERVICES ================= -->
+
+        <section class="bg-emerald text-cream py-16 md:py-20">
+
+            <div class="container-custom grid grid-cols-1 sm:grid-cols-3 gap-10 md:gap-12 text-center">
+
+                <div class="service-item reveal">
+
+                    <div class="service-icon">
+                        <i data-lucide="gem" class="w-7 h-7"></i>
+                    </div>
+
+                    <h3 class="font-bold mb-3">کیفیت و اصالت</h3>
+
+                    <p class="text-xs text-cream/60 leading-7">
+                        توجه به کیفیت و جزئیات هر انتخاب
+                    </p>
+
+                </div>
+
+                <div class="service-item reveal">
+
+                    <div class="service-icon">
+                        <i data-lucide="package-check" class="w-7 h-7"></i>
+                    </div>
+
+                    <h3 class="font-bold mb-3">بسته‌بندی ویژه</h3>
+
+                    <p class="text-xs text-cream/60 leading-7">
+                        تجربه‌ای زیبا از لحظه دریافت سفارش
+                    </p>
+
+                </div>
+
+                <div class="service-item reveal">
+
+                    <div class="service-icon">
+                        <i data-lucide="headphones" class="w-7 h-7"></i>
+                    </div>
+
+                    <h3 class="font-bold mb-3">همراهی با شما</h3>
+
+                    <p class="text-xs text-cream/60 leading-7">
+                        پشتیبانی و راهنمایی در انتخاب
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= NEWSLETTER ================= -->
+
+        <section class="light-section bg-[#EDE3D5] py-16 md:py-20">
+
+            <div class="container-custom max-w-2xl text-center reveal">
+
+                <span class="section-label">THE ARVÉ LETTER</span>
+
+                <h2 class="section-title mt-4 mb-4">
+                    از دنیای ما باخبر بمانید
+                </h2>
+
+                <p class="muted-text text-muted text-sm leading-8 mb-8">
+                    جدیدترین مجموعه‌ها و اتفاقات ARVÉ را زودتر از دیگران ببینید.
+                </p>
+
+                <form id="newsletterForm" class="flex flex-col sm:flex-row gap-3">
+
+                    <input id="newsletterEmail" type="email" required class="form-field flex-1"
+                        placeholder="ایمیل خود را وارد کنید">
+
+                    <button type="submit" class="btn-primary whitespace-nowrap">
+                        عضویت
+                        <i data-lucide="arrow-left"></i>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= CONTACT SECTION ================= -->
+
+    <section id="contact" class="contact-section section-space">
+
+        <div class="container-custom">
+
+            <div class="text-center mb-12 md:mb-14 reveal">
+
+                <span class="section-label">GET IN TOUCH</span>
+
+                <h2 class="section-title mt-3">
+                    بیایید با هم در ارتباط باشیم
+                </h2>
+
+                <div class="gold-line"></div>
+
+                <p class="muted-text text-muted text-sm leading-8">
+                    سوالی دارید؟ ما اینجاییم تا به شما کمک کنیم.
+                </p>
+
+            </div>
+
+            <div class="contact-wrapper grid md:grid-cols-2 gap-0 overflow-hidden rounded-3xl reveal">
+
+                <!-- CONTACT IMAGE -->
+
+                <div class="contact-visual">
+
+                    <div class="contact-arch">
+
+                        <img src="images/contactform.jpg" alt="جواهرات لوکس ARVÉ" loading="lazy">
+
+                    </div>
+
+                    <div class="contact-image-content">
+
+                        <span>ARVÉ JOURNAL</span>
+
+                        <h3>
+                            هر ارتباطی<br>
+                            شروع یک داستان است.
+                        </h3>
+
+                        <p>
+                            ما مشتاق شنیدن صدای شما هستیم.
+                        </p>
+
+                    </div>
+
+                    <div class="contact-circle"></div>
+
+                </div>
+
+
+                <!-- CONTACT FORM -->
+
+                <div class="contact-form-area">
+
+                    <div class="mb-8">
+
+                        <span class="section-label">
+                            SEND US A MESSAGE
+                        </span>
+
+                        <h3 class="text-xl md:text-2xl font-bold text-emerald mt-3">
+                            پیام خود را بنویسید
+                        </h3>
+
+                        <p class="text-muted text-xs mt-3 leading-7">
+                            فرم زیر را تکمیل کنید تا بتوانیم با شما در ارتباط باشیم.
+                        </p>
+
+                    </div>
+
+
+                    <form id="contactForm" novalidate>
+
+                        <div class="grid sm:grid-cols-2 gap-5">
+
+                            <div class="contact-field">
+
+                                <label for="contactName">
+                                    نام و نام خانوادگی
+                                </label>
+
+                                <input id="contactName" name="name" type="text" placeholder="نام شما" required
+                                    minlength="3">
+
+                                <small class="field-error"></small>
+
+                            </div>
+
+
+                            <div class="contact-field">
+
+                                <label for="contactEmail">
+                                    آدرس ایمیل
+                                </label>
+
+                                <input id="contactEmail" name="email" type="email" placeholder="example@email.com"
+                                    required>
+
+                                <small class="field-error"></small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-field mt-5">
+
+                            <label for="contactPhone">
+                                شماره تماس
+                            </label>
+
+                            <input id="contactPhone" name="phone" type="tel" placeholder="09xxxxxxxxx"
+                                pattern="09[0-9]{9}" required>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+                        <div class="contact-field mt-5">
+
+                            <label for="contactSubject">
+                                موضوع پیام
+                            </label>
+
+                            <select id="contactSubject" name="subject" required>
+
+                                <option value="">
+                                    موضوع موردنظر را انتخاب کنید
+                                </option>
+
+                                <option value="product">
+                                    سوال درباره محصولات
+                                </option>
+
+                                <option value="order">
+                                    پیگیری سفارش
+                                </option>
+
+                                <option value="support">
+                                    پشتیبانی
+                                </option>
+
+                                <option value="suggestion">
+                                    انتقاد و پیشنهاد
+                                </option>
+
+                                <option value="other">
+                                    سایر موارد
+                                </option>
+
+                            </select>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+                        <div class="contact-field mt-5">
+
+                            <label for="contactMessage">
+                                متن پیام
+                            </label>
+
+                            <textarea id="contactMessage" name="message" rows="5" minlength="10" maxlength="1000"
+                                placeholder="پیام خود را اینجا بنویسید..." required></textarea>
+
+                            <small class="field-error"></small>
+
+                            <div class="text-left text-[10px] text-muted mt-2">
+                                <span id="messageCount">۰</span> / ۱۰۰۰
+                            </div>
+
+                        </div>
+
+
+                        <button type="submit" id="contactSubmit" class="btn-primary w-full mt-7 contact-submit">
+
+                            <span>ارسال پیام</span>
+
+                            <i data-lucide="send" class="w-4 h-4"></i>
+
+                        </button>
+
+
+                        <p id="contactFeedback" class="contact-feedback hidden" role="status"></p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
         </div>
 
-      </div>
+    </section>
+    <!-- ================= FOOTER ================= -->
 
-      <div>
-        <h3 class="footer-title">دسترسی سریع</h3>
-        <a href="#" class="footer-link">صفحه اصلی</a>
-        <a href="#categories" class="footer-link">دسته‌بندی‌ها</a>
-        <a href="#products" class="footer-link">محصولات</a>
-        <a href="#story" class="footer-link">داستان ما</a>
-      </div>
+    <footer id="footer" class="site-footer">
 
-      <div>
-        <h3 class="footer-title">راهنمای مشتریان</h3>
-        <a href="#contact" class="footer-link">راهنمای خرید</a>
-        <a href="#contact" class="footer-link">روش‌های ارسال</a>
-        <a href="#contact" class="footer-link">قوانین و مقررات</a>
-        <a href="#contact" class="footer-link">سؤالات متداول</a>
-      </div>
+        <div class="footer-wave"></div>
 
-      <div>
-        <h3 class="footer-title">ارتباط با ما</h3>
+        <div class="footer-orb top-20 -left-32"></div>
+        <div class="footer-orb bottom-20 -right-32"></div>
 
-        <div class="flex items-center gap-3 text-sm text-cream/60 mb-5">
-          <i data-lucide="phone" class="text-gold"></i>
-          <span>۰۲۱-۱۲۳۴۵۶۷۸</span>
+        <div class="container-custom relative z-10">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-14">
+
+                <div>
+
+                    <a href="#" class="flex items-center gap-3 text-gold-light mb-6">
+                        <i data-lucide="gem" class="w-8 h-8"></i>
+                        <span class="text-4xl tracking-[4px] font-semibold">ARVÉ</span>
+                    </a>
+
+                    <p class="text-cream/60 text-sm leading-9">
+                        فراتر از یک جواهر؛
+                        داستانی از هنر، اصالت و زیبایی ماندگار.
+                    </p>
+
+                    <div class="flex gap-3 mt-7">
+
+                        <!-- Instagram -->
+                        <a href="https://instagram.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer"
+                            class="social-link" aria-label="اینستاگرام">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <!-- Telegram -->
+                        <a href="https://t.me/YOUR_USERNAME" target="_blank" rel="noopener noreferrer"
+                            class="social-link" aria-label="تلگرام">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+
+                        <!-- Pinterest -->
+                        <a href="#" class="social-link" aria-label="پینترست">
+                            <i class="fa-brands fa-pinterest-p"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div>
+                    <h3 class="footer-title">دسترسی سریع</h3>
+                    <a href="#" class="footer-link">صفحه اصلی</a>
+                    <a href="#categories" class="footer-link">دسته‌بندی‌ها</a>
+                    <a href="#products" class="footer-link">محصولات</a>
+                    <a href="#story" class="footer-link">داستان ما</a>
+                </div>
+
+                <div>
+                    <h3 class="footer-title">راهنمای مشتریان</h3>
+                    <a href="#contact" class="footer-link">راهنمای خرید</a>
+                    <a href="#contact" class="footer-link">روش‌های ارسال</a>
+                    <a href="#contact" class="footer-link">قوانین و مقررات</a>
+                    <a href="#contact" class="footer-link">سؤالات متداول</a>
+                </div>
+
+                <div>
+                    <h3 class="footer-title">ارتباط با ما</h3>
+
+                    <div class="flex items-center gap-3 text-sm text-cream/60 mb-5">
+                        <i data-lucide="phone" class="text-gold"></i>
+                        <span>۰۲۱-۱۲۳۴۵۶۷۸</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 text-sm text-cream/60 mb-5">
+                        <i data-lucide="mail" class="text-gold"></i>
+                        <span>arve@gmail.com</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 text-sm text-cream/60">
+                        <i data-lucide="map-pin" class="text-gold"></i>
+                        <span>تهران، ایران</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="border-t border-gold/20 py-7 flex flex-col md:flex-row justify-between items-center gap-4">
+
+                <p class="text-xs text-cream/50">
+                    © 2026 ARVÉ. تمامی حقوق محفوظ است.
+                </p>
+
+                <p class="text-gold-light tracking-widest text-sm">
+                    TIMELESS BEAUTY ✦
+                </p>
+
+                <button id="backToTop" class="flex items-center gap-2 text-xs text-cream/60 hover:text-gold transition">
+                    بازگشت به بالا
+                    <i data-lucide="arrow-up" class="w-4 h-4"></i>
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="flex items-center gap-3 text-sm text-cream/60 mb-5">
-          <i data-lucide="mail" class="text-gold"></i>
-          <span>hello@arve.com</span>
+    </footer>
+
+
+    <!-- ================= CART DRAWER ================= -->
+
+    <div id="drawerOverlay" class="drawer-overlay"></div>
+
+    <aside id="cartDrawer" class="cart-drawer">
+
+        <div class="flex items-center justify-between p-6 border-b border-emerald/10">
+
+            <div>
+                <h3 class="font-bold text-xl text-emerald">سبد خرید</h3>
+                <p class="text-xs text-muted mt-2">انتخاب‌های زیبای شما</p>
+            </div>
+
+            <button id="closeCart" class="text-emerald" aria-label="بستن سبد">
+                <i data-lucide="x"></i>
+            </button>
+
         </div>
 
-        <div class="flex items-center gap-3 text-sm text-cream/60">
-          <i data-lucide="map-pin" class="text-gold"></i>
-          <span>تهران، ایران</span>
+        <div id="cartItems" class="flex-1 overflow-y-auto p-5 space-y-5"></div>
+
+        <div class="p-6 border-t border-emerald/20">
+
+            <div class="flex justify-between items-center mb-5">
+                <span class="text-sm">مجموع سفارش</span>
+                <strong id="cartTotal" class="text-emerald">۰ تومان</strong>
+            </div>
+
+            <button id="checkoutButton" class="btn-primary w-full">
+                ادامه خرید
+                <i data-lucide="arrow-left"></i>
+            </button>
+
         </div>
 
-      </div>
+    </aside>
+
+
+    <!-- ================= AUTH MODAL ================= -->
+
+    <div id="authBackdrop" class="modal-backdrop">
+
+        <div class="auth-modal">
+
+            <button id="closeAuth" class="absolute top-5 left-5 text-muted hover:text-red-500" aria-label="بستن">
+                <i data-lucide="x"></i>
+            </button>
+
+            <div class="text-center mb-7">
+
+                <div class="w-14 h-14 mx-auto rounded-full bg-emerald text-gold-light grid place-items-center mb-4">
+                    <i data-lucide="gem" class="w-7 h-7"></i>
+                </div>
+
+                <h2 class="text-2xl font-bold text-emerald">به دنیای ARVÉ خوش آمدید</h2>
+
+                <p class="text-xs text-muted mt-2">حساب کاربری خود را مدیریت کنید</p>
+
+            </div>
+
+            <div class="flex border-b border-emerald/10 mb-7">
+
+                <button class="auth-tab active" data-auth-tab="login">ورود</button>
+
+                <button class="auth-tab" data-auth-tab="register">ثبت‌نام</button>
+
+            </div>
+
+            <!-- LOGIN FORM -->
+
+            <form id="loginForm" class="auth-form">
+
+                <label class="block text-xs mb-2">ایمیل یا نام کاربری</label>
+
+                <input id="loginEmail" type="text" required class="form-field" placeholder="example@email.com">
+
+                <label class="block text-xs mt-5 mb-2">رمز عبور</label>
+
+                <input id="loginPassword" type="password" required minlength="6" class="form-field"
+                    placeholder="رمز عبور خود را وارد کنید">
+
+                <button type="submit" class="btn-primary w-full mt-7">
+                    ورود به حساب
+                    <i data-lucide="log-in"></i>
+                </button>
+
+                <p class="text-xs text-muted text-center mt-5">
+                    حساب کاربری ندارید؟
+                    <button type="button" id="goRegister" class="text-emerald font-bold">ثبت‌نام کنید</button>
+                </p>
+
+            </form>
+
+            <!-- REGISTER FORM -->
+
+            <form id="registerForm" class="auth-form hidden">
+
+                <label class="block text-xs mb-2">نام و نام خانوادگی</label>
+
+                <input id="registerName" type="text" required minlength="3" class="form-field" placeholder="نام شما">
+
+                <label class="block text-xs mt-5 mb-2">آدرس ایمیل</label>
+
+                <input id="registerEmail" type="email" required class="form-field" placeholder="example@email.com">
+
+                <label class="block text-xs mt-5 mb-2">رمز عبور</label>
+
+                <input id="registerPassword" type="password" required minlength="6" class="form-field"
+                    placeholder="حداقل ۶ کاراکتر">
+
+                <label class="block text-xs mt-5 mb-2">تکرار رمز عبور</label>
+
+                <input id="confirmPassword" type="password" required minlength="6" class="form-field"
+                    placeholder="تکرار رمز عبور">
+
+                <button type="submit" class="btn-primary w-full mt-7">
+                    ساخت حساب کاربری
+                    <i data-lucide="user-plus"></i>
+                </button>
+
+                <p class="text-xs text-muted text-center mt-5">
+                    قبلاً ثبت‌نام کرده‌اید؟
+                    <button type="button" id="goLogin" class="text-emerald font-bold">وارد شوید</button>
+                </p>
+
+            </form>
+
+        </div>
 
     </div>
 
-    <div class="border-t border-gold/20 py-7 flex flex-col md:flex-row justify-between items-center gap-4">
 
-      <p class="text-xs text-cream/50">
-        © 2026 ARVÉ. تمامی حقوق محفوظ است.
-      </p>
+    <!-- ================= TOAST ================= -->
+
+    <div id="toast" class="toast"></div>
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const $ = selector => document.querySelector(selector);
+
+        const $$ = selector => document.querySelectorAll(selector);
+
+        const money = value => value.toLocaleString("fa-IR") + " تومان";
+
+        const number = value => value.toLocaleString("fa-IR");
+
+
+        // ================= PRODUCTS =================
+
+        const products = [
+
+            {
+                id: 1,
+                name: "گردنبند قلب طلایی",
+                category: "necklace",
+                price: 11500000,
+                oldPrice: 13500000,
+                badge: "جدید",
+                image: "images/heart.jpg"
+            },
 
-      <p class="text-gold-light tracking-widest text-sm">
-        TIMELESS BEAUTY ✦
-      </p>
+            {
+                id: 2,
+                name: "انگشتر الماس کلاسیک",
+                category: "ring",
+                price: 15900000,
+                oldPrice: 18500000,
+                badge: "پرفروش",
+                image: "images/ring3.jpg"
+            },
 
-      <button id="backToTop" class="flex items-center gap-2 text-xs text-cream/60 hover:text-gold transition">
-        بازگشت به بالا
-        <i data-lucide="arrow-up" class="w-4 h-4"></i>
-      </button>
+            {
+                id: 3,
+                name: "گوشواره زمرد",
+                category: "earring",
+                price: 14500000,
+                oldPrice: 0,
+                badge: "جدید",
+                image: "images/go2.jpg"
+            },
 
-    </div>
+            {
+                id: 4,
+                name: "دستبند ظریف طلایی",
+                category: "bracelet",
+                price: 9600000,
+                oldPrice: 11200000,
+                badge: "ویژه",
+                image: "images/barcmini.jpg"
+            },
 
-  </div>
+            {
+                id: 5,
+                name: "گردنبند مروارید",
+                category: "necklace",
+                price: 12500000,
+                oldPrice: 0,
+                badge: "خاص",
+                image: "images/neckk.jpg"
+            },
 
-</footer>
+            {
+                id: 6,
+                name: "انگشتر مینیمال",
+                category: "ring",
+                price: 8500000,
+                oldPrice: 9900000,
+                badge: "محبوب",
+                image: "images/ringmini.jpg"
+            },
 
+            {
+                id: 7,
+                name: "گوشواره طلایی",
+                category: "earring",
+                price: 7800000,
+                oldPrice: 0,
+                badge: "جدید",
+                image: "images/go1.jpg"
+            },
 
-<!-- ================= CART DRAWER ================= -->
+            {
+                id: 8,
+                name: "دستبند میخی",
+                category: "bracelet",
+                price: 18500000,
+                oldPrice: 21000000,
+                badge: "خاص",
+                image: "images/barcm.jpg"
+            }
 
-<div id="drawerOverlay" class="drawer-overlay"></div>
+        ];
 
-<aside id="cartDrawer" class="cart-drawer">
 
-  <div class="flex items-center justify-between p-6 border-b border-emerald/10">
+        // ================= STATE =================
 
-    <div>
-      <h3 class="font-bold text-xl text-emerald">سبد خرید</h3>
-      <p class="text-xs text-muted mt-2">انتخاب‌های زیبای شما</p>
-    </div>
+        let cart = JSON.parse(localStorage.getItem("arve-cart") || "[]");
 
-    <button id="closeCart" class="text-emerald" aria-label="بستن سبد">
-      <i data-lucide="x"></i>
-    </button>
+        let favorites = JSON.parse(localStorage.getItem("arve-favorites") || "[]");
 
-  </div>
+        let currentCategory = "all";
 
-  <div id="cartItems" class="flex-1 overflow-y-auto p-5 space-y-5"></div>
+        let searchQuery = "";
 
-  <div class="p-6 border-t border-emerald/20">
 
-    <div class="flex justify-between items-center mb-5">
-      <span class="text-sm">مجموع سفارش</span>
-      <strong id="cartTotal" class="text-emerald">۰ تومان</strong>
-    </div>
+        // ================= TOAST =================
 
-    <button id="checkoutButton" class="btn-primary w-full">
-      ادامه خرید
-      <i data-lucide="arrow-left"></i>
-    </button>
+        let toastTimer;
 
-  </div>
+        function showToast(message) {
 
-</aside>
+            const toast = $("#toast");
 
+            toast.textContent = message;
 
-<!-- ================= AUTH MODAL ================= -->
+            toast.classList.add("active");
 
-<div id="authBackdrop" class="modal-backdrop">
+            clearTimeout(toastTimer);
 
-  <div class="auth-modal">
+            toastTimer = setTimeout(() => {
+                toast.classList.remove("active");
+            }, 2700);
 
-    <button id="closeAuth" class="absolute top-5 left-5 text-muted hover:text-red-500" aria-label="بستن">
-      <i data-lucide="x"></i>
-    </button>
+        }
 
-    <div class="text-center mb-7">
 
-      <div class="w-14 h-14 mx-auto rounded-full bg-emerald text-gold-light grid place-items-center mb-4">
-        <i data-lucide="gem" class="w-7 h-7"></i>
-      </div>
+        // ================= SAVE DATA =================
 
-      <h2 class="text-2xl font-bold text-emerald">به دنیای ARVÉ خوش آمدید</h2>
+        function saveData() {
 
-      <p class="text-xs text-muted mt-2">حساب کاربری خود را مدیریت کنید</p>
+            localStorage.setItem("arve-cart", JSON.stringify(cart));
 
-    </div>
+            localStorage.setItem("arve-favorites", JSON.stringify(favorites));
 
-    <div class="flex border-b border-emerald/10 mb-7">
+        }
 
-      <button class="auth-tab active" data-auth-tab="login">ورود</button>
 
-      <button class="auth-tab" data-auth-tab="register">ثبت‌نام</button>
+        // ================= RENDER PRODUCTS =================
 
-    </div>
+        function renderProducts() {
 
-    <!-- LOGIN FORM -->
-    <form id="loginForm" class="auth-form">
+            let result = [...products];
 
-      <label class="block text-xs mb-2">ایمیل یا نام کاربری</label>
+            if (currentCategory !== "all") {
+                result = result.filter(p => p.category === currentCategory);
+            }
 
-      <input id="loginEmail" type="text" required class="form-field" placeholder="example@email.com">
+            if (searchQuery) {
+                result = result.filter(p =>
+                    p.name.toLowerCase().includes(searchQuery.toLowerCase())
+                );
+            }
 
-      <label class="block text-xs mt-5 mb-2">رمز عبور</label>
+            const sort = $("#sortSelect").value;
 
-      <input id="loginPassword" type="password" required minlength="6" class="form-field" placeholder="رمز عبور خود را وارد کنید">
+            if (sort === "cheap") {
+                result.sort((a, b) => a.price - b.price);
+            }
 
-      <button type="submit" class="btn-primary w-full mt-7">
-        ورود به حساب
-        <i data-lucide="log-in"></i>
-      </button>
+            if (sort === "expensive") {
+                result.sort((a, b) => b.price - a.price);
+            }
 
-      <p class="text-xs text-muted text-center mt-5">
-        حساب کاربری ندارید؟
-        <button type="button" id="goRegister" class="text-emerald font-bold">ثبت‌نام کنید</button>
-      </p>
+            if (sort === "name") {
+                result.sort((a, b) => a.name.localeCompare(b.name, "fa"));
+            }
 
-    </form>
+            $("#resultCount").textContent =
+                number(result.length) + " محصول";
 
-    <!-- REGISTER FORM -->
-    <form id="registerForm" class="auth-form hidden">
+            $("#emptyMessage").classList.toggle("hidden", result.length !== 0);
 
-      <label class="block text-xs mb-2">نام و نام خانوادگی</label>
-
-      <input id="registerName" type="text" required minlength="3" class="form-field" placeholder="نام شما">
-
-      <label class="block text-xs mt-5 mb-2">آدرس ایمیل</label>
-
-      <input id="registerEmail" type="email" required class="form-field" placeholder="example@email.com">
-
-      <label class="block text-xs mt-5 mb-2">رمز عبور</label>
-
-      <input id="registerPassword" type="password" required minlength="6" class="form-field" placeholder="حداقل ۶ کاراکتر">
-
-      <label class="block text-xs mt-5 mb-2">تکرار رمز عبور</label>
-
-      <input id="confirmPassword" type="password" required minlength="6" class="form-field" placeholder="تکرار رمز عبور">
-
-      <button type="submit" class="btn-primary w-full mt-7">
-        ساخت حساب کاربری
-        <i data-lucide="user-plus"></i>
-      </button>
-
-      <p class="text-xs text-muted text-center mt-5">
-        قبلاً ثبت‌نام کرده‌اید؟
-        <button type="button" id="goLogin" class="text-emerald font-bold">وارد شوید</button>
-      </p>
-
-    </form>
-
-  </div>
-
-</div>
-
-
-<!-- ================= TOAST ================= -->
-
-<div id="toast" class="toast"></div>
-
-
-<!-- ================= JAVASCRIPT ================= -->
-
-<script>
-
-const $ = selector => document.querySelector(selector);
-
-const $$ = selector => document.querySelectorAll(selector);
-
-const money = value => value.toLocaleString("fa-IR") + " تومان";
-
-const number = value => value.toLocaleString("fa-IR");
-
-
-// ================= PRODUCTS =================
-
-const products = [
-
-  {
-    id: 1,
-    name: "گردنبند قلب طلایی",
-    category: "necklace",
-    price: 11500000,
-    oldPrice: 13500000,
-    badge: "جدید",
-    image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85"
-  },
-
-  {
-    id: 2,
-    name: "انگشتر الماس کلاسیک",
-    category: "ring",
-    price: 15900000,
-    oldPrice: 18500000,
-    badge: "پرفروش",
-    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=85"
-  },
-
-  {
-    id: 3,
-    name: "گوشواره زمرد",
-    category: "earring",
-    price: 14500000,
-    oldPrice: 0,
-    badge: "جدید",
-    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=85"
-  },
-
-  {
-    id: 4,
-    name: "دستبند ظریف طلایی",
-    category: "bracelet",
-    price: 9600000,
-    oldPrice: 11200000,
-    badge: "ویژه",
-    image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=700&q=85"
-  },
-
-  {
-    id: 5,
-    name: "گردنبند مروارید",
-    category: "necklace",
-    price: 12500000,
-    oldPrice: 0,
-    badge: "خاص",
-    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=85"
-  },
-
-  {
-    id: 6,
-    name: "انگشتر مینیمال",
-    category: "ring",
-    price: 8500000,
-    oldPrice: 9900000,
-    badge: "محبوب",
-    image: "https://images.unsplash.com/photo-1603561596112-db4b9b7c7a6a?auto=format&fit=crop&w=700&q=85"
-  },
-
-  {
-    id: 7,
-    name: "گوشواره طلایی",
-    category: "earring",
-    price: 7800000,
-    oldPrice: 0,
-    badge: "جدید",
-    image: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=700&q=85"
-  },
-
-  {
-    id: 8,
-    name: "دستبند الماس",
-    category: "bracelet",
-    price: 18500000,
-    oldPrice: 21000000,
-    badge: "خاص",
-    image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=700&q=85"
-  }
-
-];
-
-
-// ================= STATE =================
-
-let cart = JSON.parse(localStorage.getItem("arve-cart") || "[]");
-
-let favorites = JSON.parse(localStorage.getItem("arve-favorites") || "[]");
-
-let currentCategory = "all";
-
-let searchQuery = "";
-
-
-// ================= TOAST =================
-
-let toastTimer;
-
-function showToast(message) {
-
-  const toast = $("#toast");
-
-  toast.textContent = message;
-
-  toast.classList.add("active");
-
-  clearTimeout(toastTimer);
-
-  toastTimer = setTimeout(() => {
-    toast.classList.remove("active");
-  }, 2700);
-
-}
-
-
-// ================= SAVE DATA =================
-
-function saveData() {
-
-  localStorage.setItem("arve-cart", JSON.stringify(cart));
-
-  localStorage.setItem("arve-favorites", JSON.stringify(favorites));
-
-}
-
-
-// ================= RENDER PRODUCTS =================
-
-function renderProducts() {
-
-  let result = [...products];
-
-  if (currentCategory !== "all") {
-    result = result.filter(p => p.category === currentCategory);
-  }
-
-  if (searchQuery) {
-    result = result.filter(p =>
-      p.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  }
-
-  const sort = $("#sortSelect").value;
-
-  if (sort === "cheap") {
-    result.sort((a, b) => a.price - b.price);
-  }
-
-  if (sort === "expensive") {
-    result.sort((a, b) => b.price - a.price);
-  }
-
-  if (sort === "name") {
-    result.sort((a, b) => a.name.localeCompare(b.name, "fa"));
-  }
-
-  $("#resultCount").textContent =
-    number(result.length) + " محصول";
-
-  $("#emptyMessage").classList.toggle("hidden", result.length !== 0);
-
-  $("#productGrid").innerHTML = result.map(product => `
+            $("#productGrid").innerHTML = result.map(product => `
 
     <article class="product-card">
 
@@ -1049,145 +1155,145 @@ function renderProducts() {
 
   `).join("");
 
-  lucide.createIcons();
+            lucide.createIcons();
 
-}
+        }
 
 
-// ================= PRODUCT DETAILS =================
+        // ================= PRODUCT DETAILS =================
 
-function showProduct(id) {
+        function showProduct(id) {
 
-  const product = products.find(p => p.id === id);
+            const product = products.find(p => p.id === id);
 
-  if (!product) return;
+            if (!product) return;
 
-  showToast(product.name + " | " + money(product.price));
+            showToast(product.name + " | " + money(product.price));
 
-}
+        }
 
 
-// ================= FILTER =================
+        // ================= FILTER =================
 
-$$(".filter-btn[data-filter]").forEach(button => {
+        $$(".filter-btn[data-filter]").forEach(button => {
 
-  button.addEventListener("click", () => {
+            button.addEventListener("click", () => {
 
-    $$(".filter-btn[data-filter]").forEach(btn =>
-      btn.classList.remove("active")
-    );
+                $$(".filter-btn[data-filter]").forEach(btn =>
+                    btn.classList.remove("active")
+                );
 
-    button.classList.add("active");
+                button.classList.add("active");
 
-    currentCategory = button.dataset.filter;
+                currentCategory = button.dataset.filter;
 
-    renderProducts();
+                renderProducts();
 
-  });
+            });
 
-});
+        });
 
 
-// CATEGORY CLICK
+        // CATEGORY CLICK
 
-$$(".category-card").forEach(button => {
+        $$(".category-card").forEach(button => {
 
-  button.addEventListener("click", () => {
+            button.addEventListener("click", () => {
 
-    currentCategory = button.dataset.category;
+                currentCategory = button.dataset.category;
 
-    $$(".filter-btn[data-filter]").forEach(btn => {
+                $$(".filter-btn[data-filter]").forEach(btn => {
 
-      btn.classList.toggle(
-        "active",
-        btn.dataset.filter === currentCategory
-      );
+                    btn.classList.toggle(
+                        "active",
+                        btn.dataset.filter === currentCategory
+                    );
 
-    });
+                });
 
-    renderProducts();
+                renderProducts();
 
-    $("#products").scrollIntoView({ behavior: "smooth" });
+                $("#products").scrollIntoView({ behavior: "smooth" });
 
-  });
+            });
 
-});
+        });
 
 
-// SORT
+        // SORT
 
-$("#sortSelect").addEventListener("change", renderProducts);
+        $("#sortSelect").addEventListener("change", renderProducts);
 
 
-// ================= SEARCH =================
+        // ================= SEARCH =================
 
-$("#searchToggle").addEventListener("click", () => {
+        $("#searchToggle").addEventListener("click", () => {
 
-  $("#searchPanel").classList.toggle("hidden");
+            $("#searchPanel").classList.toggle("hidden");
 
-  $("#searchInput").focus();
+            $("#searchInput").focus();
 
-});
+        });
 
-$("#closeSearch").addEventListener("click", () => {
+        $("#closeSearch").addEventListener("click", () => {
 
-  $("#searchPanel").classList.add("hidden");
+            $("#searchPanel").classList.add("hidden");
 
-});
+        });
 
-$("#searchInput").addEventListener("input", event => {
+        $("#searchInput").addEventListener("input", event => {
 
-  searchQuery = event.target.value.trim();
+            searchQuery = event.target.value.trim();
 
-  renderProducts();
+            renderProducts();
 
-});
+        });
 
 
-// ================= FAVORITES =================
+        // ================= FAVORITES =================
 
-function toggleFavorite(id) {
+        function toggleFavorite(id) {
 
-  if (favorites.includes(id)) {
+            if (favorites.includes(id)) {
 
-    favorites = favorites.filter(item => item !== id);
+                favorites = favorites.filter(item => item !== id);
 
-    showToast("از علاقه‌مندی‌ها حذف شد");
+                showToast("از علاقه‌مندی‌ها حذف شد");
 
-  } else {
+            } else {
 
-    favorites.push(id);
+                favorites.push(id);
 
-    showToast("به علاقه‌مندی‌ها اضافه شد");
+                showToast("به علاقه‌مندی‌ها اضافه شد");
 
-  }
+            }
 
-  saveData();
+            saveData();
 
-  updateCounts();
+            updateCounts();
 
-  renderProducts();
+            renderProducts();
 
-}
+        }
 
-$("#favoriteButton").addEventListener("click", () => {
+        $("#favoriteButton").addEventListener("click", () => {
 
-  if (!favorites.length) {
-    showToast("هنوز محصولی به علاقه‌مندی‌ها اضافه نکرده‌اید");
-    return;
-  }
+            if (!favorites.length) {
+                showToast("هنوز محصولی به علاقه‌مندی‌ها اضافه نکرده‌اید");
+                return;
+            }
 
-  currentCategory = "all";
+            currentCategory = "all";
 
-  searchQuery = "";
+            searchQuery = "";
 
-  $("#searchInput").value = "";
+            $("#searchInput").value = "";
 
-  $("#productGrid").innerHTML = "";
+            $("#productGrid").innerHTML = "";
 
-  const saved = products.filter(p => favorites.includes(p.id));
+            const saved = products.filter(p => favorites.includes(p.id));
 
-  $("#productGrid").innerHTML = saved.map(product => `
+            $("#productGrid").innerHTML = saved.map(product => `
 
     <article class="product-card">
 
@@ -1218,96 +1324,96 @@ $("#favoriteButton").addEventListener("click", () => {
 
   `).join("");
 
-  $("#resultCount").textContent = number(saved.length) + " محصول موردعلاقه";
+            $("#resultCount").textContent = number(saved.length) + " محصول موردعلاقه";
 
-  $("#emptyMessage").classList.toggle("hidden", saved.length > 0);
+            $("#emptyMessage").classList.toggle("hidden", saved.length > 0);
 
-  $("#products").scrollIntoView({ behavior: "smooth" });
+            $("#products").scrollIntoView({ behavior: "smooth" });
 
-  lucide.createIcons();
+            lucide.createIcons();
 
-});
-
-
-// ================= CART =================
-
-function addToCart(id) {
-
-  const product = products.find(p => p.id === id);
-
-  const existing = cart.find(p => p.id === id);
-
-  if (existing) {
-    existing.quantity++;
-  } else {
-    cart.push({ ...product, quantity: 1 });
-  }
-
-  saveData();
-
-  updateCart();
-
-  showToast("محصول به سبد خرید اضافه شد");
-
-}
+        });
 
 
-function changeQuantity(id, amount) {
+        // ================= CART =================
 
-  const item = cart.find(p => p.id === id);
+        function addToCart(id) {
 
-  if (!item) return;
+            const product = products.find(p => p.id === id);
 
-  item.quantity += amount;
+            const existing = cart.find(p => p.id === id);
 
-  if (item.quantity <= 0) {
-    cart = cart.filter(p => p.id !== id);
-  }
+            if (existing) {
+                existing.quantity++;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
 
-  saveData();
+            saveData();
 
-  updateCart();
+            updateCart();
 
-}
+            showToast("محصول به سبد خرید اضافه شد");
 
-
-function removeFromCart(id) {
-
-  cart = cart.filter(p => p.id !== id);
-
-  saveData();
-
-  updateCart();
-
-  showToast("محصول از سبد حذف شد");
-
-}
+        }
 
 
-function updateCounts() {
+        function changeQuantity(id, amount) {
 
-  const count = cart.reduce((sum, p) => sum + p.quantity, 0);
+            const item = cart.find(p => p.id === id);
 
-  $("#cartCount").textContent = number(count);
+            if (!item) return;
 
-  $("#favoriteCount").textContent = number(favorites.length);
+            item.quantity += amount;
 
-}
+            if (item.quantity <= 0) {
+                cart = cart.filter(p => p.id !== id);
+            }
+
+            saveData();
+
+            updateCart();
+
+        }
 
 
-function updateCart() {
+        function removeFromCart(id) {
 
-  updateCounts();
+            cart = cart.filter(p => p.id !== id);
 
-  const total = cart.reduce(
-    (sum, p) => sum + p.price * p.quantity, 0
-  );
+            saveData();
 
-  $("#cartTotal").textContent = money(total);
+            updateCart();
 
-  if (!cart.length) {
+            showToast("محصول از سبد حذف شد");
 
-    $("#cartItems").innerHTML = `
+        }
+
+
+        function updateCounts() {
+
+            const count = cart.reduce((sum, p) => sum + p.quantity, 0);
+
+            $("#cartCount").textContent = number(count);
+
+            $("#favoriteCount").textContent = number(favorites.length);
+
+        }
+
+
+        function updateCart() {
+
+            updateCounts();
+
+            const total = cart.reduce(
+                (sum, p) => sum + p.price * p.quantity, 0
+            );
+
+            $("#cartTotal").textContent = money(total);
+
+            if (!cart.length) {
+
+                $("#cartItems").innerHTML = `
       <div class="text-center py-20 text-muted">
         <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-5"></i>
         <p>سبد خرید شما خالی است.</p>
@@ -1317,9 +1423,9 @@ function updateCart() {
       </div>
     `;
 
-  } else {
+            } else {
 
-    $("#cartItems").innerHTML = cart.map(item => `
+                $("#cartItems").innerHTML = cart.map(item => `
 
       <div class="flex gap-4 border-b border-emerald/10 pb-5">
 
@@ -1355,369 +1461,434 @@ function updateCart() {
 
     `).join("");
 
-  }
+            }
 
-  lucide.createIcons();
+            lucide.createIcons();
 
-}
+        }
 
 
-// CART DRAWER
+        // CART DRAWER
 
-function openCart() {
+        function openCart() {
 
-  $("#cartDrawer").classList.add("active");
+            $("#cartDrawer").classList.add("active");
 
-  $("#drawerOverlay").classList.add("active");
+            $("#drawerOverlay").classList.add("active");
 
-  document.body.style.overflow = "hidden";
+            document.body.style.overflow = "hidden";
 
-}
+        }
 
-function closeCart() {
+        function closeCart() {
 
-  $("#cartDrawer").classList.remove("active");
+            $("#cartDrawer").classList.remove("active");
 
-  $("#drawerOverlay").classList.remove("active");
+            $("#drawerOverlay").classList.remove("active");
 
-  document.body.style.overflow = "";
+            document.body.style.overflow = "";
 
-}
+        }
 
-$("#cartButton").addEventListener("click", openCart);
+        $("#cartButton").addEventListener("click", openCart);
 
-$("#closeCart").addEventListener("click", closeCart);
+        $("#closeCart").addEventListener("click", closeCart);
 
-$("#drawerOverlay").addEventListener("click", closeCart);
+        $("#drawerOverlay").addEventListener("click", closeCart);
 
 
-// ================= CHECKOUT =================
+        // ================= CHECKOUT =================
 
-$("#checkoutButton").addEventListener("click", () => {
+        $("#checkoutButton").addEventListener("click", () => {
 
-  if (!cart.length) {
-    showToast("سبد خرید شما خالی است");
-    return;
-  }
+            if (!cart.length) {
+                showToast("سبد خرید شما خالی است");
+                return;
+            }
 
-  if (!localStorage.getItem("arve-current-user")) {
-    closeCart();
-    openAuth();
-    showToast("برای ادامه ابتدا وارد حساب خود شوید");
-    return;
-  }
+            if (!localStorage.getItem("arve-current-user")) {
+                closeCart();
+                openAuth();
+                showToast("برای ادامه ابتدا وارد حساب خود شوید");
+                return;
+            }
 
-  showToast("این نسخه آزمایشی است؛ درگاه پرداخت متصل نیست.");
+            showToast("این نسخه آزمایشی است؛ درگاه پرداخت متصل نیست.");
 
-});
+        });
 
 
-// ================= AUTH =================
+        // ================= AUTH =================
 
-function openAuth() {
+        function openAuth() {
 
-  $("#authBackdrop").classList.add("active");
+            $("#authBackdrop").classList.add("active");
 
-  document.body.style.overflow = "hidden";
+            document.body.style.overflow = "hidden";
 
-}
+        }
 
-function closeAuth() {
+        function closeAuth() {
 
-  $("#authBackdrop").classList.remove("active");
+            $("#authBackdrop").classList.remove("active");
 
-  document.body.style.overflow = "";
+            document.body.style.overflow = "";
 
-}
+        }
 
-$("#accountButton").addEventListener("click", () => {
+        $("#accountButton").addEventListener("click", () => {
 
-  const user = JSON.parse(localStorage.getItem("arve-current-user") || "null");
+            const user = JSON.parse(localStorage.getItem("arve-current-user") || "null");
 
-  if (user) {
+            if (user) {
 
-    const leave = confirm(
-      "سلام " + user.name + " عزیز!\nآیا می‌خواهید از حساب خارج شوید؟"
-    );
+                const leave = confirm(
+                    "سلام " + user.name + " عزیز!\nآیا می‌خواهید از حساب خارج شوید؟"
+                );
 
-    if (leave) {
-      localStorage.removeItem("arve-current-user");
-      showToast("از حساب کاربری خارج شدید");
-    }
+                if (leave) {
+                    localStorage.removeItem("arve-current-user");
+                    showToast("از حساب کاربری خارج شدید");
+                }
 
-  } else {
+            } else {
 
-    openAuth();
+                openAuth();
 
-  }
+            }
 
-});
+        });
 
-$("#closeAuth").addEventListener("click", closeAuth);
+        $("#closeAuth").addEventListener("click", closeAuth);
 
-$("#authBackdrop").addEventListener("click", event => {
+        $("#authBackdrop").addEventListener("click", event => {
 
-  if (event.target === $("#authBackdrop")) closeAuth();
+            if (event.target === $("#authBackdrop")) closeAuth();
 
-});
+        });
 
 
-// AUTH TABS
+        // AUTH TABS
 
-function switchAuth(type) {
+        function switchAuth(type) {
 
-  $$(".auth-tab").forEach(tab => {
+            $$(".auth-tab").forEach(tab => {
 
-    tab.classList.toggle("active", tab.dataset.authTab === type);
+                tab.classList.toggle("active", tab.dataset.authTab === type);
 
-  });
+            });
 
-  $("#loginForm").classList.toggle("hidden", type !== "login");
+            $("#loginForm").classList.toggle("hidden", type !== "login");
 
-  $("#registerForm").classList.toggle("hidden", type !== "register");
+            $("#registerForm").classList.toggle("hidden", type !== "register");
 
-}
+        }
 
-$$(".auth-tab").forEach(tab => {
+        $$(".auth-tab").forEach(tab => {
 
-  tab.addEventListener("click", () => switchAuth(tab.dataset.authTab));
+            tab.addEventListener("click", () => switchAuth(tab.dataset.authTab));
 
-});
+        });
 
-$("#goRegister").addEventListener("click", () => switchAuth("register"));
+        $("#goRegister").addEventListener("click", () => switchAuth("register"));
 
-$("#goLogin").addEventListener("click", () => switchAuth("login"));
+        $("#goLogin").addEventListener("click", () => switchAuth("login"));
 
 
-// REGISTER
+        // REGISTER
 
-$("#registerForm").addEventListener("submit", event => {
+        $("#registerForm").addEventListener("submit", event => {
 
-  event.preventDefault();
+            event.preventDefault();
 
-  const name = $("#registerName").value.trim();
+            const name = $("#registerName").value.trim();
 
-  const email = $("#registerEmail").value.trim().toLowerCase();
+            const email = $("#registerEmail").value.trim().toLowerCase();
 
-  const password = $("#registerPassword").value;
+            const password = $("#registerPassword").value;
 
-  const confirmPassword = $("#confirmPassword").value;
+            const confirmPassword = $("#confirmPassword").value;
 
-  if (password.length < 6) {
-    showToast("رمز عبور باید حداقل ۶ کاراکتر باشد");
-    return;
-  }
+            if (password.length < 6) {
+                showToast("رمز عبور باید حداقل ۶ کاراکتر باشد");
+                return;
+            }
 
-  if (password !== confirmPassword) {
-    showToast("تکرار رمز عبور صحیح نیست");
-    return;
-  }
+            if (password !== confirmPassword) {
+                showToast("تکرار رمز عبور صحیح نیست");
+                return;
+            }
 
-  const users = JSON.parse(localStorage.getItem("arve-users") || "[]");
+            const users = JSON.parse(localStorage.getItem("arve-users") || "[]");
 
-  if (users.some(user => user.email === email)) {
-    showToast("این ایمیل قبلاً ثبت شده است");
-    return;
-  }
+            if (users.some(user => user.email === email)) {
+                showToast("این ایمیل قبلاً ثبت شده است");
+                return;
+            }
 
-  users.push({ name, email, password });
+            users.push({ name, email, password });
 
-  localStorage.setItem("arve-users", JSON.stringify(users));
+            localStorage.setItem("arve-users", JSON.stringify(users));
 
-  localStorage.setItem(
-    "arve-current-user",
-    JSON.stringify({ name, email })
-  );
+            localStorage.setItem(
+                "arve-current-user",
+                JSON.stringify({ name, email })
+            );
 
-  event.target.reset();
+            event.target.reset();
 
-  closeAuth();
+            closeAuth();
 
-  showToast("ثبت‌نام با موفقیت انجام شد. خوش آمدید!");
+            showToast("ثبت‌نام با موفقیت انجام شد. خوش آمدید!");
 
-});
+        });
 
 
-// LOGIN
+        // LOGIN
 
-$("#loginForm").addEventListener("submit", event => {
+        $("#loginForm").addEventListener("submit", event => {
 
-  event.preventDefault();
+            event.preventDefault();
 
-  const email = $("#loginEmail").value.trim().toLowerCase();
+            const email = $("#loginEmail").value.trim().toLowerCase();
 
-  const password = $("#loginPassword").value;
+            const password = $("#loginPassword").value;
 
-  const users = JSON.parse(localStorage.getItem("arve-users") || "[]");
+            const users = JSON.parse(localStorage.getItem("arve-users") || "[]");
 
-  const user = users.find(
-    item => item.email === email && item.password === password
-  );
+            const user = users.find(
+                item => item.email === email && item.password === password
+            );
 
-  if (!user) {
-    showToast("ایمیل یا رمز عبور اشتباه است");
-    return;
-  }
+            if (!user) {
+                showToast("ایمیل یا رمز عبور اشتباه است");
+                return;
+            }
 
-  localStorage.setItem(
-    "arve-current-user",
-    JSON.stringify({ name: user.name, email: user.email })
-  );
+            localStorage.setItem(
+                "arve-current-user",
+                JSON.stringify({ name: user.name, email: user.email })
+            );
 
-  event.target.reset();
+            event.target.reset();
 
-  closeAuth();
+            closeAuth();
 
-  showToast("خوش آمدید " + user.name);
+            showToast("خوش آمدید " + user.name);
 
-});
+        });
 
 
-// ================= NEWSLETTER =================
+        // ================= NEWSLETTER =================
 
-$("#newsletterForm").addEventListener("submit", event => {
+        $("#newsletterForm").addEventListener("submit", event => {
 
-  event.preventDefault();
+            event.preventDefault();
 
-  const email = $("#newsletterEmail").value.trim().toLowerCase();
+            const email = $("#newsletterEmail").value.trim().toLowerCase();
 
-  const emails = JSON.parse(
-    localStorage.getItem("arve-newsletter") || "[]"
-  );
+            const emails = JSON.parse(
+                localStorage.getItem("arve-newsletter") || "[]"
+            );
 
-  if (emails.includes(email)) {
-    showToast("این ایمیل قبلاً عضو شده است");
-    return;
-  }
+            if (emails.includes(email)) {
+                showToast("این ایمیل قبلاً عضو شده است");
+                return;
+            }
 
-  emails.push(email);
+            emails.push(email);
 
-  localStorage.setItem("arve-newsletter", JSON.stringify(emails));
+            localStorage.setItem("arve-newsletter", JSON.stringify(emails));
 
-  event.target.reset();
+            event.target.reset();
 
-  showToast("عضویت شما با موفقیت ثبت شد");
+            showToast("عضویت شما با موفقیت ثبت شد");
 
-});
+        });
 
 
-// ================= THEME =================
+        // ================= THEME =================
 
-function applyTheme(theme) {
+        function applyTheme(theme) {
 
-  document.body.classList.toggle("dark-mode", theme === "dark");
+            document.body.classList.toggle("dark-mode", theme === "dark");
 
-  $("#themeButton").innerHTML = theme === "dark"
-    ? '<i data-lucide="sun"></i>'
-    : '<i data-lucide="moon"></i>';
+            $("#themeButton").innerHTML = theme === "dark"
+                ? '<i data-lucide="sun"></i>'
+                : '<i data-lucide="moon"></i>';
 
-  localStorage.setItem("arve-theme", theme);
+            localStorage.setItem("arve-theme", theme);
 
-  lucide.createIcons();
+            lucide.createIcons();
 
-}
+        }
 
-$("#themeButton").addEventListener("click", () => {
+        $("#themeButton").addEventListener("click", () => {
 
-  const dark = document.body.classList.contains("dark-mode");
+            const dark = document.body.classList.contains("dark-mode");
 
-  applyTheme(dark ? "light" : "dark");
+            applyTheme(dark ? "light" : "dark");
 
-});
+        });
 
-if (localStorage.getItem("arve-theme") === "dark") {
-  applyTheme("dark");
-}
+        if (localStorage.getItem("arve-theme") === "dark") {
+            applyTheme("dark");
+        }
 
 
-// ================= MOBILE MENU =================
+        // ================= MOBILE MENU =================
 
-$("#mobileMenuButton").addEventListener("click", () => {
+        $("#mobileMenuButton").addEventListener("click", () => {
 
-  $("#mobileMenu").classList.toggle("hidden");
+            $("#mobileMenu").classList.toggle("hidden");
 
-  $("#mobileMenu").classList.toggle("flex");
+            $("#mobileMenu").classList.toggle("flex");
 
-});
+        });
 
-$$('#mobileMenu a').forEach(link => {
+        $$('#mobileMenu a').forEach(link => {
 
-  link.addEventListener("click", () => {
+            link.addEventListener("click", () => {
 
-    $("#mobileMenu").classList.add("hidden");
+                $("#mobileMenu").classList.add("hidden");
 
-    $("#mobileMenu").classList.remove("flex");
+                $("#mobileMenu").classList.remove("flex");
 
-  });
+            });
 
-});
+        });
 
 
-// ================= BACK TO TOP =================
+        // ================= BACK TO TOP =================
 
-$("#backToTop").addEventListener("click", () => {
+        $("#backToTop").addEventListener("click", () => {
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
-});
+        });
 
 
-// ================= KEYBOARD =================
+        // ================= KEYBOARD =================
 
-document.addEventListener("keydown", event => {
+        document.addEventListener("keydown", event => {
 
-  if (event.key === "Escape") {
+            if (event.key === "Escape") {
 
-    closeCart();
+                closeCart();
 
-    closeAuth();
+                closeAuth();
 
-    $("#searchPanel").classList.add("hidden");
+                $("#searchPanel").classList.add("hidden");
 
-  }
+            }
 
-});
+        });
 
 
-// ================= SCROLL ANIMATIONS =================
+        // ================= SCROLL ANIMATIONS =================
 
-const revealObserver = new IntersectionObserver(entries => {
+        const revealObserver = new IntersectionObserver(entries => {
 
-  entries.forEach(entry => {
+            entries.forEach(entry => {
 
-    if (entry.isIntersecting) {
+                if (entry.isIntersecting) {
 
-      entry.target.classList.add("show");
+                    entry.target.classList.add("show");
 
-      revealObserver.unobserve(entry.target);
+                    revealObserver.unobserve(entry.target);
 
-    }
+                }
 
-  });
+            });
 
-}, {
-  threshold: 0.12
-});
+        }, {
+            threshold: 0.12
+        });
 
-$$(".reveal").forEach(element => {
+        $$(".reveal").forEach(element => {
 
-  revealObserver.observe(element);
+            revealObserver.observe(element);
 
-});
+        });
 
 
-// ================= INITIALIZE =================
+        // ================= INITIALIZE =================
 
-renderProducts();
+        renderProducts();
 
-updateCart();
+        updateCart();
 
-lucide.createIcons();
+        lucide.createIcons();
+        // ==============================
+        // CUSTOM SORT DROPDOWN
+        // ==============================
 
-</script>
+        const sortWrapper = document.querySelector(".sort-wrapper");
+        const sortTrigger = document.getElementById("sortTrigger");
+        const sortMenu = document.getElementById("sortMenu");
+        const sortLabel = document.getElementById("sortLabel");
+        const sortSelect = document.getElementById("sortSelect");
+        const sortOptions = document.querySelectorAll(".sort-option");
+
+        // Open and close dropdown
+        sortTrigger.addEventListener("click", () => {
+            const isOpen = sortWrapper.classList.toggle("open");
+
+            sortTrigger.setAttribute("aria-expanded", isOpen);
+        });
+
+        // Select sorting option
+        sortOptions.forEach(option => {
+            option.addEventListener("click", () => {
+
+                const value = option.dataset.sort;
+                const label = option.querySelector("span").textContent;
+
+                // Update hidden select
+                sortSelect.value = value;
+
+                // Trigger existing sorting logic
+                sortSelect.dispatchEvent(
+                    new Event("change", { bubbles: true })
+                );
+
+                // Update button text
+                sortLabel.textContent = label;
+
+                // Update active option
+                sortOptions.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                option.classList.add("active");
+
+                // Close dropdown
+                sortWrapper.classList.remove("open");
+                sortTrigger.setAttribute("aria-expanded", "false");
+            });
+        });
+
+        // Close when clicking outside
+        document.addEventListener("click", (event) => {
+            if (!sortWrapper.contains(event.target)) {
+                sortWrapper.classList.remove("open");
+                sortTrigger.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        // Close with Escape
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                sortWrapper.classList.remove("open");
+                sortTrigger.setAttribute("aria-expanded", "false");
+                sortTrigger.focus();
+            }
+        });
+    </script>
 
 </body>
+
 </html>
